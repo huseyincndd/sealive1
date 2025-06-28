@@ -2,10 +2,8 @@
 import React from "react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import Image from "next/image";
-import { useLanguage } from '@/lib/language-context'
 
 export default function TabletScrollSection() {
-  const { translations } = useLanguage()
   return (
     <div className="flex flex-col overflow-hidden bg-gradient-to-b from-white to-gray-50">
       <ContainerScroll

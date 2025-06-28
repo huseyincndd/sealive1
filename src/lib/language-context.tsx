@@ -1,12 +1,12 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
-import { getTranslation, Locale } from './translations'
+import { getTranslation, Locale, TranslationStructure } from './translations'
 
 interface LanguageContextType {
   locale: Locale
   setLocale: (locale: Locale) => void
-  translations: any
+  translations: TranslationStructure
   t: (path: string, fallback?: string) => string
 }
 
@@ -31,7 +31,17 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const translations = getTranslation(locale)
   
   const t = (path: string, fallback: string = '') => {
-    const result = path.split('.').reduce((obj: any, key) => obj?.[key], translations)
+    let result: any = translations
+    const keys = path.split('.')
+    
+    for (const key of keys) {
+      if (typeof result === 'object' && result !== null && key in result) {
+        result = result[key]
+      } else {
+        return fallback
+      }
+    }
+    
     return typeof result === 'string' ? result : fallback
   }
 

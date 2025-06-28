@@ -23,7 +23,6 @@ export default function TruckParallaxSection() {
   useEffect(() => {
     const handleScroll = () => {
       if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect()
         const scrolled = window.scrollY
         // Mobile için daha yavaş parallax efekti
         const rate = scrolled * (isMobile ? 0.08 : 0.2)

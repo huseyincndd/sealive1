@@ -23,7 +23,6 @@ export default function ParallaxSection() {
   useEffect(() => {
     const handleScroll = () => {
       if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect()
         const scrolled = window.scrollY
         // Mobile için daha yavaş parallax efekti
         const rate = scrolled * (isMobile ? 0.1 : 0.3)

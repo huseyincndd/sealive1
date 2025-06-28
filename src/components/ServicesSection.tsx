@@ -36,8 +36,8 @@ export default function ServicesSection() {
       icon: Warehouse,
       title: translations.services.warehousing.title,
       description: translations.services.warehousing.description,
-      backgroundImage: 'https://images.unsplash.com/photo-1601984427904-9c1ce3a9212b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      color: 'from-gray-600 to-gray-800'
+      backgroundImage: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a648e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+      color: 'from-orange-600 to-red-700'
     }
   ]
 
@@ -72,16 +72,16 @@ export default function ServicesSection() {
         <div className={`text-center mb-16 transform transition-all duration-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="inline-flex items-center bg-white border border-gray-200 text-gray-600 px-6 py-3 rounded-full text-sm font-medium mb-6 shadow-sm">
-            <span className="relative">
-              {translations.services.badge}
-              <span className="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full"></span>
-            </span>
-          </div>
+                      <div className="inline-flex items-center bg-yellow-100 text-yellow-600 px-6 py-3 rounded-full text-sm font-medium mb-6">
+              <span className="relative">
+                {translations.services.badge}
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-500 rounded-full"></span>
+              </span>
+            </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             {translations.services.title}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-gray-800"> {translations.services.titleHighlight}</span>
+            <span className="text-yellow-500"> {translations.services.titleHighlight}</span>
           </h2>
           
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -175,7 +175,7 @@ export default function ServicesSection() {
                 {translations.services.cta.description}
               </p>
               <div className="flex flex-row gap-3 justify-center">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-105">
+                <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-105">
                   {translations.services.cta.customQuote}
                 </button>
                 <button className="border border-gray-300 hover:border-gray-400 hover:bg-gray-50 text-gray-700 px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
