@@ -31,12 +31,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const translations = getTranslation(locale)
   
   const t = (path: string, fallback: string = '') => {
-    let result: any = translations
+    let result: unknown = translations
     const keys = path.split('.')
     
     for (const key of keys) {
       if (typeof result === 'object' && result !== null && key in result) {
-        result = result[key]
+        result = (result as Record<string, unknown>)[key]
       } else {
         return fallback
       }

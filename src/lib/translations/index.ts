@@ -152,12 +152,12 @@ export function getNestedTranslation(
   path: string,
   fallback: string = ''
 ): string {
-  let result: any = translations
+  let result: unknown = translations
   const keys = path.split('.')
   
   for (const key of keys) {
     if (typeof result === 'object' && result !== null && key in result) {
-      result = result[key]
+      result = (result as Record<string, unknown>)[key]
     } else {
       return fallback
     }
