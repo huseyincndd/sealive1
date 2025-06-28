@@ -1,0 +1,132 @@
+{
+  "header": {
+    "logo": "Modern Sea Live",
+    "tagline": "Freight Forwarding",
+    "nav": {
+      "about": "About",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "cta": "Freight Quote"
+  },
+  "hero": {
+    "slide1": {
+      "title": "Global Freight Forwarding",
+      "subtitle": "Worldwide logistics solutions",
+      "description": "Professional freight forwarding services across all transportation modes with end-to-end supply chain management."
+    },
+    "slide2": {
+      "title": "Ocean & Air Freight",
+      "subtitle": "Multi-modal transport solutions",
+      "description": "FCL and LCL container shipping, air cargo services with comprehensive customs clearance and documentation."
+    },
+    "slide3": {
+      "title": "Supply Chain Management",
+      "subtitle": "Integrated logistics solutions",
+      "description": "Complete supply chain optimization with warehousing, distribution, and real-time tracking capabilities."
+    },
+    "getQuote": "Get Quote",
+    "learnMore": "Learn More"
+  },
+  "about": {
+    "badge": "Freight Forwarding Excellence",
+    "title": "Professional Logistics",
+    "titleHighlight": "Solutions",
+    "description": "As Modern Sea Live, we are leaders in the global freight forwarding sector with FCL and LCL container shipping, multimodal transport solutions, and comprehensive customs clearance services.",
+    "feature1": {
+      "title": "Global Network",
+      "description": "We provide seamless freight forwarding operations with our worldwide network of shipping lines and logistics partners."
+    },
+    "feature2": {
+      "title": "Expert Team",
+      "description": "With our experienced freight forwarders team, we professionally manage your Bill of Lading, MAWB, and TIR documentation processes."
+    },
+    "feature3": {
+      "title": "Technology",
+      "description": "We provide shipment visibility and operational efficiency with advanced tracking systems and digital freight management platforms."
+    }
+  },
+  "parallax": {
+    "title": "FCL & LCL Freight Solutions",
+    "subtitle": "Professional container shipping services"
+  },
+  "services": {
+    "badge": "Freight Forwarding Services",
+    "title": "Comprehensive Logistics",
+    "titleHighlight": "Solutions",
+    "description": "Professional freight forwarding services across all transportation modes with comprehensive supply chain management and customs clearance expertise.",
+    "oceanFreight": {
+      "title": "Ocean Freight",
+      "description": "FCL and LCL container shipping, Bill of Lading preparation and port handling services."
+    },
+    "airFreight": {
+      "title": "Air Freight",
+      "description": "Express air cargo, MAWB preparation and fast customs clearance solutions."
+    },
+    "roadFreight": {
+      "title": "Road Freight",
+      "description": "Cross-border transport, TIR carnet and Europe-Asia overland transportation."
+    },
+    "warehousing": {
+      "title": "Warehousing",
+      "description": "Bonded warehouse, cargo consolidation and distribution center management."
+    },
+    "learnMore": "Learn More",
+    "cta": {
+      "title": "Tailored Freight Solutions",
+      "description": "Every shipment is unique. Our freight forwarding experts design customized logistics solutions that meet your specific requirements.",
+      "customQuote": "Get Custom Quote",
+      "consultation": "Schedule Consultation"
+    }
+  },
+  "truckParallax": {
+    "title": "Cross-Border Road Freight",
+    "subtitle": "TIR documentation and overland transport solutions"
+  },
+  "stats": {
+    "badge": "Performance Metrics",
+    "title": "Industry Leading",
+    "titleHighlight": "Performance",
+    "description": "Proven track record in freight forwarding excellence with measurable results that demonstrate our commitment to operational efficiency and client satisfaction.",
+    "stats": {
+      "years": "Years in Freight",
+      "shippingLines": "Shipping Lines",
+      "teu": "TEU Handled",
+      "onTime": "On-Time Delivery"
+    },
+    "cta": {
+      "title": "Partner with Industry Leaders",
+      "description": "Join our network of satisfied clients who trust our freight forwarding expertise for their global shipping requirements.",
+      "requestQuote": "Request Quote",
+      "viewServices": "View Services"
+    }
+  },
+  "testimonials": {
+    "title": "Client Success Stories",
+    "description": "Trusted by leading companies worldwide for freight forwarding excellence"
+  },
+  "cta": {
+    "title": "Start Your Freight Journey Today",
+    "description": "Ready to optimize your global shipping operations? Contact our freight forwarding experts for customized logistics solutions.",
+    "getQuote": "Get Freight Quote",
+    "phone": "+90 212 555 0123",
+    "email": "info@modernsealive.com",
+    "address": "Istanbul, Turkey"
+  },
+  "footer": {
+    "description": "Professional freight forwarding and logistics solutions provider specializing in FCL, LCL, air cargo, and multimodal transportation services.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contact": "Contact Info",
+    "rights": "All rights reserved.",
+    "links": {
+      "about": "About Us",
+      "services": "Services",
+      "contact": "Contact",
+      "oceanFreight": "Ocean Freight",
+      "airFreight": "Air Freight",
+      "roadFreight": "Road Freight",
+      "warehousing": "Warehousing"
+    }
+  }
+}
