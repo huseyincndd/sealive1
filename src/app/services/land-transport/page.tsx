@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Truck, Clock, Shield, Globe, CheckCircle, ArrowRight, PackageCheck, BarChart3 } from 'lucide-react'
+import { Truck, Clock, Shield, Globe, CheckCircle, ArrowRight, PackageCheck } from 'lucide-react'
 
 export default function LandTransportPage() {
   const landServices = [

@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Ship, Anchor, Globe, CheckCircle, ArrowRight, Award, Star, Phone } from 'lucide-react'
+import { Anchor, Globe, CheckCircle, ArrowRight, Award, Star, Phone } from 'lucide-react'
 
 export default function YachtTransportationPage() {
   const yachtServices = [

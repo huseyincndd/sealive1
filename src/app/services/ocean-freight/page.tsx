@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Ship, Clock, Shield, Globe, CheckCircle, ArrowRight, Package, Anchor, Truck } from 'lucide-react'
+import { Ship, Clock, Shield, Globe, CheckCircle, ArrowRight, Package, Truck } from 'lucide-react'
 
 export default function OceanFreightPage() {
   const oceanServices = [
