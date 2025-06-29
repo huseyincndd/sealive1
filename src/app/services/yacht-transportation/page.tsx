@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Anchor, Shield, Globe, Clock, Award, ArrowRight, CheckCircle, Star, Users, MapPin, Phone } from 'lucide-react'
+import { Ship, Anchor, Globe, CheckCircle, ArrowRight, Award, Star, Phone } from 'lucide-react'
 
 export default function YachtTransportationPage() {
   const yachtServices = [
@@ -119,7 +119,7 @@ export default function YachtTransportationPage() {
               Specialized Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive yacht transportation solutions tailored to your vessel's specific requirements.
+              Comprehensive yacht transportation solutions tailored to your vessel&apos;s specific requirements.
             </p>
           </div>
 
@@ -230,7 +230,7 @@ export default function YachtTransportationPage() {
                   ))}
                 </div>
                 <p className="text-gray-600 leading-relaxed mb-6 text-lg">
-                  "{testimonial.content}"
+                  &quot;{testimonial.content}&quot;
                 </p>
                 <div className="flex items-center">
                   <img

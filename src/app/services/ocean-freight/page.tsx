@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Ship, Container, Globe, Clock, Shield, ArrowRight, CheckCircle, Star, Truck, Plane } from 'lucide-react'
+import { Ship, Clock, Shield, Globe, CheckCircle, ArrowRight, Package, Anchor, Truck } from 'lucide-react'
 
 export default function OceanFreightPage() {
   const oceanServices = [
@@ -8,7 +8,7 @@ export default function OceanFreightPage() {
       title: "FCL (Full Container Load)",
       description: "Complete container shipping solutions for large cargo volumes with dedicated container space and competitive rates.",
       features: ["20ft & 40ft Containers", "Direct Port-to-Port", "Customs Clearance", "Door-to-Door Options"],
-      icon: Container,
+      icon: Package,
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {

@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Shield, Globe, Award, Users, Calendar, Anchor } from 'lucide-react'
+import { Shield, Globe, Award, Users, Anchor } from 'lucide-react'
 
 export default function AboutPage() {
   const values = [
@@ -136,8 +136,8 @@ export default function AboutPage() {
             </h2>
             <div className="bg-gray-50 rounded-lg p-8 border border-gray-200">
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                "To provide the world's most reliable and professional yacht transportation services, 
-                ensuring every luxury vessel reaches its destination safely, securely, and on time."
+                &quot;To provide the world&&apos;s most reliable and professional yacht transportation services, 
+                ensuring every luxury vessel reaches its destination safely, securely, and on time.&quot;
               </p>
               <p className="text-gray-600">
                 We combine decades of marine logistics expertise with cutting-edge technology and 
@@ -148,8 +148,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-
 
       {/* CTA Section */}
       <section className="py-16 bg-gray-900">

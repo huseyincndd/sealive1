@@ -17,7 +17,7 @@ export default function YachtTabletScrollSection() {
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Luxury yacht transportation with specialized handling, real-time tracking, 
-              and white-glove service for the world's most prestigious vessels.
+              and white-glove service for the world&apos;s most prestigious vessels.
             </p>
           </>
         }

@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Plane, Clock, Shield, Globe, Thermometer, ArrowRight, CheckCircle, Zap, Package, AlertTriangle } from 'lucide-react'
+import { Plane, Clock, Shield, Globe, Thermometer, ArrowRight, CheckCircle, Zap, Package } from 'lucide-react'
 
 export default function AirFreightPage() {
   const airServices = [

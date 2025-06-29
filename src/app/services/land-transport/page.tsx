@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Truck, MapPin, Shield, Clock, Route, ArrowRight, CheckCircle, Navigation, Package, Users } from 'lucide-react'
+import { Truck, Clock, Shield, Globe, CheckCircle, ArrowRight, PackageCheck, BarChart3 } from 'lucide-react'
 
 export default function LandTransportPage() {
   const landServices = [
@@ -15,14 +15,14 @@ export default function LandTransportPage() {
       title: "Less Than Truck Load (LTL)",
       description: "Cost-effective consolidation services for smaller shipments sharing truck space with other cargo.",
       features: ["Cost Effective", "Regular Schedules", "Flexible Volumes", "Terminal Networks"],
-      icon: Package,
+      icon: PackageCheck,
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Cross-Border Transport",
       description: "International road transport with TIR and customs clearance services across European and Asian corridors.",
       features: ["TIR Operations", "Customs Clearance", "Border Expertise", "Documentation Support"],
-      icon: Route,
+      icon: Globe,
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ]
@@ -43,7 +43,7 @@ export default function LandTransportPage() {
 
   const advantages = [
     {
-      icon: Route,
+      icon: Globe,
       title: "Door-to-Door Service",
       description: "Complete logistics solutions from pickup to final delivery with single point of contact.",
       color: "bg-green-50 border-green-200",
@@ -64,7 +64,7 @@ export default function LandTransportPage() {
       iconColor: "text-orange-600"
     },
     {
-      icon: Navigation,
+      icon: Globe,
       title: "Route Optimization",
       description: "Advanced route planning and traffic management for efficient and timely deliveries.",
       color: "bg-purple-50 border-purple-200",

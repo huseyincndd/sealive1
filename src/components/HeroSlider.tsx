@@ -2,12 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useLanguage } from '@/lib/language-context'
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const slideIntervalRef = useRef<NodeJS.Timeout | null>(null)
-  const { translations } = useLanguage()
 
   const SLIDE_DURATION = 5000 // 5 seconds per slide
 
