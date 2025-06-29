@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { Menu, X, Quote } from 'lucide-react'
 import { useLanguage } from '@/lib/language-context'
@@ -30,19 +31,16 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
-              isScrolled 
-                ? 'bg-yellow-400 text-gray-900' 
-                : 'bg-white/20 backdrop-blur-sm text-white'
-            }`}>
-              <span className="font-bold text-xl">ML</span>
-            </div>
-            <div className={`transition-all duration-300 ${
-              isScrolled ? 'text-gray-900' : 'text-white drop-shadow-lg'
-            }`}>
-              <div className="font-bold text-xl">{translations.header.logo}</div>
-              <div className="text-sm opacity-80">{translations.header.tagline}</div>
+          <Link href="/" className="flex items-center">
+            <div className="h-12 w-auto relative">
+              <Image
+                src="https://villaqrmenu.b-cdn.net/sealive/Sealive-logo.png"
+                alt="Modern Sea Live Logo"
+                width={160}
+                height={48}
+                className="object-contain"
+                priority
+              />
             </div>
           </Link>
 

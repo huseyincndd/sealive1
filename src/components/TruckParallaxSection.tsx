@@ -45,8 +45,8 @@ export default function TruckParallaxSection() {
         style={{
           backgroundImage: 'url(https://villaqrmenu.b-cdn.net/sealive/sealivetruck.png)',
           transform: isMobile 
-            ? `translateY(${scrollY - 380}px)` 
-            : `translateY(${scrollY - 630}px)`,
+            ? `translateY(${scrollY - 680}px)` 
+            : `translateY(${scrollY - 700}px)`,
           backgroundPosition: isMobile ? 'right center' : 'center center'
         }}
       />

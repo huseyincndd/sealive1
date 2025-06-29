@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Ship, Plane, Truck, Warehouse } from 'lucide-react'
+import { Ship, Plane, Truck, Anchor } from 'lucide-react'
 import { useLanguage } from '@/lib/language-context'
 
 export default function ServicesSection() {
@@ -33,11 +33,12 @@ export default function ServicesSection() {
       color: 'from-green-600 to-emerald-700'
     },
     {
-      icon: Warehouse,
-      title: translations.services.warehousing.title,
-      description: translations.services.warehousing.description,
-      backgroundImage: 'https://www.seaspace-int.com/wp-content/uploads/2021/02/Warehouse-and-Storage-Facilities.png',
-      color: 'from-orange-600 to-red-700'
+      icon: Anchor,
+      title: "Luxury Yacht Transportation",
+      subtitle: "Premium Marine Services",
+      description: "Specialized yacht shipping with white-glove service, global coverage, and complete insurance protection for luxury vessels.",
+      backgroundImage: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
+      color: 'from-purple-600 to-indigo-700'
     }
   ]
 

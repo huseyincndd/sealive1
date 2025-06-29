@@ -5,7 +5,8 @@ import ParallaxSection from '@/components/ParallaxSection'
 import ServicesSection from '@/components/ServicesSection'
 import TruckParallaxSection from '@/components/TruckParallaxSection'
 import StatsSection from '@/components/StatsSection'
-import TabletScrollSection from '@/components/TabletScrollSection'
+import YachtTabletScrollSection from '@/components/TabletScrollSection'
+import YachtTransportSection from '@/components/YachtTransportSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
@@ -18,9 +19,10 @@ export default function Home() {
       <AboutSection />
       <ParallaxSection />
       <ServicesSection />
+      <YachtTransportSection />
       <TruckParallaxSection />
       <StatsSection />
-      <TabletScrollSection />
+      <YachtTabletScrollSection />
       <TestimonialsSection />
       <CTASection />
       <Footer />

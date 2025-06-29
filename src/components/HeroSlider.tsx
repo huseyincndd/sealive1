@@ -1,44 +1,59 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { ChevronLeft, ChevronRight, Play } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLanguage } from '@/lib/language-context'
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const slideIntervalRef = useRef<NodeJS.Timeout | null>(null)
   const { translations } = useLanguage()
+
+  const SLIDE_DURATION = 5000 // 5 seconds per slide
 
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      title: translations.hero.slide1.title,
-      subtitle: translations.hero.slide1.subtitle,
-      description: translations.hero.slide1.description,
-      buttonText: translations.hero.getQuote
+      image: "https://globefarer.qodeinteractive.com/wp-content/uploads/2021/08/main-home-rev-slide-1-1.jpg",
+      title: "Worldwide shipping and professional solutions",
+      description: "No matter the location we got you covered with our global shipping!"
     },
     {
-      image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      title: translations.hero.slide2.title,
-      subtitle: translations.hero.slide2.subtitle,
-      description: translations.hero.slide2.description,
-      buttonText: translations.hero.getQuote
+      image: "https://globefarer.qodeinteractive.com/wp-content/uploads/2021/08/main-home-rev-slide-2.jpg",
+      title: "Land transport and logistics excellence",
+      description: "Door-to-door delivery solutions across all continents with reliable service!"
     },
     {
-      image: "https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      title: translations.hero.slide3.title,
-      subtitle: translations.hero.slide3.subtitle,
-      description: translations.hero.slide3.description,
-      buttonText: translations.hero.learnMore
+      image: "https://globefarer.qodeinteractive.com/wp-content/uploads/2021/08/main-home-rev-slide-3.jpg",
+      title: "Air cargo and express delivery",
+      description: "Fast and secure air freight services connecting global markets efficiently!"
+    },
+    {
+      image: "https://villaqrmenu.b-cdn.net/sealive/ChatGPT%20Image%2029%20Haz%202025%2014_46_02.png",
+      title: "Luxury yacht transportation worldwide",
+      description: "Specialized yacht shipping services with premium care and global coverage!"
     }
   ]
 
+  // Auto slide functionality
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
+    const startAutoSlide = () => {
+      if (slideIntervalRef.current) {
+        clearInterval(slideIntervalRef.current)
+      }
+      
+      slideIntervalRef.current = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length)
+      }, SLIDE_DURATION)
+    }
 
-    return () => clearInterval(interval)
-  }, [slides.length])
+    startAutoSlide()
+
+    return () => {
+      if (slideIntervalRef.current) {
+        clearInterval(slideIntervalRef.current)
+      }
+    }
+  }, [currentSlide, slides.length])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -46,6 +61,10 @@ export default function HeroSlider() {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
   }
 
   return (
@@ -64,33 +83,36 @@ export default function HeroSlider() {
             style={{ backgroundImage: `url(${slide.image})` }}
           />
           
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/40" />
+          {/* Overlay for 4th slide (Yacht Transport) */}
+          {index === 3 && (
+            <div className="absolute inset-0 bg-black/40" />
+          )}
           
           {/* Content */}
-          <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-lg font-medium text-yellow-400 mb-4 animate-fade-in-up">
-                {slide.subtitle}
-              </h2>
-              
-              <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in-up delay-200">
-                {slide.title}
-              </h1>
-              
-              <p className="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed opacity-90 animate-fade-in-up delay-400">
-                {slide.description}
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-600">
-                <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                  {slide.buttonText}
-                </button>
+          <div className="relative z-10 flex items-center justify-center h-full text-white px-4">
+            <div className="max-w-7xl mx-auto w-full">
+              <div className="flex items-center justify-between">
+                {/* Left Side - Logo */}
+                <div className="flex-1 flex justify-start animate-fade-in-left">
+                  <img 
+                    src="https://villaqrmenu.b-cdn.net/sealive/Sealive-logo.png"
+                    alt="GlobeFarer Logo"
+                    className="h-32 lg:h-40 w-auto object-contain"
+                  />
+                </div>
                 
-                <button className="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center">
-                  <Play size={20} className="mr-2" />
-                  Company Video
-                </button>
+                                 {/* Right Side - Slogan */}
+                 <div className="flex-1 flex justify-end text-left">
+                   <div className="max-w-3xl">
+                     <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in-right">
+                       {slide.title}
+                     </h1>
+                     
+                     <p className="text-lg lg:text-xl leading-relaxed opacity-90 animate-fade-in-right delay-200">
+                       {slide.description}
+                     </p>
+                   </div>
+                 </div>
               </div>
             </div>
           </div>
@@ -112,18 +134,13 @@ export default function HeroSlider() {
         <ChevronRight size={24} />
       </button>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-yellow-400 scale-125' : 'bg-white/50 hover:bg-white/75'
-            }`}
-          />
-        ))}
-      </div>
+      {/* Progress Indicators - Completely Independent */}
+      <ProgressIndicators 
+        totalSlides={slides.length}
+        currentSlide={currentSlide}
+        onSlideClick={goToSlide}
+        slideDuration={SLIDE_DURATION}
+      />
 
       {/* CSS for animations */}
       <style jsx>{`
@@ -138,8 +155,38 @@ export default function HeroSlider() {
           }
         }
 
+        @keyframes fade-in-left {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes fade-in-right {
+          from {
+            opacity: 0;
+            transform: translateX(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
         .animate-fade-in-up {
           animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-left {
+          animation: fade-in-left 1s ease-out forwards;
+        }
+
+        .animate-fade-in-right {
+          animation: fade-in-right 0.8s ease-out forwards;
         }
 
         .delay-200 {
@@ -154,6 +201,92 @@ export default function HeroSlider() {
           animation-delay: 0.6s;
         }
       `}</style>
+    </div>
+  )
+}
+
+// Separate component for progress indicators - completely isolated
+function ProgressIndicators({ 
+  totalSlides, 
+  currentSlide, 
+  onSlideClick, 
+  slideDuration 
+}: {
+  totalSlides: number
+  currentSlide: number
+  onSlideClick: (index: number) => void
+  slideDuration: number
+}) {
+  const [animationProgress, setAnimationProgress] = useState(0)
+  const animationRef = useRef<number | null>(null)
+  const startTimeRef = useRef<number>(0)
+
+  // Start animation for current slide
+  useEffect(() => {
+    startTimeRef.current = performance.now()
+    setAnimationProgress(0)
+
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTimeRef.current
+      const progress = Math.min((elapsed / slideDuration) * 100, 100)
+      
+      setAnimationProgress(progress)
+      
+      if (progress < 100) {
+        animationRef.current = requestAnimationFrame(animate)
+      }
+    }
+
+    animationRef.current = requestAnimationFrame(animate)
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current)
+      }
+    }
+  }, [currentSlide, slideDuration])
+
+  const slideLabels = ['Ocean Freight', 'Land Transport', 'Air Freight', 'Yacht Transport']
+
+  return (
+    <div className="absolute bottom-8 left-0 right-0 flex gap-4 z-20 px-8">
+      {Array.from({ length: totalSlides }).map((_, index) => (
+        <div
+          key={index}
+          className="relative cursor-pointer group flex-1"
+          onClick={() => onSlideClick(index)}
+        >
+          {/* Background Line */}
+          <div className="w-full h-1 bg-white/30 overflow-hidden rounded-full">
+            {/* Progress Fill */}
+            <div 
+              className={`h-full rounded-full transition-colors duration-300 ${
+                index === currentSlide 
+                  ? 'bg-yellow-400' 
+                  : index < currentSlide 
+                    ? 'bg-white/70' 
+                    : 'bg-transparent'
+              }`}
+              style={{
+                width: index === currentSlide 
+                  ? `${animationProgress}%` 
+                  : index < currentSlide 
+                    ? '100%' 
+                    : '0%',
+                transition: index === currentSlide ? 'none' : 'width 0.3s ease'
+              }}
+            />
+          </div>
+          
+          {/* Hover Effect */}
+          <div className="absolute -top-1 -left-1 -right-1 h-3 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+          
+          {/* Slide Label - Always Visible */}
+          <div className="absolute -top-10 left-0 text-base text-white font-bold transition-all duration-200 whitespace-nowrap group-hover:text-yellow-400">
+            {slideLabels[index] || `Slide ${index + 1}`}
+          </div>
+        </div>
+      ))}
     </div>
   )
 } 

@@ -3,31 +3,31 @@ import React from "react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import Image from "next/image";
 
-export default function TabletScrollSection() {
+export default function YachtTabletScrollSection() {
   return (
-    <div className="flex flex-col overflow-hidden bg-gradient-to-b from-white to-gray-50">
+    <div className="flex flex-col overflow-hidden bg-gradient-to-b from-slate-50 via-blue-50 to-slate-100">
       <ContainerScroll
         titleComponent={
           <>
             <h1 className="text-4xl font-semibold text-gray-900 mb-4">
-              Digital <br />
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
-                Freight Management
+              Premium <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800">
+                Yacht Transport
               </span>
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Modern teknoloji ile freight forwarding operasyonları. 
-              Digital documentation, shipment management ve comprehensive logistics dashboard.
+              Luxury yacht transportation with specialized handling, real-time tracking, 
+              and white-glove service for the world's most prestigious vessels.
             </p>
           </>
         }
       >
         <Image
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-          alt="Digital freight management dashboard and logistics operations"
+          src="https://www.turkdenizcilik.com/wp-content/uploads/2020/12/mega-yacht-transport-05.jpg"
+          alt="Luxury yacht being transported on specialized marine carrier"
           height={720}
           width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          className="mx-auto rounded-2xl object-cover h-full object-center"
           draggable={false}
         />
       </ContainerScroll>

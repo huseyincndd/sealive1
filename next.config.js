@@ -9,6 +9,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'villaqrmenu.b-cdn.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.turkdenizcilik.com',
       }
       
     ],
