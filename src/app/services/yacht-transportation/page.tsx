@@ -136,30 +136,6 @@ export default function YachtTransportationPage() {
     }
   ]
 
-  const specifications = [
-    { label: "Maximum Length", value: "200+ feet" },
-    { label: "Weight Capacity", value: "Up to 500 tons" },
-    { label: "Insurance Coverage", value: "Up to $50M" },
-    { label: "Global Ports", value: "500+ destinations" }
-  ]
-
-  const testimonials = [
-    {
-      name: "Marcus Whitfield",
-      title: "Yacht Owner",
-      content: "Exceptional service from start to finish. My 150-foot yacht was handled with utmost care and professionalism.",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      name: "Isabella Rodriguez",
-      title: "Yacht Broker",
-      content: "SeaLive consistently delivers premium yacht transport services. Highly recommended for luxury vessels.",
-      rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
-    }
-  ]
-
   return (
     <main className="min-h-screen bg-white">
       <script

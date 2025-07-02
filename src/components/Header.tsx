@@ -11,7 +11,7 @@ import ServicesDropdown from './ServicesDropdown'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const { translations, locale } = useLanguage()
+  const { translations } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {

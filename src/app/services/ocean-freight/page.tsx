@@ -110,13 +110,6 @@ export default function OceanFreightPage() {
     { from: "Middle East", to: "Africa", time: "5-8 days", frequency: "3x/week" }
   ]
 
-  const specifications = [
-    { label: "Global Ports", value: "500+" },
-    { label: "Container Types", value: "All Sizes" },
-    { label: "Weekly Departures", value: "1000+" },
-    { label: "Transit Coverage", value: "Worldwide" }
-  ]
-
   const advantages = [
     {
       icon: Shield,

@@ -48,7 +48,7 @@ export default function ContactPage() {
         service: '',
         message: ''
       })
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

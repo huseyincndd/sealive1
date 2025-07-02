@@ -108,20 +108,6 @@ export default function AirFreightPage() {
     }
   ]
 
-  const destinations = [
-    { region: "Europe", airports: "50+", time: "4-6 hours", frequency: "Daily" },
-    { region: "Asia Pacific", airports: "80+", time: "8-12 hours", frequency: "Daily" },
-    { region: "North America", airports: "60+", time: "10-14 hours", frequency: "Daily" },
-    { region: "Middle East", airports: "25+", time: "2-4 hours", frequency: "Multiple Daily" }
-  ]
-
-  const specifications = [
-    { label: "Global Airports", value: "200+" },
-    { label: "Daily Flights", value: "500+" },
-    { label: "Max Weight", value: "Up to 100 tons" },
-    { label: "Express Delivery", value: "24-48 hrs" }
-  ]
-
   const advantages = [
     {
       icon: Clock,
@@ -150,29 +136,6 @@ export default function AirFreightPage() {
       description: translations.airFreightPage.advantagesSection.advantages[3].description,
       color: "bg-purple-50 border-purple-200",
       iconColor: "text-purple-600"
-    }
-  ]
-
-  const cargoTypes = [
-    {
-      type: "General Cargo",
-      description: "Standard commercial goods and merchandise",
-      examples: ["Electronics", "Textiles", "Machinery", "Documents"]
-    },
-    {
-      type: "Perishables",
-      description: "Temperature-sensitive and time-critical goods",
-      examples: ["Fresh Produce", "Flowers", "Seafood", "Pharmaceuticals"]
-    },
-    {
-      type: "Dangerous Goods",
-      description: "Hazardous materials requiring special handling",
-      examples: ["Chemicals", "Batteries", "Medical Samples", "Flammable Goods"]
-    },
-    {
-      type: "High Value",
-      description: "Valuable cargo requiring enhanced security",
-      examples: ["Jewelry", "Electronics", "Artwork", "Precious Metals"]
     }
   ]
 
@@ -397,47 +360,6 @@ export default function AirFreightPage() {
                 </div>
               )
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Cargo Types Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className={`text-center mb-20 transition-all duration-700 transform ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              {translations.airFreightPage.cargoTypesSection.title}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {translations.airFreightPage.cargoTypesSection.description}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {translations.airFreightPage.cargoTypesSection.types.map((cargoType, index) => (
-              <div key={index} className={`bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-all duration-300 transform ${
-                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-              }`} style={{ transitionDelay: `${900 + index * 100}ms` }}>
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{cargoType.type}</h3>
-                  <p className="text-gray-600 mb-4">{cargoType.description}</p>
-                </div>
-                
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">Examples:</h4>
-                  <div className="grid grid-cols-2 gap-2">
-                    {cargoType.examples.map((example, idx) => (
-                      <div key={idx} className="flex items-center space-x-2">
-                        <CheckCircle size={14} className="text-red-500" />
-                        <span className="text-sm text-gray-700">{example}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
