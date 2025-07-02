@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Ship, Plane, Truck, Anchor } from 'lucide-react'
 import { useLanguage } from '@/lib/language-context'
+import Link from 'next/link'
 
 export default function ServicesSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -15,30 +16,33 @@ export default function ServicesSection() {
       icon: Ship,
       title: translations.services.oceanFreight.title,
       description: translations.services.oceanFreight.description,
-      backgroundImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      color: 'from-blue-600 to-blue-800'
+      backgroundImage: "https://www.agi.global/wp-content/uploads/2020/09/Sea-Freight.jpg",
+      color: "from-blue-500 to-blue-600",
+      href: "/services/ocean-freight"
     },
     {
       icon: Plane,
       title: translations.services.airFreight.title,
       description: translations.services.airFreight.description,
-      backgroundImage: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      color: 'from-sky-600 to-blue-700'
+      backgroundImage: "https://www.all-forward.com/Content/images/commercial/AirFreightHeroBanner.jpg",
+      color: "from-orange-500 to-orange-600",
+      href: "/services/air-freight"
     },
     {
       icon: Truck,
       title: translations.services.roadFreight.title,
       description: translations.services.roadFreight.description,
-      backgroundImage: 'https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      color: 'from-green-600 to-emerald-700'
+      backgroundImage: "https://lot.dhl.com/wp-content/uploads/2019/01/Article-Key-Image-1025490817.jpg",
+      color: "from-green-500 to-green-600",
+      href: "/services/land-transport"
     },
     {
       icon: Anchor,
-      title: "Luxury Yacht Transportation",
-      subtitle: "Premium Marine Services",
-      description: "Specialized yacht shipping with white-glove service, global coverage, and complete insurance protection for luxury vessels.",
-      backgroundImage: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80',
-      color: 'from-purple-600 to-indigo-700'
+      title: translations.services.yachtTransport.title,
+      description: translations.services.yachtTransport.description,
+      backgroundImage: "https://image.yachtbuyer.com/w1440/h560/qh/ca/m1/ow-1/k57945f3b/article/yb-advice/2456030/yacht-transportation-the-options-review.jpg",
+      color: "from-purple-500 to-purple-600",
+      href: "/services/yacht-transportation"
     }
   ]
 
@@ -144,12 +148,12 @@ export default function ServicesSection() {
                       </p>
                       
                       {/* CTA Button */}
-                      <button className="inline-flex items-center text-white font-semibold text-sm group-hover:text-yellow-300 transition-colors duration-300">
+                      <Link href={service.href} className="inline-flex items-center text-white font-semibold text-sm group-hover:text-yellow-300 transition-colors duration-300 cursor-pointer">
                         {translations.services.learnMore}
                         <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
-                      </button>
+                      </Link>
                     </div>
 
                     {/* Accent Line */}
@@ -176,12 +180,14 @@ export default function ServicesSection() {
                 {translations.services.cta.description}
               </p>
               <div className="flex flex-row gap-3 justify-center">
-                <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-105">
+                <Link href="/contact" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:scale-105">
                   {translations.services.cta.customQuote}
-                </button>
-                <button className="border border-gray-300 hover:border-gray-400 hover:bg-gray-50 text-gray-700 px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
-                  {translations.services.cta.consultation}
-                </button>
+                </Link>
+                <Link href="/contact">
+                  <button className="border border-gray-300 hover:border-gray-400 hover:bg-gray-50 text-gray-700 px-6 py-2 rounded-lg text-sm font-semibold transition-all duration-300">
+                    {translations.services.cta.consultation}
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

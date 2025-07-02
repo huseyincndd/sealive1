@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react'
 import { useLanguage } from '@/lib/language-context'
+import Link from 'next/link'
 
 export default function CTASection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -50,7 +51,7 @@ export default function CTASection() {
           }`}>
             <div className="inline-flex items-center bg-gradient-to-r from-yellow-400/20 to-orange-400/20 backdrop-blur-sm border border-yellow-400/30 text-yellow-400 px-6 py-3 rounded-full text-sm font-medium mb-6">
               <span className="relative">
-                Ready to Ship? 
+                {translations.cta.badge}
                 <span className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-ping"></span>
               </span>
             </div>
@@ -68,19 +69,21 @@ export default function CTASection() {
           <div className={`flex flex-col md:flex-row gap-6 justify-center mb-16 transform transition-all duration-1000 delay-300 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <button className="group bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+            <Link href="/contact" className="group bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
               <span className="flex items-center justify-center">
                 {translations.cta.getQuote}
                 <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </span>
-            </button>
+            </Link>
             
-            <button className="group border-2 border-gray-300 hover:border-yellow-400 hover:bg-yellow-400/10 text-gray-300 hover:text-yellow-400 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300">
-              <span className="flex items-center justify-center">
-                Contact Expert
-                <Phone size={20} className="ml-2 group-hover:scale-110 transition-transform" />
-              </span>
-            </button>
+            <Link href="/contact">
+              <button className="group border-2 border-gray-300 hover:border-yellow-400 hover:bg-yellow-400/10 text-gray-300 hover:text-yellow-400 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300">
+                <span className="flex items-center justify-center">
+                  {translations.cta.contactExpert}
+                  <Phone size={20} className="ml-2 group-hover:scale-110 transition-transform" />
+                </span>
+              </button>
+            </Link>
           </div>
 
           {/* Contact Information */}
@@ -92,8 +95,8 @@ export default function CTASection() {
               <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Mail size={20} className="text-white" />
               </div>
-              <h3 className="text-white font-semibold mb-2">Freight Quotes</h3>
-              <p className="text-gray-400 text-sm">{translations.cta.email}</p>
+              <h3 className="text-white font-semibold mb-2">{translations.cta.infoCards.quotes}</h3>
+              <p className="text-gray-400 text-sm">yusuf@sealive.net</p>
             </div>
 
             {/* Phone */}
@@ -101,8 +104,8 @@ export default function CTASection() {
               <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Phone size={20} className="text-white" />
               </div>
-              <h3 className="text-white font-semibold mb-2">24/7 Support</h3>
-              <p className="text-gray-400 text-sm">{translations.cta.phone}</p>
+              <h3 className="text-white font-semibold mb-2">{translations.cta.infoCards.support}</h3>
+              <p className="text-gray-400 text-sm">+90 505 092 09 99</p>
             </div>
 
             {/* Office */}
@@ -110,8 +113,9 @@ export default function CTASection() {
               <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <MapPin size={20} className="text-white" />
               </div>
-              <h3 className="text-white font-semibold mb-2">Main Office</h3>
-              <p className="text-gray-400 text-sm">{translations.cta.address}</p>
+              <h3 className="text-white font-semibold mb-2">{translations.cta.infoCards.office}</h3>
+              <p className="text-gray-400 text-sm">Kuzeykent Mah. 31168 Sok. Ritim Ofis B Blok Kat:5 D:19</p>
+              <p className="text-gray-400 text-sm">{translations.footer.address.city}</p>
             </div>
           </div>
 
@@ -120,8 +124,8 @@ export default function CTASection() {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             <p className="text-gray-400 text-sm">
-              Freight forwarding expertise with 15+ years experience. 
-              <span className="text-yellow-400"> Bill of Lading to final delivery - we handle it all.</span>
+              {translations.cta.bottomText}
+              <span className="text-yellow-400">{translations.cta.bottomTextHighlight}</span>
             </p>
           </div>
         </div>

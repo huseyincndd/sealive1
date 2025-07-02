@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/lib/language-context'
+import Link from 'next/link'
 
 export default function AboutSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -51,17 +52,19 @@ export default function AboutSection() {
               {translations.about.description}
             </p>
             
-            <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-8 py-3 rounded-lg font-semibold transition-colors">
-              {translations.hero.learnMore}
-            </button>
+            <Link href="/about">
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-800 px-8 py-3 rounded-lg font-semibold transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg">
+                {translations.hero.learnMore}
+              </button>
+            </Link>
           </div>
           
           {/* Right Image - Simple Left to Right Reveal */}
           <div className="relative">
             <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-                alt="Modern freight forwarding and container logistics"
+                src="https://www.xeneta.com/hs-fs/hubfs/shipping-logistics-market.jpeg?width=1200&name=shipping-logistics-market.jpeg"
+                alt="Sealive Lojistik - Freight forwarding and container logistics"
                 className={`w-full h-full object-cover transition-all duration-1500 ease-out ${
                   isVisible 
                     ? 'clip-path-reveal-full' 

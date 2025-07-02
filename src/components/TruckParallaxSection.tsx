@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/lib/language-context'
+import Link from 'next/link'
 
 export default function TruckParallaxSection() {
   const [scrollY, setScrollY] = useState(0)
@@ -41,15 +42,22 @@ export default function TruckParallaxSection() {
     >
       {/* Parallax Background Image */}
       <div 
-        className="absolute inset-0 w-full h-[110%] bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 w-full h-[110%]"
         style={{
-          backgroundImage: 'url(https://villaqrmenu.b-cdn.net/sealive/sealivetruck.png)',
           transform: isMobile 
-            ? `translateY(${scrollY - 680}px)` 
+            ? `translateY(${scrollY - 460}px)` 
             : `translateY(${scrollY - 700}px)`,
-          backgroundPosition: isMobile ? 'right center' : 'center center'
         }}
-      />
+      >
+        <img 
+          src="https://villaqrmenu.b-cdn.net/sealive/sealivetruck.png"
+          alt="SeaLive lojistik kamyonu - karayolu taşımacılığı ve kara nakliyesi hizmetleri"
+          className="w-full h-full object-cover"
+          style={{
+            objectPosition: isMobile ? 'right center' : 'center center'
+          }}
+        />
+      </div>
       
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40" />
@@ -66,12 +74,16 @@ export default function TruckParallaxSection() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-              {translations.hero.getQuote}
-            </button>
-            <button className="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-              {translations.hero.learnMore}
-            </button>
+            <Link href="/contact">
+              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+                {translations.hero.getQuote}
+              </button>
+            </Link>
+            <Link href="/services">
+              <button className="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 cursor-pointer">
+                {translations.hero.learnMore}
+              </button>
+            </Link>
           </div>
         </div>
       </div>

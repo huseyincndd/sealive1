@@ -1,27 +1,108 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Plane, Clock, Shield, Globe, Thermometer, ArrowRight, CheckCircle, Zap, Package } from 'lucide-react'
+import { useLanguage } from '@/lib/language-context'
+import Link from 'next/link'
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Uluslararası Havayolu Kargo ve Express Lojistik",
+  "description": "Express ve standart havayolu kargo hizmetleri ile kritik yükleriniz için hızlı, güvenli ve global ulaştırma çözümleri. 24-48 saat express teslimat ve özel kargo taşımacılığı.",
+  "provider": {
+    "@type": "Organization",
+    "name": "SeaLive Lojistik & Taşımacılık",
+    "url": "https://www.sealive.net"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Worldwide"
+  },
+  "serviceType": "Air Freight",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Havayolu Kargo Hizmetleri",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Express Hava Kargo",
+          "description": "24-48 saat kritik yükler için ultra hızlı havayolu taşımacılığı"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Standart Hava Taşımacılığı",
+          "description": "Ekonomik ve güvenilir uluslararası havayolu kargo hizmetleri"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Özel Kargo Taşımacılığı",
+          "description": "Tehlikeli maddeler, değerli eşyalar ve sıcaklık kontrollü yükler için özel çözümler"
+        }
+      }
+    ]
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Global Havaalanları",
+      "value": "200+ Havaalanı"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Günlük Uçuş",
+      "value": "500+ Sefer"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Maksimum Ağırlık",
+      "value": "100 ton'a kadar"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Express Teslimat",
+      "value": "24-48 saat"
+    }
+  ]
+};
 
 export default function AirFreightPage() {
+  const { translations } = useLanguage()
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   const airServices = [
     {
-      title: "Express Air Freight",
-      description: "Priority air cargo services for time-critical shipments with guaranteed delivery times and premium handling.",
-      features: ["24-48 Hour Delivery", "Priority Handling", "Real-Time Tracking", "Door-to-Door Service"],
+      title: translations.airFreightPage.servicesSection.services[0].title,
+      description: translations.airFreightPage.servicesSection.services[0].description,
+      features: translations.airFreightPage.servicesSection.services[0].features,
       icon: Zap,
       image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Standard Air Cargo",
-      description: "Cost-effective air freight solutions for regular shipments with reliable transit times and competitive rates.",
-      features: ["3-7 Day Transit", "Competitive Rates", "Consolidation Options", "Global Coverage"],
+      title: translations.airFreightPage.servicesSection.services[1].title,
+      description: translations.airFreightPage.servicesSection.services[1].description,
+      features: translations.airFreightPage.servicesSection.services[1].features,
       icon: Plane,
       image: "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Specialized Cargo",
-      description: "Expert handling for temperature-sensitive, dangerous goods, and oversized cargo with specialized equipment.",
-      features: ["Temperature Control", "Dangerous Goods", "Oversized Cargo", "Pharmaceutical Grade"],
+      title: translations.airFreightPage.servicesSection.services[2].title,
+      description: translations.airFreightPage.servicesSection.services[2].description,
+      features: translations.airFreightPage.servicesSection.services[2].features,
       icon: Package,
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
@@ -44,29 +125,29 @@ export default function AirFreightPage() {
   const advantages = [
     {
       icon: Clock,
-      title: "Speed & Reliability",
-      description: "Fastest transit times with guaranteed delivery schedules and on-time performance.",
+      title: translations.airFreightPage.advantagesSection.advantages[0].title,
+      description: translations.airFreightPage.advantagesSection.advantages[0].description,
       color: "bg-red-50 border-red-200",
       iconColor: "text-red-600"
     },
     {
       icon: Shield,
-      title: "Cargo Security",
-      description: "Advanced security protocols and handling procedures for high-value shipments.",
+      title: translations.airFreightPage.advantagesSection.advantages[1].title,
+      description: translations.airFreightPage.advantagesSection.advantages[1].description,
       color: "bg-blue-50 border-blue-200",
       iconColor: "text-blue-600"
     },
     {
       icon: Thermometer,
-      title: "Temperature Control",
-      description: "Climate-controlled transport for pharmaceuticals, perishables, and sensitive goods.",
+      title: translations.airFreightPage.advantagesSection.advantages[2].title,
+      description: translations.airFreightPage.advantagesSection.advantages[2].description,
       color: "bg-green-50 border-green-200",
       iconColor: "text-green-600"
     },
     {
       icon: Globe,
-      title: "Global Network",
-      description: "Extensive airline partnerships and airport facilities across six continents.",
+      title: translations.airFreightPage.advantagesSection.advantages[3].title,
+      description: translations.airFreightPage.advantagesSection.advantages[3].description,
       color: "bg-purple-50 border-purple-200",
       iconColor: "text-purple-600"
     }
@@ -97,44 +178,56 @@ export default function AirFreightPage() {
 
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Header />
       
       {/* Hero Section */}
       <section className="pt-32 pb-24 bg-gradient-to-br from-red-900 via-orange-800 to-yellow-700 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div 
-            className="w-full h-full bg-cover bg-center opacity-25"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80')" }}
+          <img 
+            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            alt="Havayolu kargo uçağı - hava taşımacılığı ve ekspres kargo hizmetleri"
+            className="w-full h-full object-cover object-center opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-red-900/80 via-orange-800/70 to-yellow-700/80"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center bg-yellow-400/20 backdrop-blur-sm border border-yellow-400/30 text-yellow-400 px-6 py-3 rounded-full text-sm font-medium mb-8">
+            <div className={`inline-flex items-center bg-yellow-400/20 backdrop-blur-sm border border-yellow-400/30 text-yellow-400 px-6 py-3 rounded-full text-sm font-medium mb-8 transition-all duration-700 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
+            }`}>
               <Plane size={16} className="mr-2" />
-              Express Air Freight Services
+              {translations.airFreightPage.hero.badge}
             </div>
             
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              Fast & Reliable
+            <h1 className={`text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight transition-all duration-700 delay-300 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}>
+              {translations.airFreightPage.hero.title}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">
-                Air Freight
+                {translations.airFreightPage.hero.titleHighlight}
               </span>
             </h1>
             
-            <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12">
-              Time-critical air cargo solutions with express delivery, temperature control, and specialized handling. 
-              Connecting 200+ airports worldwide with guaranteed transit times.
+            <p className={`text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12 transition-all duration-700 delay-500 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}>
+              {translations.airFreightPage.hero.description}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group">
-                Get Air Quote
+            <div className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-700 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}>
+              <Link href="/contact" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group transform hover:scale-105">
+                {translations.airFreightPage.hero.getQuote}
                 <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
               <button className="border border-white/30 hover:border-white/50 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-                Track Shipment
+                {translations.airFreightPage.hero.trackShipment}
               </button>
             </div>
           </div>
@@ -144,9 +237,11 @@ export default function AirFreightPage() {
       {/* Specifications Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {specifications.map((spec, index) => (
-              <div key={index} className="text-center">
+          <div className={`grid grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            {translations.airFreightPage.specifications.map((spec, index) => (
+              <div key={index} className="text-center" style={{ transitionDelay: `${300 + index * 100}ms` }}>
                 <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{spec.value}</div>
                 <div className="text-gray-600 font-medium">{spec.label}</div>
               </div>
@@ -158,12 +253,14 @@ export default function AirFreightPage() {
       {/* Services Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Air Freight Services
+              {translations.airFreightPage.servicesSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive air cargo solutions for every shipping requirement and timeline.
+              {translations.airFreightPage.servicesSection.description}
             </p>
           </div>
 
@@ -173,7 +270,9 @@ export default function AirFreightPage() {
               const isEven = index % 2 === 0
               
               return (
-                <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''} transition-all duration-700 transform ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                }`} style={{ transitionDelay: `${500 + index * 200}ms` }}>
                   <div className={`${!isEven ? 'lg:col-start-2' : ''} space-y-6`}>
                     <div className="flex items-start space-x-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-red-400/20 to-orange-400/20 border border-red-400/30 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -195,11 +294,6 @@ export default function AirFreightPage() {
                         </div>
                       ))}
                     </div>
-                    
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center group">
-                      Learn More
-                      <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </button>
                   </div>
                   
                   <div className={`${!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
@@ -222,41 +316,47 @@ export default function AirFreightPage() {
       {/* Destinations Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Global Destinations
+              {translations.airFreightPage.destinationsSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Direct flights and connections to major airports worldwide with competitive transit times.
+              {translations.airFreightPage.destinationsSection.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {destinations.map((dest, index) => (
-              <div key={index} className="bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl p-8 border border-red-200/50">
+            {translations.airFreightPage.destinationsSection.destinations.map((destination, index) => (
+              <div key={index} className={`bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-all duration-300 transform ${
+                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              }`} style={{ transitionDelay: `${700 + index * 100}ms` }}>
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                      <Plane size={20} className="text-white" />
+                    <div className="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold">
+                      ✈️
                     </div>
                     <div>
-                      <div className="text-lg font-bold text-gray-900">{dest.region}</div>
+                      <h3 className="text-xl font-bold text-gray-900">{destination.region}</h3>
+                      <div className="text-gray-600">{destination.airports} Airports</div>
                     </div>
                   </div>
+                  <div className="text-red-600 font-bold text-lg">{destination.frequency}</div>
                 </div>
                 
-                <div className="grid grid-cols-3 gap-4">
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">Airports</div>
-                    <div className="text-lg font-semibold text-gray-900">{dest.airports}</div>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Airports:</span>
+                    <span className="font-semibold">{destination.airports}</span>
                   </div>
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">Transit Time</div>
-                    <div className="text-lg font-semibold text-gray-900">{dest.time}</div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Transit Time:</span>
+                    <span className="font-semibold text-red-600">{destination.time}</span>
                   </div>
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">Frequency</div>
-                    <div className="text-lg font-semibold text-gray-900">{dest.frequency}</div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Frequency:</span>
+                    <span className="font-semibold">{destination.frequency}</span>
                   </div>
                 </div>
               </div>
@@ -268,20 +368,25 @@ export default function AirFreightPage() {
       {/* Advantages Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose Our Air Freight
+              {translations.airFreightPage.advantagesSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Advanced air cargo solutions with specialized handling and guaranteed performance.
+              {translations.airFreightPage.advantagesSection.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {advantages.map((advantage, index) => {
               const IconComponent = advantage.icon
+              
               return (
-                <div key={index} className={`${advantage.color} rounded-2xl p-8 border-2 hover:shadow-xl transition-all duration-300 group cursor-pointer`}>
+                <div key={index} className={`${advantage.color} rounded-2xl p-8 border-2 hover:shadow-xl transition-all duration-300 group cursor-pointer transform ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                }`} style={{ transitionDelay: `${800 + index * 100}ms` }}>
                   <div className="text-center">
                     <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                       <IconComponent size={24} className={advantage.iconColor} />
@@ -299,71 +404,38 @@ export default function AirFreightPage() {
       {/* Cargo Types Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Cargo Types We Handle
+              {translations.airFreightPage.cargoTypesSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Specialized handling for all types of air cargo with appropriate equipment and procedures.
+              {translations.airFreightPage.cargoTypesSection.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {cargoTypes.map((cargo, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{cargo.type}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{cargo.description}</p>
-                <div className="space-y-2">
-                  <div className="text-sm font-medium text-gray-700 mb-3">Examples:</div>
+            {translations.airFreightPage.cargoTypesSection.types.map((cargoType, index) => (
+              <div key={index} className={`bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-all duration-300 transform ${
+                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              }`} style={{ transitionDelay: `${900 + index * 100}ms` }}>
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{cargoType.type}</h3>
+                  <p className="text-gray-600 mb-4">{cargoType.description}</p>
+                </div>
+                
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">Examples:</h4>
                   <div className="grid grid-cols-2 gap-2">
-                    {cargo.examples.map((example, idx) => (
+                    {cargoType.examples.map((example, idx) => (
                       <div key={idx} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                        <span className="text-gray-600 text-sm">{example}</span>
+                        <CheckCircle size={14} className="text-red-500" />
+                        <span className="text-sm text-gray-700">{example}</span>
                       </div>
                     ))}
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Air Freight Process
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Streamlined air cargo process ensuring fast, secure, and reliable delivery.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            {[
-              { step: "01", title: "Quote & Booking", description: "Instant air freight quotes and booking confirmation", icon: "📋" },
-              { step: "02", title: "Collection", description: "Professional cargo pickup and preparation", icon: "📦" },
-              { step: "03", title: "Airport Processing", description: "Security screening and flight loading", icon: "✈️" },
-              { step: "04", title: "Flight Transit", description: "Secure air transport with tracking", icon: "🛫" },
-              { step: "05", title: "Delivery", description: "Final delivery and proof of receipt", icon: "✅" }
-            ].map((process, index) => (
-              <div key={index} className="text-center group">
-                <div className="relative mb-8">
-                  <div className="w-20 h-20 bg-gradient-to-br from-red-600 to-orange-600 text-white rounded-full flex items-center justify-center mx-auto font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    {process.step}
-                  </div>
-                  <div className="absolute -top-2 -right-2 text-2xl">
-                    {process.icon}
-                  </div>
-                  {index < 4 && (
-                    <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-red-600/50 to-transparent"></div>
-                  )}
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{process.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{process.description}</p>
               </div>
             ))}
           </div>
@@ -377,31 +449,34 @@ export default function AirFreightPage() {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className={`max-w-4xl mx-auto text-center transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
-              Need Fast Air Freight?
+              {translations.airFreightPage.cta.title}
             </h2>
             <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-              Get instant air freight quotes and guaranteed delivery times. 
-              Our specialists are available 24/7 for urgent shipments.
+              {translations.airFreightPage.cta.description}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center group">
-                Get Instant Quote
+              <Link href="/contact" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center group transform hover:scale-105">
+                {translations.airFreightPage.cta.getQuote}
                 <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="border-2 border-white/30 hover:border-white/50 hover:bg-white/10 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300">
-                📞 +90 (212) 555-0123
-              </button>
+              </Link>
+              <Link href="/contact">
+                <button className="border-2 border-white/30 hover:border-white/50 hover:bg-white/10 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300">
+                  {translations.airFreightPage.cta.trackShipment}
+                </button>
+              </Link>
             </div>
             
             <div className="mt-12 pt-8 border-t border-white/20">
-              <p className="text-gray-400 mb-4">Trusted for time-critical shipments worldwide</p>
+              <p className="text-gray-400 mb-4">Sealive Lojistik - {translations.airFreightPage.cta.phone}</p>
               <div className="flex justify-center items-center space-x-8 text-white/60">
-                <span className="text-sm">⚡ 24-48 Hour Express</span>
-                <span className="text-sm">🌡️ Temperature Control</span>
-                <span className="text-sm">🛡️ Secure Handling</span>
+                {translations.airFreightPage.cta.features.map((feature, index) => (
+                  <span key={index} className="text-sm">{feature}</span>
+                ))}
               </div>
             </div>
           </div>

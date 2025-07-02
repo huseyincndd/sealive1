@@ -1,13 +1,18 @@
 {
   "header": {
-    "logo": "Modern Sea Live",
+    "logo": "Sealive Lojistik",
     "tagline": "Freight Forwarding",
     "nav": {
+      "home": "Ana Sayfa",
       "about": "Hakkımızda",
       "services": "Hizmetler",
       "contact": "İletişim"
     },
-    "cta": "Freight Quote"
+    "cta": "Teklif Al",
+    "contactInfo": {
+      "phone": "+90 505 092 09 99",
+      "email": "yusuf@sealive.net"
+    }
   },
   "hero": {
     "slide1": {
@@ -28,13 +33,39 @@
     "getQuote": "Teklif Al",
     "learnMore": "Daha Fazla"
   },
+  "heroSlider": {
+    "slides": [
+      {
+        "title": "Dünya çapında nakliye ve profesyonel çözümler",
+        "description": "Nerede olursanız olun, küresel nakliye hizmetimizle yanınızdayız!"
+      },
+      {
+        "title": "Kara taşımacılığı ve lojistik mükemmelliği",
+        "description": "Tüm kıtalarda güvenilir hizmetle kapıdan kapıya teslimat çözümleri!"
+      },
+      {
+        "title": "Hava kargo ve ekspres teslimat",
+        "description": "Küresel pazarları verimli bir şekilde birbirine bağlayan hızlı ve güvenli hava kargo hizmetleri!"
+      },
+      {
+        "title": "Dünya çapında lüks yat taşımacılığı",
+        "description": "Özel yatçılık hizmetleri ile özel bakım ve küresel kapsama alanı!"
+      }
+    ],
+    "labels": [
+      "Deniz Taşımacılığı",
+      "Kara Taşımacılığı",
+      "Hava Taşımacılığı",
+      "Yat Taşımacılığı"
+    ]
+  },
   "about": {
-    "badge": "Freight Forwarding Excellence",
-    "title": "Professional Logistics",
-    "titleHighlight": "Solutions",
-    "description": "Modern Sea Live olarak, FCL ve LCL konteyner nakliyesi, multimodal transport çözümleri ve comprehensive customs clearance hizmetleriyle global freight forwarding sektöründe lider konumdayız.",
+    "badge": "Nakliye Mükemmelliği",
+    "title": "Profesyonel Lojistik",
+    "titleHighlight": "Çözümleri",
+    "description": "SeaLive olarak, FCL ve LCL konteyner taşımacılığı, çok modlu taşıma çözümleri ve kapsamlı gümrükleme hizmetleri ile küresel nakliye sektöründe lider konumdayız.",
     "feature1": {
-      "title": "Global Network",
+      "title": "Küresel Ağ",
       "description": "Dünya çapında shipping lines ve logistics partners ağımızla seamless freight forwarding operations sağlıyoruz."
     },
     "feature2": {
@@ -47,86 +78,1011 @@
     }
   },
   "parallax": {
-    "title": "FCL & LCL Freight Solutions",
-    "subtitle": "Professional container shipping services"
+    "title": "FCL ve LCL Navlun Çözümleri",
+    "subtitle": "Profesyonel konteyner taşımacılığı hizmetleri"
   },
   "services": {
-    "badge": "Freight Forwarding Services",
-    "title": "Comprehensive Logistics",
-    "titleHighlight": "Solutions",
-    "description": "Professional freight forwarding services across all transportation modes with comprehensive supply chain management and customs clearance expertise.",
+    "badge": "Nakliye Hizmetleri",
+    "title": "Kapsamlı Lojistik",
+    "titleHighlight": "Çözümleri",
+    "description": "Kapsamlı tedarik zinciri yönetimi ve gümrükleme uzmanlığı ile tüm taşıma modlarında profesyonel nakliye hizmetleri.",
     "oceanFreight": {
-      "title": "Ocean Freight",
-      "description": "FCL ve LCL konteyner nakliyesi, Bill of Lading düzenleme ve port handling hizmetleri."
+      "title": "Deniz Taşımacılığı",
+      "description": "FCL ve LCL konteyner taşımacılığı, konşimento düzenleme ve liman elleçleme hizmetleri."
     },
     "airFreight": {
-      "title": "Air Freight",
-      "description": "Express air cargo, MAWB düzenleme ve hızlı customs clearance çözümleri."
+      "title": "Hava Taşımacılığı",
+      "description": "Ekspres hava kargo, ana konşimento (MAWB) düzenleme ve hızlı gümrükleme çözümleri."
     },
     "roadFreight": {
-      "title": "Road Freight",
-      "description": "Cross-border transport, TIR karnesi ve Avrupa-Asya arası overland taşımacılık."
+      "title": "Kara Taşımacılığı",
+      "description": "Sınır ötesi taşımacılık, TIR karnesi ve Avrupa-Asya arası karayolu nakliyesi."
+    },
+    "yachtTransport": {
+      "title": "Lüks Yat Taşımacılığı",
+      "description": "Lüks tekneler için beyaz eldiven hizmeti, küresel kapsama alanı ve tam sigorta koruması ile özel yat nakliyesi."
     },
     "warehousing": {
-      "title": "Warehousing",
-      "description": "Bonded warehouse, cargo consolidation ve distribution center yönetimi."
+      "title": "Depolama Hizmetleri",
+      "description": "Gümrüklü antrepo, kargo birleştirme ve dağıtım merkezi yönetimi."
     },
     "learnMore": "Daha Fazla",
     "cta": {
-      "title": "Tailored Freight Solutions",
-      "description": "Every shipment is unique. Our freight forwarding experts design customized logistics solutions that meet your specific requirements.",
-      "customQuote": "Get Custom Quote",
-      "consultation": "Schedule Consultation"
+      "title": "Size Özel Navlun Çözümleri",
+      "description": "Her gönderi benzersizdir. Nakliye uzmanlarımız, özel gereksinimlerinizi karşılayan özelleştirilmiş lojistik çözümleri tasarlar.",
+      "customQuote": "Özel Teklif Alın",
+      "consultation": "Danışmanlık Talep Edin"
     }
   },
   "truckParallax": {
-    "title": "Cross-Border Road Freight",
-    "subtitle": "TIR documentation and overland transport solutions"
+    "title": "Sınır Ötesi Karayolu Taşımacılığı",
+    "subtitle": "TIR dokümantasyonu ve karayolu taşıma çözümleri"
   },
   "stats": {
-    "badge": "Performance Metrics",
-    "title": "Industry Leading",
-    "titleHighlight": "Performance",
-    "description": "Proven track record in freight forwarding excellence with measurable results that demonstrate our commitment to operational efficiency and client satisfaction.",
+    "badge": "Performans Metrikleri",
+    "title": "Sektör Lideri",
+    "titleHighlight": "Performans",
+    "description": "Operasyonel verimlilik ve müşteri memnuniyetine olan bağlılığımızı gösteren ölçülebilir sonuçlarla kanıtlanmış bir nakliye mükemmelliği geçmişi.",
     "stats": {
-      "years": "Years in Freight",
-      "shippingLines": "Shipping Lines",
-      "teu": "TEU Handled",
-      "onTime": "On-Time Delivery"
+      "years": "Yıllık Tecrübe",
+      "shippingLines": "Nakliye Hatları",
+      "teu": "İşlenen TEU",
+      "onTime": "Zamanında Teslimat",
+      "descriptions": [
+        "Yıllık Mükemmellik",
+        "Küresel Ortaklar",
+        "İşlenen Konteyner",
+        "Başarı Oranı"
+      ]
     },
     "cta": {
-      "title": "Partner with Industry Leaders",
-      "description": "Join our network of satisfied clients who trust our freight forwarding expertise for their global shipping requirements.",
-      "requestQuote": "Request Quote",
-      "viewServices": "View Services"
+      "title": "Sektör Liderleriyle Ortak Olun",
+      "description": "Küresel nakliye gereksinimleri için uzmanlığımıza güvenen memnun müşteriler ağımıza katılın.",
+      "requestQuote": "Teklif Talep Edin",
+      "viewServices": "Hizmetleri Görüntüle"
     }
   },
   "testimonials": {
-    "title": "Client Success Stories",
-    "description": "Trusted by leading companies worldwide for freight forwarding excellence"
+    "title": "Müşterilerimiz Ne Diyor?",
+    "description": "Şirketlerin küresel freight forwarding ihtiyaçları için neden Sealive Lojistik'e güvendiğini keşfedin.",
+    "cards": [
+      {
+        "name": "Mehmet Yılmaz",
+        "company": "Yılmaz İthalat & İhracat Ltd.",
+        "position": "Genel Müdür",
+        "text": "Sealive Lojistik ile olan freight forwarding ortaklığımız mükemmel. FCL ve LCL gönderilerimizde gümrüklemeden teslimata kadar her aşamada profesyonel hizmet aldık."
+      },
+      {
+        "name": "Ayşe Demir",
+        "company": "Demir Tekstil Ticaret A.Ş.",
+        "position": "Lojistik Direktörü",
+        "text": "Sealive Lojistik'in freight forwarding uzmanlığı, Avrupa pazarına açılırken bizim için paha biçilmezdi. Konşimento belgeleri ve liman hizmetleri harikaydı."
+      },
+      {
+        "name": "Ali Kaya",
+        "company": "Kaya Ağır Makine İhracat",
+        "position": "İhracat Uzmanı",
+        "text": "Sealive Lojistik'in proje kargo ve ağır yük operasyonlarındaki deneyimi olağanüstü. Multimodal taşıma çözümleri mükemmel."
+      },
+      {
+        "name": "Fatma Özkan",
+        "company": "Özkan Global Ticaret",
+        "position": "Operasyon Müdürü",
+        "text": "Hava kargo ve ekspres gönderi ihtiyaçlarımızda Sealive Lojistik her zaman güvenilir ortağımız. MAWB işlemleri ve gümrükleme uzmanlıkları harika."
+      },
+      {
+        "name": "Ahmet Şen",
+        "company": "Şen Lojistik Çözümleri",
+        "position": "Nakliye Müdürü",
+        "text": "Sealive Lojistik'in depo yönetimi ve dağıtım merkezi operasyonlarındaki freight forwarding yetenekleri olağanüstü. Tedarik zinciri verimliliğimiz mükemmel."
+      }
+    ]
   },
   "cta": {
-    "title": "Start Your Freight Journey Today",
-    "description": "Ready to optimize your global shipping operations? Contact our freight forwarding experts for customized logistics solutions.",
-    "getQuote": "Get Freight Quote",
-    "phone": "+90 212 555 0123",
-    "email": "info@modernsealive.com",
-    "address": "Istanbul, Turkey"
+    "title": "Yolculuğunuza Bugün Başlayın",
+    "description": "Küresel nakliye operasyonlarınızı optimize etmeye hazır mısınız? Özelleştirilmiş lojistik çözümleri için uzmanlarımızla iletişime geçin.",
+    "getQuote": "Teklif Alın",
+    "contactExpert": "Uzmanla İletişime Geçin",
+    "badge": "Gönderime Hazır Mısınız?",
+    "infoCards": {
+      "quotes": "Navlun Teklifleri",
+      "support": "7/24 Destek",
+      "office": "Ana Ofis"
+    },
+    "bottomText": "15+ yıllık deneyimle nakliye uzmanlığı.",
+    "bottomTextHighlight": " Konşimentodan nihai teslimata kadar her şeyi biz hallederiz."
   },
   "footer": {
-    "description": "Professional freight forwarding and logistics solutions provider specializing in FCL, LCL, air cargo, and multimodal transportation services.",
-    "quickLinks": "Quick Links",
-    "services": "Services",
-    "contact": "Contact Info",
-    "rights": "All rights reserved.",
+    "logo": {
+      "name": "GlobeFarer",
+      "tagline": "Dünya Çapında Nakliye Çözümleri"
+    },
+    "description": "FCL, LCL, hava kargo ve çok modlu taşımacılık hizmetlerinde uzmanlaşmış profesyonel nakliye ve lojistik çözümleri sağlayıcısı.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "services": "Hizmetler",
+    "support": "Destek",
+    "contactInfo": "İletişim Bilgileri",
+    "address": {
+      "title": "Merkez Ofis:",
+      "line1": "Kuzeykent Mahallesi, 31168 Sokak, Ritim Ofis",
+      "line2": "B Blok, Kat 5, Daire No: 19",
+      "city": "Mersin, Türkiye"
+    },
+    "newsletter": {
+      "title": "Bülten Aboneliği",
+      "placeholder": "E-posta adresiniz",
+      "subscribe": "Abone Ol",
+      "description": "Sektör haberlerini ve özel tekliflerimizi kaçırmayın."
+    },
+    "rights": "Tüm hakları saklıdır.",
+    "followUs": "Bizi takip edin:",
     "links": {
-      "about": "About Us",
-      "services": "Services",
-      "contact": "Contact",
-      "oceanFreight": "Ocean Freight",
-      "airFreight": "Air Freight",
-      "roadFreight": "Road Freight",
-      "warehousing": "Warehousing"
+      "about": "Hakkımızda",
+      "services": "Hizmetler",
+      "contact": "İletişim",
+      "oceanFreight": "Deniz Taşımacılığı",
+      "airFreight": "Hava Taşımacılığı",
+      "roadFreight": "Kara Taşımacılığı",
+      "yachtTransport": "Yat Taşımacılığı"
+    },
+    "legal": {
+      "privacy": "Gizlilik Politikası",
+      "terms": "Kullanım Şartları",
+      "cookies": "Çerez Politikası"
+    },
+    "trustBadges": [
+      "ISO 9001:2015 Sertifikalı",
+      "IATA Üyesi",
+      "FIATA Sertifikalı",
+      "C-TPAT Onaylı",
+      "AEO Sertifikalı"
+    ]
+  },
+  "yachtTransport": {
+    "badge": "Özel Deniz Taşımacılığı",
+    "title": "Profesyonel Yat Taşımacılığı",
+    "description": "Dünya çapında lüks tekneler için güvenli, sigortalı ve özel taşıma hizmetleri.",
+    "feature1": {
+      "title": "Tam Sigorta",
+      "description": "50 milyon dolara kadar tekne değeri için kapsamlı teminat"
+    },
+    "feature2": {
+      "title": "Küresel Ağ",
+      "description": "50'den fazla ülkede özel deniz terminalleri"
+    },
+    "feature3": {
+      "title": "Uzman Elleçleme",
+      "description": "Özel yat taşıma uzmanları"
+    },
+    "cta": "Yat Teklifi Alın"
+  },
+  "contact": {
+    "hero": {
+      "title": "İletişime Geçin",
+      "subtitle": "Sea Live ile Bağlantı Kurun",
+      "description": "Lojistik ihtiyaçlarınız için bizimle iletişime geçin. Uzman ekibimiz size en iyi çözümleri sunmak için burada.",
+      "badge": "Profesyonel Lojistik Hizmetleri",
+      "getQuote": "Teklif Alın",
+      "callNow": "Hemen Arayın"
+    },
+    "section": {
+      "title": "Uzman Ekibimizle İletişim Kurun",
+      "subtitle": "İş ihtiyaçlarınıza özel çözümler için lojistik profesyonellerimizle iletişime geçin."
+    },
+    "form": {
+      "title": "Mesaj Gönderin",
+      "subtitle": "Sorularınızı ve taleplerinizi bizimle paylaşın",
+      "fields": {
+        "name": "Ad Soyad",
+        "email": "E-posta Adresi",
+        "phone": "Telefon Numarası",
+        "company": "Şirket Adı",
+        "service": "Hizmet Türü",
+        "message": "Mesajınız"
+      },
+      "placeholders": {
+        "name": "Adınızı ve soyadınızı girin",
+        "email": "E-posta adresinizi girin",
+        "phone": "Telefon numaranızı girin",
+        "company": "Şirket adınızı girin (isteğe bağlı)",
+        "message": "Mesajınızı veya talebinizi detaylı olarak yazın",
+        "service": "Bir hizmet seçin"
+      },
+      "services": {
+        "ocean": "Deniz Taşımacılığı",
+        "air": "Hava Taşımacılığı",
+        "land": "Kara Taşımacılığı",
+        "yacht": "Yat Taşımacılığı",
+        "other": "Diğer"
+      },
+      "submit": "Mesaj Gönder",
+      "sending": "Gönderiliyor...",
+      "success": "Mesajınız başarıyla gönderildi!",
+      "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+    },
+    "info": {
+      "title": "İletişim Bilgileri",
+      "subtitle": "Bize Ulaşın",
+      "phone": "Telefon",
+      "email": "E-posta",
+      "address": {
+        "title": "Adres",
+        "line1": "SeaLive Lojistik",
+        "line2": "Kuzeykent Mahallesi, 31168 Sokak, Ritim Ofis",
+        "line3": "B Blok, Kat 5, Daire No: 19",
+        "line4": "Türkiye"
+      },
+      "hours": {
+        "title": "Çalışma Saatleri",
+        "weekdays": "Pazartesi - Cuma: 09:00 - 18:00",
+        "saturday": "Cumartesi: 09:00 - 14:00",
+        "sunday": "Pazar: Kapalı"
+      }
+    },
+    "whyChoose": {
+      "title": "Neden Bizi Seçmelisiniz",
+      "experience": "15+ Yıllık Deneyim",
+      "network": "Küresel Ağ Kapsamı",
+      "support": "7/24 Müşteri Desteği",
+      "pricing": "Rekabetçi Fiyatlandırma"
+    },
+    "emergency": {
+      "title": "Acil Durum İletişim",
+      "subtitle": "Acil kargo ve destek için",
+      "button": "Acil Hat"
+    },
+    "map": {
+      "title": "Lokasyonumuz"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "badge": "Sealive Lojistik Hakkında",
+      "title": "Global Lojistikte Öncüler",
+      "description": "15 yılı aşkın lojistik deneyimimizle, dünya çapında güvenli, profesyonel ve verimli freight forwarding hizmetleri sunmaktayız."
+    },
+    "story": {
+      "title": "Hikayemiz",
+      "paragraph1": "2009 yılında kurulan Sealive Lojistik, freight forwarding sektöründe devrim yaratma vizyonuyla yola çıktı. Küçük bir operasyon olarak başlayan serüvenimiz, lojistik alanında dünya çapında tanınan bir lidere dönüştü.",
+      "paragraph2": "Deniz, hava ve kara taşımacılığındaki uzmanlığımız, bizi dünya çapındaki işletmeler için tercih edilen bir ortak haline getirdi. Her gönderinin müşterilerimiz için kritik bir yatırım olduğunu ve önemli bir değer taşıdığını anlıyoruz.",
+      "paragraph3": "Bugün, 50'den fazla ülkede bulunan özel terminal ağımız aracılığıyla faaliyet gösteriyor, kargonuzun varış noktası ne olursa olsun aynı profesyonel özeni görmesini sağlıyoruz."
+    },
+    "values": {
+      "title": "Temel Değerlerimiz",
+      "description": "Bu ilkeler, tüm lojistik hizmetlerimizin temelini oluşturur ve her gönderide mükemmelliği garanti eder.",
+      "security": {
+        "title": "Güvenlik ve Güvenilirlik",
+        "description": "Kargonuzu her aşamada korumak için kapsamlı sigorta ve güvenli elleçleme protokolleri."
+      },
+      "network": {
+        "title": "Global Ağ",
+        "description": "Dünya çapında 50'den fazla ülkede geniş bir ortak ve terminal ağı."
+      },
+      "handling": {
+        "title": "Uzman Elleçleme",
+        "description": "Onlarca yıllık freight forwarding deneyimine sahip özel lojistik uzmanları."
+      },
+      "team": {
+        "title": "Profesyonel Ekip",
+        "description": "En yüksek hizmet standartlarını sağlayan sertifikalı taşıma profesyonelleri."
+      }
+    },
+    "mission": {
+      "title": "Misyonumuz",
+      "quote": "Dünyanın en güvenilir ve profesyonel lojistik hizmetlerini sunarak, her gönderinin varış noktasına güvenli, emniyetli ve zamanında ulaşmasını sağlamak.",
+      "description": "Onlarca yıllık lojistik uzmanlığını en son teknoloji ve mükemmelliğe olan sarsılmaz bağlılığımızla birleştirerek, dünya çapında freight forwarding için güvenilir bir tercih haline geliyoruz."
+    },
+    "cta": {
+      "title": "Lojistiğinizi Optimize Etmeye Hazır mısınız?",
+      "description": "Kişiselleştirilmiş bir danışmanlık ve gönderi ihtiyaçlarınız için ayrıntılı bir teklif almak üzere lojistik uzmanları ekibimizle iletişime geçin.",
+      "getQuote": "Teklif Al",
+      "contactUs": "Bize Ulaşın"
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "badge": "Profesyonel Nakliye Hizmetleri",
+      "title": "Küresel Lojistik",
+      "titleHighlight": "Mükemmelliği",
+      "description": "Yat taşımacılığı, deniz nakliyesi, hava kargo ve kara taşımacılığı hizmetlerinde uzmanlaşmış kapsamlı nakliye çözümleri ile altı kıtada hizmet.",
+      "getQuote": "Ücretsiz Teklif Al",
+      "viewPortfolio": "Portföyü Görüntüle"
+    },
+    "mainSection": {
+      "badge": "Temel Hizmetler",
+      "title": "Özelleşmiş Çözümler",
+      "description": "Özel gereksinimlerinize uygun profesyonel nakliye çözümleri, sektör lideri uzmanlık ve küresel erişim ile."
+    },
+    "mainServices": [
+      {
+        "title": "Yat Taşımacılığı",
+        "subtitle": "Özel Deniz Taşımacılığı",
+        "description": "Dünya çapında lüks tekneler için güvenli, sigortalı ve özel taşıma hizmetleri.",
+        "features": [
+          "Tam sigorta koruması",
+          "Küresel kapsama alanı",
+          "Özel ekipman ve ekip",
+          "7/24 izleme sistemi"
+        ],
+        "premiumBadge": "Premium Hizmet",
+        "learnMore": "Detaylı Bilgi",
+        "pricing": {
+          "startingFrom": "Başlangıç fiyatı",
+          "contactQuote": "Teklif için iletişime geçin"
+        }
+      },
+      {
+        "title": "Deniz Taşımacılığı",
+        "subtitle": "Konteyner Taşımacılığı",
+        "description": "FCL ve LCL konteyner taşımacılığı, konşimento düzenleme ve liman elleçleme hizmetleri.",
+        "features": [
+          "FCL & LCL hizmetleri",
+          "Gümrükleme desteği",
+          "Liman operasyonları",
+          "Takip sistemi"
+        ],
+        "learnMore": "Detaylı Bilgi",
+        "pricing": {
+          "startingFrom": "Başlangıç fiyatı",
+          "contactQuote": "Teklif için iletişime geçin"
+        }
+      },
+      {
+        "title": "Hava Taşımacılığı",
+        "subtitle": "Hava Kargo Hizmetleri",
+        "description": "Ekspres hava kargo, ana konşimento (MAWB) düzenleme ve hızlı gümrükleme çözümleri.",
+        "features": [
+          "Express servis",
+          "Özel kargo hizmetleri",
+          "Door-to-door teslimat",
+          "7/24 destek"
+        ],
+        "learnMore": "Detaylı Bilgi",
+        "pricing": {
+          "startingFrom": "Başlangıç fiyatı",
+          "contactQuote": "Teklif için iletişime geçin"
+        }
+      },
+      {
+        "title": "Kara Taşımacılığı",
+        "subtitle": "Karayolu Lojistiği",
+        "description": "Sınır ötesi taşımacılık, TIR karnesi ve Avrupa-Asya arası karayolu nakliyesi.",
+        "features": [
+          "FTL & LTL hizmetleri",
+          "Cross-border taşımacılık",
+          "Özel ekipman filosu",
+          "GPS takip sistemi"
+        ],
+        "learnMore": "Detaylı Bilgi",
+        "pricing": {
+          "startingFrom": "Başlangıç fiyatı",
+          "contactQuote": "Teklif için iletişime geçin"
+        }
+      }
+    ],
+    "additionalServices": {
+      "title": "Destek Hizmetleri",
+      "description": "Nakliye ihtiyaçlarınızı tamamlamak ve sorunsuz operasyonlar sağlamak için kapsamlı destek hizmetleri.",
+      "services": [
+        {
+          "title": "Deniz Sigortası",
+          "description": "Küresel koruma ve anında hasar işleme ile kapsamlı deniz ve kargo sigortası kapsamı."
+        },
+        {
+          "title": "Gümrük İşlemleri",
+          "description": "Hızlandırılmış işleme ve uyumluluk güvencesi ile uzman gümrük müşavirliği ve dokümantasyon hizmetleri."
+        },
+        {
+          "title": "Proje Lojistiği",
+          "description": "Özel ekipman ve mühendislik desteği ile karmaşık proje kargo ve ağır kaldırma çözümleri."
+        },
+        {
+          "title": "Tedarik Zinciri Danışmanlığı",
+          "description": "Maliyet azaltma ve verimlilik iyileştirmeleri ile stratejik lojistik danışmanlığı ve tedarik zinciri optimizasyonu."
+        }
+      ]
+    },
+    "process": {
+      "title": "Sürecimiz",
+      "description": "Her adımda mükemmelliği sağlayan akıcı, şeffaf ve profesyonel bir nakliye yaklaşımı.",
+      "steps": [
+        {
+          "title": "İlk Danışmanlık",
+          "description": "Nakliye gereksinimlerinizin detaylı değerlendirmesi ve özelleştirilmiş çözüm planlaması."
+        },
+        {
+          "title": "Rota Planlaması",
+          "description": "Optimal rota seçimi, dokümantasyon hazırlığı ve düzenleyici uyumluluk doğrulaması."
+        },
+        {
+          "title": "Profesyonel Uygulama",
+          "description": "Yolculuk boyunca uzman elleçleme, güvenli taşıma ve sürekli izleme."
+        },
+        {
+          "title": "Güvenli Teslimat",
+          "description": "Zamanında teslimat onayı, tamamlama dokümantasyonu ve teslimat sonrası destek."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Kargonuzu Göndermeye Hazır Mısınız?",
+      "description": "Özel nakliye gereksinimlerinize uygun detaylı teklif ve danışmanlık için nakliye uzmanlarımızla iletişime geçin. Dünya çapında 7/24 hizmet.",
+      "getQuote": "Ücretsiz Teklif Al",
+      "phone": "📞 +90 505 092 09 99",
+      "trustText": "Dünya çapında 500+ şirket tarafından güveniliyor",
+      "certifications": [
+        "🏆 ISO 9001 Sertifikalı",
+        "🛡️ Tam Sigortalı",
+        "🌍 Küresel Ağ"
+      ]
+    }
+  },
+  "yachtTransportPage": {
+    "hero": {
+      "badge": "Premium Yat Taşımacılığı",
+      "title": "Lüks Yat",
+      "titleHighlight": "Taşımacılığı",
+      "description": "Dünya çapında lüks tekneler için güvenli, sigortalı ve özel taşıma hizmetleri.",
+      "getQuote": "Teklif Al",
+      "viewPortfolio": "Portföyü Görüntüle"
+    },
+    "specifications": [
+      {
+        "label": "Maksimum Yat Uzunluğu",
+        "value": "200 metre"
+      },
+      {
+        "label": "Maksimum Ağırlık",
+        "value": "2000 ton"
+      },
+      {
+        "label": "Sigorta Kapsamı",
+        "value": "50M USD'ye kadar"
+      },
+      {
+        "label": "Küresel Limanlar",
+        "value": "500+ destinasyon"
+      }
+    ],
+    "servicesSection": {
+      "title": "Premium Yat Taşıma Hizmetleri",
+      "description": "Lüks yatınız için uçtan uca özel taşıma çözümleri",
+      "services": [
+        {
+          "title": "Deniz Yolu Taşıması",
+          "description": "Özel ekipman ve uzman ekip ile deniz yolu taşıması",
+          "features": [
+            "Tam sigorta",
+            "7/24 izleme",
+            "Özel ekipman",
+            "Uzman mürettebat"
+          ]
+        },
+        {
+          "title": "Kara Yolu Taşıması",
+          "description": "Liman transferleri ve kısa mesafe taşıma",
+          "features": [
+            "Özel ekipman",
+            "Uzman ekip",
+            "Güvenli transfer",
+            "GPS takip"
+          ]
+        },
+        {
+          "title": "Hava Yolu Taşıması",
+          "description": "Yat parçaları ve ekipmanları için hava kargo hizmetleri",
+          "features": [
+            "Express teslimat",
+            "Küresel kapsama",
+            "Özel elleçleme",
+            "Gerçek zamanlı takip"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "title": "Taşıma Süreci",
+      "description": "Yatınızın güvenli taşınması için profesyonel süreç yönetimi",
+      "steps": [
+        {
+          "title": "Planlama",
+          "description": "Detaylı rota ve ekipman planlaması"
+        },
+        {
+          "title": "Hazırlık",
+          "description": "Yatın taşımaya hazırlanması"
+        },
+        {
+          "title": "Taşıma",
+          "description": "Profesyonel ekip ile taşıma operasyonu"
+        },
+        {
+          "title": "Teslimat",
+          "description": "Güvenli teslimat ve tamamlama doğrulaması"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Müşteri Yorumları",
+      "description": "Değerli müşterilerimizin deneyimleri",
+      "reviews": [
+        {
+          "name": "Ahmet Yılmaz",
+          "title": "Yat Sahibi",
+          "content": "Mükemmel hizmet ve profesyonel ekip",
+          "rating": 5
+        },
+        {
+          "name": "Mehmet Demir",
+          "title": "Marina Müdürü",
+          "content": "Güvenilir ve zamanında teslimat",
+          "rating": 5
+        }
+      ]
+    },
+    "cta": {
+      "title": "Yatınız İçin Özel Teklif Alın",
+      "description": "Size özel taşıma çözümleri için hemen iletişime geçin",
+      "getQuote": "Teklif Al",
+      "phone": "+90 505 092 09 99",
+      "trustText": "Güvenilir ve Profesyonel Hizmet",
+      "features": ["Tam Sigorta", "7/24 İzleme", "Uzman Ekip", "Global Ağ"]
+    }
+  },
+  "oceanFreightPage": {
+    "hero": {
+      "badge": "Deniz Taşımacılığı Hizmetleri",
+      "title": "Küresel Deniz",
+      "titleHighlight": "Nakliye Çözümleri",
+      "description": "FCL, LCL ve proje kargo çözümleri ile dünya çapında büyük limanları bağlayan kapsamlı deniz nakliyesi hizmetleri. Güvenilir, uygun maliyetli ve tam takipli kargolar.",
+      "getQuote": "Nakliye Teklifi Al",
+      "trackShipment": "Kargoyu İzle"
+    },
+    "specifications": [
+      { "label": "Küresel Limanlar", "value": "500+" },
+      { "label": "Konteyner Türleri", "value": "Tüm Boyutlar" },
+      { "label": "Haftalık Kalkışlar", "value": "1000+" },
+      { "label": "Transit Kapsamı", "value": "Dünya Çapında" }
+    ],
+    "servicesSection": {
+      "title": "Deniz Taşımacılığı Hizmetleri",
+      "description": "Kargo gereksinimlerinize ve bütçenize uygun esnek deniz nakliyesi çözümleri.",
+      "services": [
+        {
+          "title": "FCL (Tam Konteyner Yükü)",
+          "description": "Büyük kargo hacimleri için tahsisli konteyner alanı ve rekabetçi fiyatlarla tam konteyner nakliye çözümleri.",
+          "features": [
+            "20ft ve 40ft Konteynerler",
+            "Direkt Liman-Liman",
+            "Gümrük İşlemleri",
+            "Kapıdan Kapıya Seçenekler"
+          ]
+        },
+        {
+          "title": "LCL (Parsiyel Konteyner Yükü)",
+          "description": "Diğer kargolarla konteyner alanı paylaşan küçük kargolar için uygun maliyetli konsolidasyon hizmetleri.",
+          "features": [
+            "Esnek Hacim",
+            "Haftalık Kalkışlar",
+            "Konsolidasyon Hizmetleri",
+            "Rekabetçi Fiyatlar"
+          ]
+        },
+        {
+          "title": "Dökme Yük ve Proje Kargo",
+          "description": "Büyük boyutlu, ağır veya alışılmadık kargolar için özel ekipman ve uzmanlık gerektiren özelleşmiş elleçleme.",
+          "features": [
+            "Ağır Kaldırma Kapasitesi",
+            "Proje Yönetimi",
+            "Özel Ekipman",
+            "Rota Planlaması"
+          ]
+        }
+      ]
+    },
+    "routesSection": {
+      "title": "Ana Nakliye Rotaları",
+      "description": "Rekabetçi transit süreleri ve sıklıklarla ana ticaret rotalarında düzenli hizmetler.",
+      "routes": [
+        {
+          "from": "Avrupa",
+          "to": "Orta Doğu",
+          "time": "7-10 gün",
+          "frequency": "Günlük"
+        },
+        {
+          "from": "Asya",
+          "to": "Avrupa",
+          "time": "14-21 gün",
+          "frequency": "Günlük"
+        },
+        {
+          "from": "Kuzey Amerika",
+          "to": "Asya",
+          "time": "12-18 gün",
+          "frequency": "Günlük"
+        },
+        {
+          "from": "Orta Doğu",
+          "to": "Afrika",
+          "time": "5-8 gün",
+          "frequency": "Haftada 3x"
+        }
+      ]
+    },
+    "advantagesSection": {
+      "title": "Neden Deniz Taşımacılığı?",
+      "description": "Deniz nakliyesinin avantajları ve sunduğumuz katma değer hizmetleri.",
+      "advantages": [
+        {
+          "title": "Kapsamlı Sigorta",
+          "description": "Deniz sigortası kapsamı ve hasar desteği ile tam kargo koruması."
+        },
+        {
+          "title": "Gerçek Zamanlı İzleme",
+          "description": "Kargolarınızın gerçek zamanlı görünürlüğünü sağlayan gelişmiş takip sistemleri."
+        },
+        {
+          "title": "Küresel Ağ",
+          "description": "Dünya çapında büyük limanlarda geniş partner ve acente ağı."
+        },
+        {
+          "title": "Intermodal Çözümler",
+          "description": "Eksiksiz lojistik için kara ve hava taşımacılığı ile sorunsuz entegrasyon."
+        }
+      ]
+    },
+    "processSection": {
+      "title": "Nakliye Süreci",
+      "description": "Etkin ve güvenli deniz nakliyesi için optimize edilmiş süreç adımları.",
+      "steps": [
+        {
+          "title": "Teklif ve Rezervasyon",
+          "description": "Gereksinimlerinize göre fiyat teklifi ve rezervasyon onayı."
+        },
+        {
+          "title": "Dokümantasyon",
+          "description": "Gümrük ve nakliye belgeleri hazırlığı ve doğrulaması."
+        },
+        {
+          "title": "Konteyner Yükleme",
+          "description": "Profesyonel yükleme ve konteyner mühürleme işlemleri."
+        },
+        {
+          "title": "Transit İzleme",
+          "description": "Yolculuk boyunca sürekli izleme ve güncelleme."
+        },
+        {
+          "title": "Teslim",
+          "description": "Varış limanında güvenli boşaltma ve teslim işlemleri."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Deniz Nakliyesi İçin Hazır Mısınız?",
+      "description": "Deniz taşımacılığı uzmanlarımızla iletişime geçin ve özel kargo gereksinimlerinize uygun detaylı teklif alın.",
+      "getQuote": "Deniz Nakliye Teklifi Al",
+      "trackShipment": "Kargoyu İzle",
+      "phone": "+90 505 092 09 99",
+      "features": ["🚢 500+ Liman", "📦 FCL & LCL", "🛡️ Tam Sigorta"]
+    }
+  },
+  "airFreightPage": {
+    "hero": {
+      "badge": "Ekspres Hava Kargo Hizmetleri",
+      "title": "Hızlı ve Güvenilir",
+      "titleHighlight": "Hava Kargo",
+      "description": "Ekspres teslimat, sıcaklık kontrolü ve özel elleçleme ile zamana duyarlı hava kargo çözümleri. Garantili transit süreleri ile dünya çapında 200+ havaalanını bağlar.",
+      "getQuote": "Hava Kargo Teklifi Al",
+      "trackShipment": "Kargoyu İzle"
+    },
+    "specifications": [
+      { "label": "Küresel Havaalanları", "value": "200+" },
+      { "label": "Günlük Uçuşlar", "value": "500+" },
+      { "label": "Maksimum Ağırlık", "value": "100 tona kadar" },
+      { "label": "Ekspres Teslimat", "value": "24-48 saat" }
+    ],
+    "servicesSection": {
+      "title": "Hava Kargo Hizmetleri",
+      "description": "Her nakliye gereksinimi ve zaman çizelgesi için kapsamlı hava kargo çözümleri.",
+      "services": [
+        {
+          "title": "Ekspres Hava Kargo",
+          "description": "Garantili teslimat süreleri ve premium elleçleme ile zamana kritik kargolar için öncelikli hava kargo hizmetleri.",
+          "features": [
+            "24-48 Saatte Teslimat",
+            "Öncelikli Elleçleme",
+            "Gerçek Zamanlı İzleme",
+            "Kapıdan Kapıya Hizmet"
+          ]
+        },
+        {
+          "title": "Standart Hava Kargo",
+          "description": "Güvenilir transit süreleri ve rekabetçi fiyatlarla düzenli kargolar için uygun maliyetli hava nakliyesi çözümleri.",
+          "features": [
+            "3-7 Günde Transit",
+            "Rekabetçi Fiyatlar",
+            "Konsolidasyon Seçenekleri",
+            "Küresel Kapsam"
+          ]
+        },
+        {
+          "title": "Özel Kargo",
+          "description": "Özel ekipmanla sıcaklığa duyarlı, tehlikeli maddeler ve büyük boyutlu kargolar için uzman elleçleme.",
+          "features": [
+            "Sıcaklık Kontrolü",
+            "Tehlikeli Maddeler",
+            "Büyük Boyutlu Kargo",
+            "İlaç Kalitesi"
+          ]
+        }
+      ]
+    },
+    "destinationsSection": {
+      "title": "Küresel Destinasyonlar",
+      "description": "Dünya çapında büyük havaalanlarına günlük uçuşlarla kapsamlı ağ erişimi.",
+      "destinations": [
+        {
+          "region": "Avrupa",
+          "airports": "50+",
+          "time": "4-6 saat",
+          "frequency": "Günlük"
+        },
+        {
+          "region": "Asya Pasifik",
+          "airports": "80+",
+          "time": "8-12 saat",
+          "frequency": "Günlük"
+        },
+        {
+          "region": "Kuzey Amerika",
+          "airports": "60+",
+          "time": "10-14 saat",
+          "frequency": "Günlük"
+        },
+        {
+          "region": "Orta Doğu",
+          "airports": "25+",
+          "time": "2-4 saat",
+          "frequency": "Günde Çoklu"
+        }
+      ]
+    },
+    "advantagesSection": {
+      "title": "Hava Kargo Avantajları",
+      "description": "Hava taşımacılığının benzersiz avantajları ve katma değer hizmetleri.",
+      "advantages": [
+        {
+          "title": "Hız ve Güvenilirlik",
+          "description": "Garantili teslimat programları ve zamanında performans ile en hızlı transit süreleri."
+        },
+        {
+          "title": "Kargo Güvenliği",
+          "description": "Yüksek değerli kargolar için gelişmiş güvenlik protokolleri ve elleçleme prosedürleri."
+        },
+        {
+          "title": "Sıcaklık Kontrolü",
+          "description": "İlaçlar, bozulabilir ürünler ve hassas mallar için iklim kontrollü taşıma."
+        },
+        {
+          "title": "Küresel Ağ",
+          "description": "Altı kıtada geniş havayolu ortaklıkları ve havaalanı tesisleri."
+        }
+      ]
+    },
+    "cargoTypesSection": {
+      "title": "Kargo Türleri",
+      "description": "Uzmanlık alanlarımız ve elleçlediğimiz kargo çeşitleri.",
+      "types": [
+        {
+          "type": "Genel Kargo",
+          "description": "Standart ticari mallar ve ürünler",
+          "examples": ["Elektronik", "Tekstil", "Makine", "Belgeler"]
+        },
+        {
+          "type": "Bozulabilir Ürünler",
+          "description": "Sıcaklığa duyarlı ve zamana kritik mallar",
+          "examples": ["Taze Ürünler", "Çiçekler", "Deniz Ürünleri", "İlaçlar"]
+        },
+        {
+          "type": "Tehlikeli Maddeler",
+          "description": "Özel elleçleme gerektiren tehlikeli materyaller",
+          "examples": [
+            "Kimyasallar",
+            "Piller",
+            "Tıbbi Örnekler",
+            "Yanıcı Maddeler"
+          ]
+        },
+        {
+          "type": "Yüksek Değerli",
+          "description": "Artırılmış güvenlik gerektiren değerli kargo",
+          "examples": [
+            "Mücevher",
+            "Elektronik",
+            "Sanat Eseri",
+            "Değerli Metaller"
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Hava Kargo İçin Hazır Mısınız?",
+      "description": "Hava kargo uzmanlarımızla iletişime geçin ve zamana duyarlı kargolarınız için hızlı çözümler alın.",
+      "getQuote": "Hava Kargo Teklifi Al",
+      "trackShipment": "Kargoyu İzle",
+      "phone": "+90 505 092 09 99",
+      "features": ["✈️ 24-48 Saat", "🌡️ Sıcaklık Kontrolü", "🛡️ Güvenli Taşıma"]
+    }
+  },
+  "landTransportPage": {
+    "hero": {
+      "badge": "Profesyonel Kara Taşımacılığı",
+      "title": "Güvenilir Karayolu",
+      "titleHighlight": "Taşıma Çözümleri",
+      "description": "Avrupa, Asya ve Orta Doğu koridorlarında kapıdan kapıya kara taşımacılığı hizmetleri. Gerçek zamanlı izleme ve gümrük işlemleri desteği ile TIR sertifikalı operasyonlar.",
+      "getQuote": "Taşıma Teklifi Al",
+      "trackVehicle": "Aracı İzle"
+    },
+    "specifications": [
+      { "label": "Rota Kapsamı", "value": "50+ Ülke" },
+      { "label": "Filo Büyüklüğü", "value": "500+ Araç" },
+      { "label": "Maksimum Kapasite", "value": "40 tona kadar" },
+      { "label": "TIR Sertifikalı", "value": "%100" }
+    ],
+    "servicesSection": {
+      "title": "Kara Taşımacılığı Hizmetleri",
+      "description": "Tüm kargo türleri ve destinasyonlar için kapsamlı karayolu taşıma çözümleri.",
+      "services": [
+        {
+          "title": "Tam Kamyon Yükü (FTL)",
+          "description": "Tüm treyler kapasitesinin münhasır kullanımını gerektiren büyük kargolar için tahsisli kamyon hizmetleri.",
+          "features": [
+            "Tahsisli Araç",
+            "Direkt Rota",
+            "Hızlı Transit",
+            "Güvenli Taşıma"
+          ]
+        },
+        {
+          "title": "Parsiyel Kamyon Yükü (LTL)",
+          "description": "Diğer kargolarla kamyon alanı paylaşan küçük kargolar için uygun maliyetli konsolidasyon hizmetleri.",
+          "features": [
+            "Uygun Maliyet",
+            "Düzenli Programlar",
+            "Esnek Hacimler",
+            "Terminal Ağları"
+          ]
+        },
+        {
+          "title": "Sınır Ötesi Taşıma",
+          "description": "Avrupa ve Asya koridorlarında TIR ve gümrük işlemleri hizmetleri ile uluslararası karayolu taşımacılığı.",
+          "features": [
+            "TIR Operasyonları",
+            "Gümrük İşlemleri",
+            "Sınır Uzmanlığı",
+            "Dokümantasyon Desteği"
+          ]
+        }
+      ]
+    },
+    "routesSection": {
+      "title": "Ana Taşıma Rotaları",
+      "description": "Düzenli hizmetlerle önemli ticaret koridorlarında güvenilir kara taşımacılığı.",
+      "routes": [
+        {
+          "from": "Türkiye",
+          "to": "Avrupa",
+          "time": "3-5 gün",
+          "distance": "2.500 km",
+          "frequency": "Günlük"
+        },
+        {
+          "from": "Avrupa",
+          "to": "Orta Asya",
+          "time": "7-10 gün",
+          "distance": "4.000 km",
+          "frequency": "Haftada 3x"
+        },
+        {
+          "from": "Orta Doğu",
+          "to": "Kafkasya",
+          "time": "2-4 gün",
+          "distance": "1.500 km",
+          "frequency": "Günlük"
+        },
+        {
+          "from": "Türkiye",
+          "to": "Rusya",
+          "time": "5-7 gün",
+          "distance": "3.200 km",
+          "frequency": "Haftada 2x"
+        }
+      ]
+    },
+    "advantagesSection": {
+      "title": "Kara Taşımacılığı Avantajları",
+      "description": "Karayolu taşımacılığının benzersiz avantajları ve katma değer hizmetleri.",
+      "advantages": [
+        {
+          "title": "Kapıdan Kapıya Hizmet",
+          "description": "Toplama noktasından son teslimat noktasına kadar tek iletişim noktası ile eksiksiz lojistik çözümleri."
+        },
+        {
+          "title": "Kargo Güvenliği",
+          "description": "Tam gönül rahatlığı için GPS takip, güvenli yükleme ve kapsamlı sigorta."
+        },
+        {
+          "title": "Esnek Programlama",
+          "description": "Özel operasyonel gereksinimlerinizi karşılamak için uyarlanabilir toplama ve teslimat süreleri."
+        },
+        {
+          "title": "Rota Optimizasyonu",
+          "description": "Verimli ve zamanında teslimatlar için gelişmiş rota planlama ve trafik yönetimi."
+        }
+      ]
+    },
+    "vehicleTypesSection": {
+      "title": "Araç Türleri",
+      "description": "Farklı kargo türleri ve gereksinimleri için özelleşmiş araç filosu.",
+      "types": [
+        {
+          "type": "Standart Kamyonlar",
+          "description": "Standart treylerlİ düzenli kargo taşımacılığı",
+          "capacity": "24 tona kadar",
+          "dimensions": "13,6m x 2,5m x 3m",
+          "suitable": [
+            "Genel Kargo",
+            "Paletli Mallar",
+            "Kuru Mallar",
+            "Tüketici Ürünleri"
+          ]
+        },
+        {
+          "type": "Soğutuculu Kamyonlar",
+          "description": "Bozulabilir ürünler için sıcaklık kontrollü taşıma",
+          "capacity": "22 tona kadar",
+          "dimensions": "13,6m x 2,5m x 2,8m",
+          "suitable": [
+            "Taze Ürünler",
+            "İlaçlar",
+            "Donmuş Gıdalar",
+            "Kimyasallar"
+          ]
+        },
+        {
+          "type": "Açık Platform Treylerleri",
+          "description": "Büyük boyutlu ve ağır kargolar için açık treylerleri",
+          "capacity": "40 tona kadar",
+          "dimensions": "13,6m x 2,5m (açık)",
+          "suitable": [
+            "Makine",
+            "İnşaat Malzemeleri",
+            "Çelik Ürünleri",
+            "Endüstriyel Ekipman"
+          ]
+        },
+        {
+          "type": "Özel Araçlar",
+          "description": "Benzersiz taşıma gereksinimleri için özel çözümler",
+          "capacity": "Değişken",
+          "dimensions": "Özel",
+          "suitable": [
+            "Tehlikeli Maddeler",
+            "Büyük Boyutlu Kargo",
+            "Yüksek Değerli Eşyalar",
+            "Proje Kargo"
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Kara Taşımacılığı İçin Hazır Mısınız?",
+      "description": "Kara taşımacılığı uzmanlarımızla iletişime geçin ve kapıdan kapıya çözümleriniz için detaylı teklif alın.",
+      "getQuote": "Taşıma Teklifi Al",
+      "trackVehicle": "Aracı İzle",
+      "phone": "+90 505 092 09 99",
+      "features": ["🚛 Kapıdan Kapıya", "🛣️ TIR Sertifikalı", "📍 GPS İzleme"]
     }
   }
 }

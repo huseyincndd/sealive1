@@ -2,33 +2,31 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useLanguage } from '@/lib/language-context'
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const slideIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  const { translations } = useLanguage()
 
   const SLIDE_DURATION = 5000 // 5 seconds per slide
 
   const slides = [
     {
       image: "https://globefarer.qodeinteractive.com/wp-content/uploads/2021/08/main-home-rev-slide-1-1.jpg",
-      title: "Worldwide shipping and professional solutions",
-      description: "No matter the location we got you covered with our global shipping!"
+      ...translations.heroSlider.slides[0]
     },
     {
       image: "https://globefarer.qodeinteractive.com/wp-content/uploads/2021/08/main-home-rev-slide-2.jpg",
-      title: "Land transport and logistics excellence",
-      description: "Door-to-door delivery solutions across all continents with reliable service!"
+      ...translations.heroSlider.slides[1]
     },
     {
       image: "https://globefarer.qodeinteractive.com/wp-content/uploads/2021/08/main-home-rev-slide-3.jpg",
-      title: "Air cargo and express delivery",
-      description: "Fast and secure air freight services connecting global markets efficiently!"
+      ...translations.heroSlider.slides[2]
     },
     {
       image: "https://villaqrmenu.b-cdn.net/sealive/ChatGPT%20Image%2029%20Haz%202025%2014_46_02.png",
-      title: "Luxury yacht transportation worldwide",
-      description: "Specialized yacht shipping services with premium care and global coverage!"
+      ...translations.heroSlider.slides[3]
     }
   ]
 
@@ -76,10 +74,13 @@ export default function HeroSlider() {
           }`}
         >
           {/* Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${slide.image})` }}
-          />
+          <div className="absolute inset-0">
+            <img 
+              src={slide.image}
+              alt={`${slide.title} - SeaLive lojistik ve taşımacılık hizmetleri`}
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
           
           {/* Overlay for 4th slide (Yacht Transport) */}
           {index === 3 && (
@@ -89,7 +90,8 @@ export default function HeroSlider() {
           {/* Content */}
           <div className="relative z-10 flex items-center justify-center h-full text-white px-4">
             <div className="max-w-7xl mx-auto w-full">
-              <div className="flex items-center justify-between">
+              {/* Desktop Layout */}
+              <div className="hidden lg:flex items-center justify-between">
                 {/* Left Side - Logo */}
                 <div className="flex-1 flex justify-start animate-fade-in-left">
                   <img 
@@ -99,18 +101,41 @@ export default function HeroSlider() {
                   />
                 </div>
                 
-                                 {/* Right Side - Slogan */}
-                 <div className="flex-1 flex justify-end text-left">
-                   <div className="max-w-3xl">
-                     <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in-right">
-                       {slide.title}
-                     </h1>
-                     
-                     <p className="text-lg lg:text-xl leading-relaxed opacity-90 animate-fade-in-right delay-200">
-                       {slide.description}
-                     </p>
-                   </div>
-                 </div>
+                {/* Right Side - Slogan */}
+                <div className="flex-1 flex justify-end text-left">
+                  <div className="max-w-3xl">
+                    <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in-right">
+                      {slide.title}
+                    </h2>
+                    
+                    <p className="text-lg lg:text-xl leading-relaxed opacity-90 animate-fade-in-right delay-200">
+                      {slide.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile Layout */}
+              <div className="lg:hidden flex flex-col items-center justify-center h-full text-center space-y-8">
+                {/* Logo on Top */}
+                <div className="animate-fade-in-up">
+                  <img 
+                    src="https://villaqrmenu.b-cdn.net/sealive/Sealive-logo.png"
+                    alt="GlobeFarer Logo"
+                    className="h-24 w-auto object-contain mx-auto"
+                  />
+                </div>
+                
+                {/* Slogan Below */}
+                <div className="max-w-sm mx-auto px-4">
+                  <h2 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight animate-fade-in-up delay-200">
+                    {slide.title}
+                  </h2>
+                  
+                  <p className="text-sm sm:text-base leading-relaxed opacity-90 animate-fade-in-up delay-400">
+                    {slide.description}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -218,6 +243,7 @@ function ProgressIndicators({
   const [animationProgress, setAnimationProgress] = useState(0)
   const animationRef = useRef<number | null>(null)
   const startTimeRef = useRef<number>(0)
+  const { translations } = useLanguage()
 
   // Start animation for current slide
   useEffect(() => {
@@ -244,47 +270,88 @@ function ProgressIndicators({
     }
   }, [currentSlide, slideDuration])
 
-  const slideLabels = ['Ocean Freight', 'Land Transport', 'Air Freight', 'Yacht Transport']
+  const slideLabels = translations.heroSlider.labels
 
   return (
-    <div className="absolute bottom-8 left-0 right-0 flex gap-4 z-20 px-8">
-      {Array.from({ length: totalSlides }).map((_, index) => (
-        <div
-          key={index}
-          className="relative cursor-pointer group flex-1"
-          onClick={() => onSlideClick(index)}
-        >
-          {/* Background Line */}
-          <div className="w-full h-1 bg-white/30 overflow-hidden rounded-full">
-            {/* Progress Fill */}
-            <div 
-              className={`h-full rounded-full transition-colors duration-300 ${
-                index === currentSlide 
-                  ? 'bg-yellow-400' 
-                  : index < currentSlide 
-                    ? 'bg-white/70' 
-                    : 'bg-transparent'
-              }`}
-              style={{
-                width: index === currentSlide 
-                  ? `${animationProgress}%` 
-                  : index < currentSlide 
-                    ? '100%' 
-                    : '0%',
-                transition: index === currentSlide ? 'none' : 'width 0.3s ease'
-              }}
-            />
+    <div className="absolute bottom-8 left-0 right-0 z-20 px-4 sm:px-8">
+      {/* Desktop Layout - Side by side */}
+      <div className="hidden sm:flex gap-4">
+        {Array.from({ length: totalSlides }).map((_, index) => (
+          <div
+            key={index}
+            className="relative cursor-pointer group flex-1"
+            onClick={() => onSlideClick(index)}
+          >
+            {/* Background Line */}
+            <div className="w-full h-1 bg-white/30 overflow-hidden rounded-full">
+              {/* Progress Fill */}
+              <div 
+                className={`h-full rounded-full transition-colors duration-300 ${
+                  index === currentSlide 
+                    ? 'bg-yellow-400' 
+                    : index < currentSlide 
+                      ? 'bg-white/70' 
+                      : 'bg-transparent'
+                }`}
+                style={{
+                  width: index === currentSlide 
+                    ? `${animationProgress}%` 
+                    : index < currentSlide 
+                      ? '100%' 
+                      : '0%',
+                  transition: index === currentSlide ? 'none' : 'width 0.3s ease'
+                }}
+              />
+            </div>
+            
+            {/* Hover Effect */}
+            <div className="absolute -top-1 -left-1 -right-1 h-3 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+            
+            {/* Slide Label - Always Visible */}
+            <div className="absolute -top-10 left-0 text-sm lg:text-base text-white font-bold transition-all duration-200 whitespace-nowrap group-hover:text-yellow-400">
+              {slideLabels[index] || `Slide ${index + 1}`}
+            </div>
           </div>
-          
-          {/* Hover Effect */}
-          <div className="absolute -top-1 -left-1 -right-1 h-3 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-          
-          {/* Slide Label - Always Visible */}
-          <div className="absolute -top-10 left-0 text-base text-white font-bold transition-all duration-200 whitespace-nowrap group-hover:text-yellow-400">
-            {slideLabels[index] || `Slide ${index + 1}`}
+        ))}
+      </div>
+
+      {/* Mobile Layout - Stacked 2x2 grid */}
+      <div className="sm:hidden grid grid-cols-2 gap-3">
+        {Array.from({ length: totalSlides }).map((_, index) => (
+          <div
+            key={index}
+            className="relative cursor-pointer group"
+            onClick={() => onSlideClick(index)}
+          >
+            {/* Background Line */}
+            <div className="w-full h-1 bg-white/30 overflow-hidden rounded-full">
+              {/* Progress Fill */}
+              <div 
+                className={`h-full rounded-full transition-colors duration-300 ${
+                  index === currentSlide 
+                    ? 'bg-yellow-400' 
+                    : index < currentSlide 
+                      ? 'bg-white/70' 
+                      : 'bg-transparent'
+                }`}
+                style={{
+                  width: index === currentSlide 
+                    ? `${animationProgress}%` 
+                    : index < currentSlide 
+                      ? '100%' 
+                      : '0%',
+                  transition: index === currentSlide ? 'none' : 'width 0.3s ease'
+                }}
+              />
+            </div>
+            
+            {/* Slide Label - Always Visible */}
+            <div className="mt-2 text-xs text-white font-bold text-center group-hover:text-yellow-400 transition-colors duration-200">
+              {slideLabels[index] || `Slide ${index + 1}`}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 } 

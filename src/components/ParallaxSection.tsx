@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '@/lib/language-context'
+import Link from 'next/link'
 
 export default function ParallaxSection() {
   const [offsetY, setOffsetY] = useState(0)
@@ -41,15 +42,22 @@ export default function ParallaxSection() {
     >
       {/* Parallax Background Image */}
       <div 
-        className="absolute inset-0 w-full h-[130%] bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 w-full h-[130%]"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1605745341112-85968b19335b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80)',
           transform: isMobile 
             ? `translateY(${offsetY - 200}px)` 
             : `translateY(${offsetY - 500}px)`,
-          backgroundPosition: isMobile ? 'center 20%' : 'center center'
         }}
-      />
+      >
+        <img 
+          src="https://images.unsplash.com/photo-1605745341112-85968b19335b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+          alt="Uluslararası konteyner limanı ve kargo gemileri - deniz taşımacılığı lojistik merkezi"
+          className="w-full h-full object-cover"
+          style={{
+            objectPosition: isMobile ? 'center 20%' : 'center center'
+          }}
+        />
+      </div>
       
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50" />
@@ -64,9 +72,11 @@ export default function ParallaxSection() {
           {translations.parallax.subtitle}
         </p>
         
-        <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-          {translations.hero.getQuote}
-        </button>
+        <Link href="/contact">
+          <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 cursor-pointer">
+            {translations.hero.getQuote}
+          </button>
+        </Link>
       </div>
       
       {/* Scroll Indicator */}

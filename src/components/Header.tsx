@@ -3,14 +3,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { Menu, X, Quote } from 'lucide-react'
+import { Menu, X, Quote, Mail, Phone } from 'lucide-react'
 import { useLanguage } from '@/lib/language-context'
 import LanguageSwitcher from './LanguageSwitcher'
+import ServicesDropdown from './ServicesDropdown'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const { translations } = useLanguage()
+  const { translations, locale } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +33,13 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="h-12 w-auto relative">
+            <div className="h-12 w-auto relative flex items-center">
               <Image
-                src="https://villaqrmenu.b-cdn.net/sealive/Sealive-logo.png"
-                alt="Modern Sea Live Logo"
+                src={isScrolled 
+                  ? "https://villaqrmenu.b-cdn.net/sealive/Sealive-logo-dark.png"
+                  : "https://villaqrmenu.b-cdn.net/sealive/Sealive-logo.png"
+                }
+                alt="Sealive Lojistik"
                 width={160}
                 height={48}
                 className="object-contain"
@@ -44,50 +48,91 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-10">
-            <Link href="/" className={`font-semibold text-lg transition-all duration-300 ${
-              isScrolled 
-                ? 'text-gray-700 hover:text-yellow-600' 
-                : 'text-white hover:text-yellow-300 drop-shadow-sm'
-            }`}>
-              Ana Sayfa
-            </Link>
-            <Link href="/about" className={`font-semibold text-lg transition-all duration-300 ${
-              isScrolled 
-                ? 'text-gray-700 hover:text-yellow-600' 
-                : 'text-white hover:text-yellow-300 drop-shadow-sm'
-            }`}>
-              {translations.header.nav.about}
-            </Link>
-            <Link href="/services" className={`font-semibold text-lg transition-all duration-300 ${
-              isScrolled 
-                ? 'text-gray-700 hover:text-yellow-600' 
-                : 'text-white hover:text-yellow-300 drop-shadow-sm'
-            }`}>
-              {translations.header.nav.services}
-            </Link>
-            <Link href="/contact" className={`font-semibold text-lg transition-all duration-300 ${
-              isScrolled 
-                ? 'text-gray-700 hover:text-yellow-600' 
-                : 'text-white hover:text-yellow-300 drop-shadow-sm'
-            }`}>
-              {translations.header.nav.contact}
-            </Link>
-          </nav>
+          {/* Desktop Navigation - Optimized for medium screens */}
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+            <nav className="flex items-center space-x-4 xl:space-x-6">
+              <Link href="/" className={`font-semibold text-base xl:text-lg transition-all duration-300 ${
+                isScrolled 
+                  ? 'text-gray-700 hover:text-yellow-600' 
+                  : 'text-white hover:text-yellow-300 drop-shadow-sm'
+              }`}>
+                {translations.header.nav.home}
+              </Link>
+              <Link href="/about" className={`font-semibold text-base xl:text-lg transition-all duration-300 ${
+                isScrolled 
+                  ? 'text-gray-700 hover:text-yellow-600' 
+                  : 'text-white hover:text-yellow-300 drop-shadow-sm'
+              }`}>
+                {translations.header.nav.about}
+              </Link>
+              <ServicesDropdown isScrolled={isScrolled} />
+              <Link href="/contact" className={`font-semibold text-base xl:text-lg transition-all duration-300 ${
+                isScrolled 
+                  ? 'text-gray-700 hover:text-yellow-600' 
+                  : 'text-white hover:text-yellow-300 drop-shadow-sm'
+              }`}>
+                {translations.header.nav.contact}
+              </Link>
+            </nav>
 
-          {/* Language Switcher, Freight Quote Button & Mobile Menu */}
-          <div className="flex items-center space-x-4">
+            {/* Contact Info - Hidden on lg, shown on xl+ */}
+            <div className="hidden xl:flex items-center space-x-1 border-l border-yellow-400/30 pl-3">
+              <a href={`tel:${translations.header.contactInfo.phone}`} 
+                 className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
+                   isScrolled 
+                     ? 'text-gray-700 hover:bg-yellow-50 hover:text-yellow-700 border border-transparent hover:border-yellow-200' 
+                     : 'text-white hover:bg-white/10 hover:text-yellow-300 border border-white/20 hover:border-yellow-300/50'
+                 }`}>
+                <Phone size={16} className="text-yellow-500" />
+                <span className="text-sm font-medium">{translations.header.contactInfo.phone}</span>
+              </a>
+              <a href={`mailto:${translations.header.contactInfo.email}`} 
+                 className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
+                   isScrolled 
+                     ? 'text-gray-700 hover:bg-yellow-50 hover:text-yellow-700 border border-transparent hover:border-yellow-200' 
+                     : 'text-white hover:bg-white/10 hover:text-yellow-300 border border-white/20 hover:border-yellow-300/50'
+                 }`}>
+                <Mail size={16} className="text-yellow-500" />
+                <span className="text-sm font-medium">{translations.header.contactInfo.email}</span>
+              </a>
+            </div>
+
+            {/* Compact Contact Info - Only on lg screens */}
+            <div className="xl:hidden flex items-center space-x-1 border-l border-yellow-400/30 pl-3">
+              <a href={`tel:${translations.header.contactInfo.phone}`} 
+                 className={`flex items-center px-2 py-2 rounded-lg transition-all duration-300 ${
+                   isScrolled 
+                     ? 'text-gray-700 hover:bg-yellow-50 hover:text-yellow-700' 
+                     : 'text-white hover:bg-white/10 hover:text-yellow-300'
+                 }`}>
+                <Phone size={16} className="text-yellow-500" />
+              </a>
+              <a href={`mailto:${translations.header.contactInfo.email}`} 
+                 className={`flex items-center px-2 py-2 rounded-lg transition-all duration-300 ${
+                   isScrolled 
+                     ? 'text-gray-700 hover:bg-yellow-50 hover:text-yellow-700' 
+                     : 'text-white hover:bg-white/10 hover:text-yellow-300'
+                 }`}>
+                <Mail size={16} className="text-yellow-500" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right side items */}
+          <div className="flex items-center space-x-2 xl:space-x-4">
             {/* Language Switcher */}
             <div className="hidden lg:block">
-              <LanguageSwitcher />
+              <LanguageSwitcher isScrolled={isScrolled} />
             </div>
             
-            {/* Freight Quote Button */}
-            <button className="hidden lg:flex items-center space-x-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              <Quote size={18} />
-              <span>{translations.header.cta}</span>
-            </button>
+            {/* Freight Quote Button - Responsive sizing */}
+            <Link href="/contact" className="hidden lg:flex">
+              <button className="flex items-center space-x-1 xl:space-x-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-4 xl:px-6 py-2 xl:py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <Quote size={16} className="xl:hidden" />
+                <Quote size={18} className="hidden xl:block" />
+                <span className="text-sm xl:text-base">{translations.header.cta}</span>
+              </button>
+            </Link>
 
             {/* Mobile menu button */}
             <button
@@ -111,45 +156,55 @@ export default function Header() {
               : 'bg-white/10 backdrop-blur-xl border border-white/20'
           }`}>
             <nav className="flex flex-col space-y-4">
-              <Link href="/" className={`font-semibold text-lg transition-all duration-300 ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-yellow-600' 
-                  : 'text-white hover:text-yellow-300'
-              }`}>
-                Ana Sayfa
+              <Link href="/" className={`font-semibold text-lg transition-all duration-300 ${isScrolled ? 'text-gray-700' : 'text-white'} hover:text-yellow-500`}>
+                {translations.header.nav.home}
               </Link>
-              <Link href="/about" className={`font-semibold text-lg transition-all duration-300 ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-yellow-600' 
-                  : 'text-white hover:text-yellow-300'
-              }`}>
+              <Link href="/about" className={`font-semibold text-lg transition-all duration-300 ${isScrolled ? 'text-gray-700' : 'text-white'} hover:text-yellow-500`}>
                 {translations.header.nav.about}
               </Link>
-              <Link href="/services" className={`font-semibold text-lg transition-all duration-300 ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-yellow-600' 
-                  : 'text-white hover:text-yellow-300'
-              }`}>
+              <Link href="/services" className={`font-semibold text-lg transition-all duration-300 ${isScrolled ? 'text-gray-700' : 'text-white'} hover:text-yellow-500`}>
                 {translations.header.nav.services}
               </Link>
-              <Link href="/contact" className={`font-semibold text-lg transition-all duration-300 ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-yellow-600' 
-                  : 'text-white hover:text-yellow-300'
-              }`}>
+              <Link href="/contact" className={`font-semibold text-lg transition-all duration-300 ${isScrolled ? 'text-gray-700' : 'text-white'} hover:text-yellow-500`}>
                 {translations.header.nav.contact}
               </Link>
-              
-              {/* Mobile Language Switcher */}
-              <div className="pt-2 border-t border-gray-200 mt-4">
-                <LanguageSwitcher />
+            </nav>
+
+            {/* Mobile Contact Info */}
+            <div className={`mt-6 pt-6 border-t ${isScrolled ? 'border-gray-200' : 'border-white/20'}`}>
+              <div className="grid grid-cols-1 gap-3">
+                <a href={`tel:${translations.header.contactInfo.phone}`} 
+                   className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 ${
+                     isScrolled 
+                       ? 'bg-gray-50 text-gray-700 hover:bg-yellow-50' 
+                       : 'bg-white/5 text-white hover:bg-white/10'
+                   }`}>
+                  <Phone size={18} className="text-yellow-500" />
+                  <span className="font-medium">{translations.header.contactInfo.phone}</span>
+                </a>
+                <a href={`mailto:${translations.header.contactInfo.email}`} 
+                   className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-300 ${
+                     isScrolled 
+                       ? 'bg-gray-50 text-gray-700 hover:bg-yellow-50' 
+                       : 'bg-white/5 text-white hover:bg-white/10'
+                   }`}>
+                  <Mail size={18} className="text-yellow-500" />
+                  <span className="font-medium">{translations.header.contactInfo.email}</span>
+                </a>
               </div>
+            </div>
               
-              <button className="mt-4 flex items-center justify-center space-x-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
+            {/* Mobile Language Switcher */}
+            <div className={`pt-6 border-t ${isScrolled ? 'border-gray-200' : 'border-white/20'} mt-6`}>
+              <LanguageSwitcher isScrolled={isScrolled} />
+            </div>
+            
+            <Link href="/contact" className="block mt-6">
+              <button className="flex items-center justify-center space-x-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-xl font-bold transition-all duration-300 w-full">
                 <Quote size={18} />
                 <span>{translations.header.cta}</span>
               </button>
-            </nav>
+            </Link>
           </div>
         )}
       </div>

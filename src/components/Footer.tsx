@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
 import { useLanguage } from '@/lib/language-context'
 
@@ -12,27 +13,14 @@ export default function Footer() {
     { name: translations.footer.links.oceanFreight, href: '/services/ocean-freight' },
     { name: translations.footer.links.airFreight, href: '/services/air-freight' },
     { name: translations.footer.links.roadFreight, href: '/services/land-transport' },
-    { name: 'Gümrük İşlemleri', href: '/services/customs' },
-    { name: translations.footer.links.warehousing, href: '/services/warehousing' },
-    { name: 'Sigorta', href: '/services/insurance' }
+    { name: 'Yat Taşımacılığı', href: '/services/yacht-transportation' }
   ]
 
   const companyLinks = [
+    { name: 'Ana Sayfa', href: '/' },
     { name: translations.footer.links.about, href: '/about' },
-    { name: 'Kariyer', href: '/careers' },
-    { name: 'Haberler', href: '/news' },
-    { name: 'Belgelerimiz', href: '/certificates' },
-    { name: 'Sürdürülebilirlik', href: '/sustainability' },
-    { name: 'Partnerlerimiz', href: '/partners' }
-  ]
-
-  const supportLinks = [
-    { name: 'Kargo Takibi', href: '/tracking' },
-    { name: 'Fiyat Hesapla', href: '/quote' },
-    { name: 'Müşteri Desteği', href: '/support' },
-    { name: 'SSS', href: '/faq' },
-    { name: translations.footer.links.contact, href: '/contact' },
-    { name: 'Şikayetler', href: '/complaints' }
+    { name: translations.footer.links.services, href: '/services' },
+    { name: translations.footer.links.contact, href: '/contact' }
   ]
 
   const socialLinks = [
@@ -46,20 +34,22 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
             {/* Logo */}
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="relative">
-                <div className="w-10 h-10 bg-yellow-400 rounded transform rotate-45"></div>
-                <div className="absolute inset-0 w-10 h-10 bg-yellow-500 rounded transform rotate-12"></div>
+            <Link href="/" className="flex items-center mb-6">
+              <div className="h-12 w-auto relative">
+                <Image
+                  src="https://villaqrmenu.b-cdn.net/sealive/Sealive-logo.png"
+                  alt="SeaLive Logo"
+                  width={160}
+                  height={48}
+                  className="object-contain"
+                  priority
+                />
               </div>
-              <div>
-                <h3 className="text-2xl font-bold">GlobeFarer</h3>
-                <p className="text-xs text-yellow-300">Worldwide Shipping Solutions</p>
-              </div>
-            </div>
+            </Link>
 
             <p className="text-gray-300 mb-6 leading-relaxed">
               {translations.footer.description}
@@ -70,25 +60,21 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin size={18} className="text-yellow-400 mt-1 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
-                  <p>Merkez Ofis:</p>
-                  <p>Şişli Plaza, Kat 15</p>
-                  <p>34394 Şişli/İstanbul</p>
+                  <p>{translations.footer.address.title}</p>
+                  <p>{translations.footer.address.line1}</p>
+                  <p>{translations.footer.address.line2}</p>
+                  <p>{translations.footer.address.city}</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-yellow-400 flex-shrink-0" />
-                <span className="text-sm text-gray-300">+90 212 555 0123</span>
+                <span className="text-sm text-gray-300">+90 505 092 09 99</span>
               </div>
               
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-yellow-400 flex-shrink-0" />
-                <span className="text-sm text-gray-300">info@globefarer.com</span>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <Clock size={18} className="text-yellow-400 flex-shrink-0" />
-                <span className="text-sm text-gray-300">7/24 Müşteri Desteği</span>
+                <span className="text-sm text-gray-300">yusuf@sealive.net</span>
               </div>
             </div>
           </div>
@@ -120,38 +106,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Support */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">{translations.footer.contact}</h4>
-            <ul className="space-y-3">
-              {supportLinks.map((link, index) => (
-                <li key={index}>
-                  <Link href={link.href} className="text-gray-300 hover:text-yellow-400 transition-colors text-sm">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            
-            {/* Newsletter */}
-            <div className="mt-8">
-              <h5 className="font-semibold mb-4">Bülten Aboneliği</h5>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="E-posta adresiniz"
-                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-l-lg text-sm focus:outline-none focus:border-yellow-400"
-                />
-                <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-4 py-2 rounded-r-lg text-sm font-medium transition-colors">
-                  Abone Ol
-                </button>
-              </div>
-              <p className="text-xs text-gray-400 mt-2">
-                Sektör haberlerini ve özel tekliflerimizi kaçırmayın.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -166,7 +120,7 @@ export default function Footer() {
 
             {/* Social Links */}
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-gray-400 mr-2">Bizi takip edin:</span>
+              <span className="text-sm text-gray-400 mr-2">{translations.footer.followUs}</span>
               {socialLinks.map((social, index) => {
                 const IconComponent = social.icon
                 return (
@@ -187,13 +141,13 @@ export default function Footer() {
             {/* Legal Links */}
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <Link href="/privacy" className="hover:text-yellow-400 transition-colors">
-                Gizlilik Politikası
+                {translations.footer.legal.privacy}
               </Link>
               <Link href="/terms" className="hover:text-yellow-400 transition-colors">
-                Kullanım Şartları
+                {translations.footer.legal.terms}
               </Link>
               <Link href="/cookies" className="hover:text-yellow-400 transition-colors">
-                Çerez Politikası
+                {translations.footer.legal.cookies}
               </Link>
             </div>
           </div>
@@ -204,11 +158,9 @@ export default function Footer() {
       <div className="bg-gray-950 py-4">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center space-x-8 opacity-60">
-            <div className="text-xs text-gray-500">ISO 9001:2015 Sertifikalı</div>
-            <div className="text-xs text-gray-500">IATA Üyesi</div>
-            <div className="text-xs text-gray-500">FIATA Sertifikalı</div>
-            <div className="text-xs text-gray-500">C-TPAT Onaylı</div>
-            <div className="text-xs text-gray-500">AEO Sertifikalı</div>
+            {translations.footer.trustBadges.map((badge, index) => (
+              <div key={index} className="text-xs text-gray-500">{badge}</div>
+            ))}
           </div>
         </div>
       </div>

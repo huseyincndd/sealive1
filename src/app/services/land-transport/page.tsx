@@ -1,27 +1,118 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Truck, Clock, Shield, Globe, CheckCircle, ArrowRight, PackageCheck } from 'lucide-react'
+import { useLanguage } from '@/lib/language-context'
+import Link from 'next/link'
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Karayolu Nakliyesi ve TIR Taşımacılığı",
+  "description": "Türkiye ve Avrupa genelinde komple ve parsiyel karayolu nakliyesi, TIR taşımacılığı ve özel araç çözümleri. 50+ ülkeye güvenilir kara lojistiği hizmetleri.",
+  "provider": {
+    "@type": "Organization",
+    "name": "SeaLive Lojistik & Taşımacılık",
+    "url": "https://www.sealive.net"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Turkey"
+    },
+    {
+      "@type": "Place",
+      "name": "Europe"
+    },
+    {
+      "@type": "Place",
+      "name": "Central Asia"
+    }
+  ],
+  "serviceType": "Land Transport",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Kara Taşımacılığı Hizmetleri",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Komple Yük (FTL) Taşımacılığı",
+          "description": "Tam araç kapasitesi ile ekonomik ve hızlı karayolu taşımacılığı"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Parsiyel Yük (LTL) Taşımacılığı",
+          "description": "Konsolide yükler için uygun maliyetli karayolu lojistiği"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "TIR ve Uluslararası Taşımacılık",
+          "description": "TIR karnesi ile gümrük avantajlı uluslararası kara nakliyesi"
+        }
+      }
+    ]
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Rota Kapsamı",
+      "value": "50+ Ülke"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Filo Büyüklüğü",
+      "value": "500+ Araç"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Maksimum Kapasite",
+      "value": "40 ton'a kadar"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "TIR Sertifikası",
+      "value": "%100 Sertifikalı"
+    }
+  ]
+};
 
 export default function LandTransportPage() {
+  const { translations } = useLanguage()
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   const landServices = [
     {
-      title: "Full Truck Load (FTL)",
-      description: "Dedicated truck services for large shipments requiring exclusive use of the entire trailer capacity.",
-      features: ["Dedicated Vehicle", "Direct Route", "Faster Transit", "Secure Transport"],
+      title: translations.landTransportPage.servicesSection.services[0].title,
+      description: translations.landTransportPage.servicesSection.services[0].description,
+      features: translations.landTransportPage.servicesSection.services[0].features,
       icon: Truck,
       image: "https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Less Than Truck Load (LTL)",
-      description: "Cost-effective consolidation services for smaller shipments sharing truck space with other cargo.",
-      features: ["Cost Effective", "Regular Schedules", "Flexible Volumes", "Terminal Networks"],
+      title: translations.landTransportPage.servicesSection.services[1].title,
+      description: translations.landTransportPage.servicesSection.services[1].description,
+      features: translations.landTransportPage.servicesSection.services[1].features,
       icon: PackageCheck,
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Cross-Border Transport",
-      description: "International road transport with TIR and customs clearance services across European and Asian corridors.",
-      features: ["TIR Operations", "Customs Clearance", "Border Expertise", "Documentation Support"],
+      title: translations.landTransportPage.servicesSection.services[2].title,
+      description: translations.landTransportPage.servicesSection.services[2].description,
+      features: translations.landTransportPage.servicesSection.services[2].features,
       icon: Globe,
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
@@ -44,29 +135,29 @@ export default function LandTransportPage() {
   const advantages = [
     {
       icon: Globe,
-      title: "Door-to-Door Service",
-      description: "Complete logistics solutions from pickup to final delivery with single point of contact.",
+      title: translations.landTransportPage.advantagesSection.advantages[0].title,
+      description: translations.landTransportPage.advantagesSection.advantages[0].description,
       color: "bg-green-50 border-green-200",
       iconColor: "text-green-600"
     },
     {
       icon: Shield,
-      title: "Cargo Security",
-      description: "GPS tracking, secure loading, and comprehensive insurance for complete peace of mind.",
+      title: translations.landTransportPage.advantagesSection.advantages[1].title,
+      description: translations.landTransportPage.advantagesSection.advantages[1].description,
       color: "bg-blue-50 border-blue-200",
       iconColor: "text-blue-600"
     },
     {
       icon: Clock,
-      title: "Flexible Scheduling",
-      description: "Adaptable pickup and delivery times to meet your specific operational requirements.",
+      title: translations.landTransportPage.advantagesSection.advantages[2].title,
+      description: translations.landTransportPage.advantagesSection.advantages[2].description,
       color: "bg-orange-50 border-orange-200",
       iconColor: "text-orange-600"
     },
     {
       icon: Globe,
-      title: "Route Optimization",
-      description: "Advanced route planning and traffic management for efficient and timely deliveries.",
+      title: translations.landTransportPage.advantagesSection.advantages[3].title,
+      description: translations.landTransportPage.advantagesSection.advantages[3].description,
       color: "bg-purple-50 border-purple-200",
       iconColor: "text-purple-600"
     }
@@ -105,44 +196,56 @@ export default function LandTransportPage() {
 
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Header />
       
       {/* Hero Section */}
       <section className="pt-32 pb-24 bg-gradient-to-br from-green-900 via-emerald-800 to-teal-700 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div 
-            className="w-full h-full bg-cover bg-center opacity-25"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80')" }}
+          <img 
+            src="https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            alt="Karayolu kamyon taşımacılığı - kara nakliyesi ve TIR hizmetleri"
+            className="w-full h-full object-cover object-center opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 via-emerald-800/70 to-teal-700/80"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center bg-yellow-400/20 backdrop-blur-sm border border-yellow-400/30 text-yellow-400 px-6 py-3 rounded-full text-sm font-medium mb-8">
+            <div className={`inline-flex items-center bg-yellow-400/20 backdrop-blur-sm border border-yellow-400/30 text-yellow-400 px-6 py-3 rounded-full text-sm font-medium mb-8 transition-all duration-700 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
+            }`}>
               <Truck size={16} className="mr-2" />
-              Professional Land Transport
+              {translations.landTransportPage.hero.badge}
             </div>
             
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              Reliable Road
+            <h1 className={`text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight transition-all duration-700 delay-300 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}>
+              {translations.landTransportPage.hero.title}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">
-                Transport Solutions
+                {translations.landTransportPage.hero.titleHighlight}
               </span>
             </h1>
             
-            <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12">
-              Door-to-door land transport services across Europe, Asia, and Middle East corridors. 
-              TIR-certified operations with real-time tracking and customs clearance support.
+            <p className={`text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12 transition-all duration-700 delay-500 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}>
+              {translations.landTransportPage.hero.description}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group">
-                Get Transport Quote
+            <div className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-700 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}>
+              <Link href="/contact" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group transform hover:scale-105">
+                {translations.landTransportPage.hero.getQuote}
                 <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
               <button className="border border-white/30 hover:border-white/50 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-                Track Vehicle
+                {translations.landTransportPage.hero.trackVehicle}
               </button>
             </div>
           </div>
@@ -152,9 +255,11 @@ export default function LandTransportPage() {
       {/* Specifications Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {specifications.map((spec, index) => (
-              <div key={index} className="text-center">
+          <div className={`grid grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            {translations.landTransportPage.specifications.map((spec, index) => (
+              <div key={index} className="text-center" style={{ transitionDelay: `${300 + index * 100}ms` }}>
                 <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{spec.value}</div>
                 <div className="text-gray-600 font-medium">{spec.label}</div>
               </div>
@@ -166,12 +271,14 @@ export default function LandTransportPage() {
       {/* Services Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Land Transport Services
+              {translations.landTransportPage.servicesSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive road transport solutions for all cargo types and destinations.
+              {translations.landTransportPage.servicesSection.description}
             </p>
           </div>
 
@@ -181,7 +288,9 @@ export default function LandTransportPage() {
               const isEven = index % 2 === 0
               
               return (
-                <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''} transition-all duration-700 transform ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                }`} style={{ transitionDelay: `${500 + index * 200}ms` }}>
                   <div className={`${!isEven ? 'lg:col-start-2' : ''} space-y-6`}>
                     <div className="flex items-start space-x-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-green-400/20 to-emerald-400/20 border border-green-400/30 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -203,11 +312,6 @@ export default function LandTransportPage() {
                         </div>
                       ))}
                     </div>
-                    
-                    <button className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center group">
-                      Learn More
-                      <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </button>
                   </div>
                   
                   <div className={`${!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
@@ -230,41 +334,53 @@ export default function LandTransportPage() {
       {/* Routes Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Major Transport Routes
+              {translations.landTransportPage.routesSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Regular services on key international corridors with reliable transit times.
+              {translations.landTransportPage.routesSection.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {routes.map((route, index) => (
-              <div key={index} className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-200/50">
+              <div key={index} className={`bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-all duration-300 transform ${
+                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              }`} style={{ transitionDelay: `${700 + index * 100}ms` }}>
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                      <Truck size={20} className="text-white" />
+                    <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">
+                      {route.from.charAt(0)}
                     </div>
-                    <div>
-                      <div className="text-lg font-bold text-gray-900">{route.from} → {route.to}</div>
+                    <div className="text-gray-400">
+                      <ArrowRight size={20} />
+                    </div>
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                      {route.to.charAt(0)}
                     </div>
                   </div>
+                  <div className="text-green-600 font-bold text-lg">{route.frequency}</div>
                 </div>
                 
-                <div className="grid grid-cols-3 gap-4">
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">Transit Time</div>
-                    <div className="text-lg font-semibold text-gray-900">{route.time}</div>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">From:</span>
+                    <span className="font-semibold">{route.from}</span>
                   </div>
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">Distance</div>
-                    <div className="text-lg font-semibold text-gray-900">{route.distance}</div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">To:</span>
+                    <span className="font-semibold">{route.to}</span>
                   </div>
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">Frequency</div>
-                    <div className="text-lg font-semibold text-gray-900">{route.frequency}</div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Transit Time:</span>
+                    <span className="font-semibold text-green-600">{route.time}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Distance:</span>
+                    <span className="font-semibold">{route.distance}</span>
                   </div>
                 </div>
               </div>
@@ -276,20 +392,25 @@ export default function LandTransportPage() {
       {/* Advantages Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose Our Land Transport
+              {translations.landTransportPage.advantagesSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional road transport with advanced tracking, security, and customer service.
+              {translations.landTransportPage.advantagesSection.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {advantages.map((advantage, index) => {
               const IconComponent = advantage.icon
+              
               return (
-                <div key={index} className={`${advantage.color} rounded-2xl p-8 border-2 hover:shadow-xl transition-all duration-300 group cursor-pointer`}>
+                <div key={index} className={`${advantage.color} rounded-2xl p-8 border-2 hover:shadow-xl transition-all duration-300 group cursor-pointer transform ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                }`} style={{ transitionDelay: `${800 + index * 100}ms` }}>
                   <div className="text-center">
                     <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                       <IconComponent size={24} className={advantage.iconColor} />
@@ -307,87 +428,49 @@ export default function LandTransportPage() {
       {/* Vehicle Types Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Vehicle Fleet
+              {translations.landTransportPage.vehicleTypesSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Modern fleet of specialized vehicles to handle all types of cargo requirements.
+              {translations.landTransportPage.vehicleTypesSection.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {vehicleTypes.map((vehicle, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
-                <div className="flex items-start justify-between mb-6">
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{vehicle.type}</h3>
-                    <p className="text-gray-600 leading-relaxed">{vehicle.description}</p>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <div className="text-sm font-medium text-gray-700 mb-1">Capacity</div>
-                    <div className="text-lg font-semibold text-gray-900">{vehicle.capacity}</div>
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-gray-700 mb-1">Dimensions</div>
-                    <div className="text-lg font-semibold text-gray-900">{vehicle.dimensions}</div>
+              <div key={index} className={`bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-all duration-300 transform ${
+                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              }`} style={{ transitionDelay: `${900 + index * 100}ms` }}>
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{vehicle.type}</h3>
+                  <p className="text-gray-600 mb-4">{vehicle.description}</p>
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <span className="text-sm text-gray-500 font-medium">Capacity:</span>
+                      <div className="text-green-600 font-semibold">{vehicle.capacity}</div>
+                    </div>
+                    <div>
+                      <span className="text-sm text-gray-500 font-medium">Dimensions:</span>
+                      <div className="text-green-600 font-semibold">{vehicle.dimensions}</div>
+                    </div>
                   </div>
                 </div>
                 
                 <div>
-                  <div className="text-sm font-medium text-gray-700 mb-3">Suitable For:</div>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-3 uppercase tracking-wide">Suitable for:</h4>
                   <div className="grid grid-cols-2 gap-2">
                     {vehicle.suitable.map((item, idx) => (
                       <div key={idx} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span className="text-gray-600 text-sm">{item}</span>
+                        <CheckCircle size={14} className="text-green-500" />
+                        <span className="text-sm text-gray-700">{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Transport Process
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Efficient land transport process ensuring secure and timely delivery.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            {[
-              { step: "01", title: "Route Planning", description: "Optimal route selection and scheduling", icon: "🗺️" },
-              { step: "02", title: "Pickup", description: "Professional cargo collection and loading", icon: "📦" },
-              { step: "03", title: "Documentation", description: "Customs and border documentation", icon: "📋" },
-              { step: "04", title: "Transit", description: "Secure transport with GPS tracking", icon: "🚛" },
-              { step: "05", title: "Delivery", description: "Final delivery and confirmation", icon: "✅" }
-            ].map((process, index) => (
-              <div key={index} className="text-center group">
-                <div className="relative mb-8">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-emerald-600 text-white rounded-full flex items-center justify-center mx-auto font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    {process.step}
-                  </div>
-                  <div className="absolute -top-2 -right-2 text-2xl">
-                    {process.icon}
-                  </div>
-                  {index < 4 && (
-                    <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-green-600/50 to-transparent"></div>
-                  )}
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{process.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{process.description}</p>
               </div>
             ))}
           </div>
@@ -401,31 +484,32 @@ export default function LandTransportPage() {
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className={`max-w-4xl mx-auto text-center transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
-              Ready for Land Transport?
+              {translations.landTransportPage.cta.title}
             </h2>
             <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-              Get competitive land transport rates with door-to-door service. 
-              Our specialists provide custom solutions for your specific requirements.
+              {translations.landTransportPage.cta.description}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center group">
-                Get Transport Quote
+              <Link href="/contact" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center group transform hover:scale-105">
+                {translations.landTransportPage.cta.getQuote}
                 <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
               <button className="border-2 border-white/30 hover:border-white/50 hover:bg-white/10 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300">
-                📞 +90 (212) 555-0123
+                {translations.landTransportPage.cta.trackVehicle}
               </button>
             </div>
             
             <div className="mt-12 pt-8 border-t border-white/20">
-              <p className="text-gray-400 mb-4">Trusted for cross-border transport across continents</p>
+              <p className="text-gray-400 mb-4">Sealive Lojistik - {translations.landTransportPage.cta.phone}</p>
               <div className="flex justify-center items-center space-x-8 text-white/60">
-                <span className="text-sm">🚛 TIR Certified</span>
-                <span className="text-sm">📍 GPS Tracking</span>
-                <span className="text-sm">🛡️ Fully Insured</span>
+                {translations.landTransportPage.cta.features.map((feature, index) => (
+                  <span key={index} className="text-sm">{feature}</span>
+                ))}
               </div>
             </div>
           </div>

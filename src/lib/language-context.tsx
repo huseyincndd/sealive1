@@ -14,6 +14,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('tr')
+  const [translations, setTranslations] = useState<TranslationStructure>(getTranslation('tr'))
 
   useEffect(() => {
     // Get locale from localStorage or browser language on mount
@@ -23,13 +24,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLocaleState(initialLocale)
   }, [])
 
+  useEffect(() => {
+    // Update translations when locale changes
+    setTranslations(getTranslation(locale))
+    // Update the lang attribute of the <html> tag
+    document.documentElement.lang = locale
+  }, [locale])
+
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale)
     localStorage.setItem('preferred-language', newLocale)
   }
 
-  const translations = getTranslation(locale)
-  
   const t = (path: string, fallback: string = '') => {
     let result: unknown = translations
     const keys = path.split('.')

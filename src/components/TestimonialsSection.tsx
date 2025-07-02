@@ -11,53 +11,38 @@ export default function TestimonialsSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const { translations } = useLanguage()
 
-  const testimonials = [
+  const staticData = [
     {
-      name: 'Mehmet Yılmaz',
-      company: 'Yılmaz Import & Export Ltd.',
-      position: 'General Manager',
       rating: 5,
-      text: 'Modern Sea Live ile freight forwarding partnership\'imiz mükemmel. FCL ve LCL shipment\'larımızda customs clearance\'dan delivery\'ye kadar her aşamada professional service.',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
       color: 'from-blue-400 to-cyan-600'
     },
     {
-      name: 'Ayşe Demir',
-      company: 'Demir Textile Trading A.Ş.',
-      position: 'Logistics Director',
       rating: 5,
-      text: 'European market expansion sürecimizde Modern Sea Live\'in freight forwarding expertise çok değerli oldu. Bill of Lading documentation ve port handling excellent.',
       avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b191?w=100&h=100&fit=crop&crop=face',
       color: 'from-purple-400 to-pink-600'
     },
     {
-      name: 'Ali Kaya',
-      company: 'Kaya Heavy Machinery Export',
-      position: 'Export Specialist',
       rating: 5,
-      text: 'Project cargo ve heavy lift operations konusunda Modern Sea Live\'in freight forwarding experience outstanding. Multimodal transport solutions perfect.',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
       color: 'from-green-400 to-emerald-600'
     },
     {
-      name: 'Fatma Özkan',
-      company: 'Özkan Global Trading',
-      position: 'Operations Manager',
       rating: 5,
-      text: 'Air freight ve express shipment ihtiyaçlarımızda Modern Sea Live her zaman reliable partner. MAWB processing ve customs clearance expertise excellent.',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
       color: 'from-orange-400 to-red-600'
     },
     {
-      name: 'Ahmet Şen',
-      company: 'Şen Logistics Solutions',
-      position: 'Freight Manager',
       rating: 5,
-      text: 'Warehouse management ve distribution center operations konusunda Modern Sea Live\'in freight forwarding capabilities outstanding. Supply chain efficiency perfect.',
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
       color: 'from-teal-400 to-blue-600'
     }
   ]
+
+  const testimonials = translations.testimonials.cards.map((card, index) => ({
+    ...card,
+    ...staticData[index]
+  }))
 
   useEffect(() => {
     const observer = new IntersectionObserver(

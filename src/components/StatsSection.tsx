@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { useLanguage } from '@/lib/language-context'
+import Link from 'next/link'
 
 export default function StatsSection() {
   const [inView, setInView] = useState(false)
@@ -17,7 +18,7 @@ export default function StatsSection() {
       suffix: '+',
       label: translations.stats.stats.years,
       backgroundImage: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      description: 'Years of Excellence'
+      description: translations.stats.stats.descriptions[0]
     },
     {
       id: 'partners',
@@ -25,7 +26,7 @@ export default function StatsSection() {
       suffix: '+',
       label: translations.stats.stats.shippingLines,
       backgroundImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      description: 'Global Partners'
+      description: translations.stats.stats.descriptions[1]
     },
     {
       id: 'volume',
@@ -33,7 +34,7 @@ export default function StatsSection() {
       suffix: 'K+',
       label: translations.stats.stats.teu,
       backgroundImage: 'https://images.unsplash.com/photo-1494412651409-8963ce7935a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      description: 'TEU Processed'
+      description: translations.stats.stats.descriptions[2]
     },
     {
       id: 'performance',
@@ -41,7 +42,7 @@ export default function StatsSection() {
       suffix: '%',
       label: translations.stats.stats.onTime,
       backgroundImage: 'https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-      description: 'Success Rate'
+      description: translations.stats.stats.descriptions[3]
     }
   ]
 
@@ -169,7 +170,7 @@ export default function StatsSection() {
                 <div className="absolute inset-0">
                   <img
                     src={stat.backgroundImage}
-                    alt={`${stat.label} background`}
+                    alt={`${stat.label} - SeaLive lojistik istatistik görseli`}
                     className="w-full h-full object-cover opacity-10 group-hover:opacity-15 transition-opacity duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/95 to-white/90"></div>
@@ -222,23 +223,25 @@ export default function StatsSection() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+              <Link href="/contact" className="group bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 cursor-pointer">
                 <span className="flex items-center justify-center gap-2">
                   {translations.stats.cta.requestQuote}
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </span>
-              </button>
+              </Link>
               
-              <button className="group bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 hover:border-gray-300 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-sm hover:shadow-md">
-                <span className="flex items-center justify-center gap-2">
-                  {translations.stats.cta.viewServices}
-                  <svg className="w-4 h-4 group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </span>
-              </button>
+              <Link href="/services">
+                <button className="group bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 hover:border-gray-300 px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer transform hover:scale-105">
+                  <span className="flex items-center justify-center gap-2">
+                    {translations.stats.cta.viewServices}
+                    <svg className="w-4 h-4 group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </span>
+                </button>
+              </Link>
             </div>
           </div>
         </div>

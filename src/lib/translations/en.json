@@ -1,13 +1,18 @@
 {
   "header": {
-    "logo": "Modern Sea Live",
+    "logo": "Sealive Logistics",
     "tagline": "Freight Forwarding",
     "nav": {
-      "about": "About",
+      "home": "Home",
+      "about": "About Us",
       "services": "Services",
       "contact": "Contact"
     },
-    "cta": "Freight Quote"
+    "cta": "Freight Quote",
+    "contactInfo": {
+      "phone": "+90 505 092 09 99",
+      "email": "yusuf@sealive.net"
+    }
   },
   "hero": {
     "slide1": {
@@ -28,11 +33,37 @@
     "getQuote": "Get Quote",
     "learnMore": "Learn More"
   },
+  "heroSlider": {
+    "slides": [
+      {
+        "title": "Worldwide shipping and professional solutions",
+        "description": "No matter the location we got you covered with our global shipping!"
+      },
+      {
+        "title": "Land transport and logistics excellence",
+        "description": "Door-to-door delivery solutions across all continents with reliable service!"
+      },
+      {
+        "title": "Air cargo and express delivery",
+        "description": "Fast and secure air freight services connecting global markets efficiently!"
+      },
+      {
+        "title": "Luxury yacht transportation worldwide",
+        "description": "Specialized yacht shipping services with premium care and global coverage!"
+      }
+    ],
+    "labels": [
+      "Ocean Freight",
+      "Land Transport",
+      "Air Freight",
+      "Yacht Transport"
+    ]
+  },
   "about": {
     "badge": "Freight Forwarding Excellence",
     "title": "Professional Logistics",
     "titleHighlight": "Solutions",
-    "description": "As Modern Sea Live, we are leaders in the global freight forwarding sector with FCL and LCL container shipping, multimodal transport solutions, and comprehensive customs clearance services.",
+    "description": "As SeaLive, we are leaders in the global freight forwarding sector with FCL and LCL container shipping, multimodal transport solutions, and comprehensive customs clearance services.",
     "feature1": {
       "title": "Global Network",
       "description": "We provide seamless freight forwarding operations with our worldwide network of shipping lines and logistics partners."
@@ -67,6 +98,10 @@
       "title": "Road Freight",
       "description": "Cross-border transport, TIR carnet and Europe-Asia overland transportation."
     },
+    "yachtTransport": {
+      "title": "Luxury Yacht Transportation",
+      "description": "Specialized yacht shipping with white-glove service, global coverage, and complete insurance protection for luxury vessels."
+    },
     "warehousing": {
       "title": "Warehousing",
       "description": "Bonded warehouse, cargo consolidation and distribution center management."
@@ -92,7 +127,13 @@
       "years": "Years in Freight",
       "shippingLines": "Shipping Lines",
       "teu": "TEU Handled",
-      "onTime": "On-Time Delivery"
+      "onTime": "On-Time Delivery",
+      "descriptions": [
+        "Years of Excellence",
+        "Global Partners",
+        "TEU Processed",
+        "Success Rate"
+      ]
     },
     "cta": {
       "title": "Partner with Industry Leaders",
@@ -102,23 +143,79 @@
     }
   },
   "testimonials": {
-    "title": "Client Success Stories",
-    "description": "Trusted by leading companies worldwide for freight forwarding excellence"
+    "title": "What Our Clients Say",
+    "description": "Discover why companies trust Sealive Logistics for their global freight forwarding needs.",
+    "cards": [
+      {
+        "name": "Johnathan Smith",
+        "company": "Global Imports Inc.",
+        "position": "Logistics Manager",
+        "text": "Sealive Logistics transformed our supply chain. Their professionalism and efficiency are unmatched. Highly recommended for any complex shipping needs."
+      },
+      {
+        "name": "Samantha Lee",
+        "company": "Innovate Tech",
+        "position": "Operations Director",
+        "text": "The team at Sealive Logistics is fantastic. They handle all our air freight with incredible attention to detail. True partners in our success."
+      },
+      {
+        "name": "Carlos Rodriguez",
+        "company": "Sun-Kissed Agro",
+        "position": "Export Coordinator",
+        "text": "We ship perishable goods, and the reliability of Sealive Logistics is crucial for us. Their on-time delivery record is impeccable."
+      },
+      {
+        "name": "Chen Wang",
+        "company": "East-West Traders",
+        "position": "Founder & CEO",
+        "text": "For cross-continental freight, there's no one I trust more than Sealive Logistics. Their expertise in customs and documentation is a game-changer."
+      },
+      {
+        "name": "Fatima Al-Jamil",
+        "company": "Luxury Lifestyle Goods",
+        "position": "Procurement Head",
+        "text": "The customer service at Sealive Logistics is top-notch. They are always responsive, proactive, and provide clear updates on our shipments."
+      }
+    ]
   },
   "cta": {
     "title": "Start Your Freight Journey Today",
     "description": "Ready to optimize your global shipping operations? Contact our freight forwarding experts for customized logistics solutions.",
     "getQuote": "Get Freight Quote",
-    "phone": "+90 212 555 0123",
-    "email": "info@modernsealive.com",
-    "address": "Istanbul, Turkey"
+    "contactExpert": "Contact Expert",
+    "badge": "Ready to Ship?",
+    "infoCards": {
+      "quotes": "Freight Quotes",
+      "support": "24/7 Support",
+      "office": "Main Office"
+    },
+    "bottomText": "Freight forwarding expertise with 15+ years experience.",
+    "bottomTextHighlight": " Bill of Lading to final delivery - we handle it all."
   },
   "footer": {
+    "logo": {
+      "name": "GlobeFarer",
+      "tagline": "Worldwide Shipping Solutions"
+    },
     "description": "Professional freight forwarding and logistics solutions provider specializing in FCL, LCL, air cargo, and multimodal transportation services.",
     "quickLinks": "Quick Links",
     "services": "Services",
-    "contact": "Contact Info",
+    "support": "Support",
+    "contactInfo": "Contact Info",
+    "address": {
+      "title": "Head Office:",
+      "line1": "Kuzeykent Mahallesi, 31168 Sokak, Ritim Ofis",
+      "line2": "B Blok, Kat 5, Daire No: 19",
+      "city": "Mersin, Turkey"
+    },
+    "newsletter": {
+      "title": "Newsletter Subscription",
+      "placeholder": "Your email address",
+      "subscribe": "Subscribe",
+      "description": "Don't miss our industry news and special offers."
+    },
     "rights": "All rights reserved.",
+    "followUs": "Follow us:",
     "links": {
       "about": "About Us",
       "services": "Services",
@@ -126,7 +223,870 @@
       "oceanFreight": "Ocean Freight",
       "airFreight": "Air Freight",
       "roadFreight": "Road Freight",
-      "warehousing": "Warehousing"
+      "yachtTransport": "Yacht Transport"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "cookies": "Cookie Policy"
+    },
+    "trustBadges": [
+      "ISO 9001:2015 Certified",
+      "IATA Member",
+      "FIATA Certified",
+      "C-TPAT Approved",
+      "AEO Certified"
+    ]
+  },
+  "yachtTransport": {
+    "badge": "Specialized Marine Transport",
+    "title": "Professional Yacht Transportation",
+    "description": "Secure, insured, and specialized transport services for luxury vessels worldwide.",
+    "feature1": {
+      "title": "Full Insurance",
+      "description": "Comprehensive coverage up to $50M vessel value"
+    },
+    "feature2": {
+      "title": "Global Network",
+      "description": "Specialized marine terminals in 50+ countries"
+    },
+    "feature3": {
+      "title": "Expert Handling",
+      "description": "Dedicated yacht transport specialists"
+    },
+    "cta": "Request Yacht Quote"
+  },
+  "contact": {
+    "hero": {
+      "title": "Get in Touch",
+      "subtitle": "Connect with SeaLive",
+      "description": "Contact us for your logistics needs. Our expert team is here to provide you with the best solutions.",
+      "badge": "Professional Logistics Services",
+      "getQuote": "Get Quote",
+      "callNow": "Call Now"
+    },
+    "section": {
+      "title": "Contact Our Expert Team",
+      "subtitle": "Get in touch with our logistics professionals for customized solutions that meet your business needs."
+    },
+    "form": {
+      "title": "Send a Message",
+      "subtitle": "Share your questions and requests with us",
+      "fields": {
+        "name": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "company": "Company Name",
+        "service": "Service Type",
+        "message": "Your Message"
+      },
+      "placeholders": {
+        "name": "Enter your full name",
+        "email": "Enter your email address",
+        "phone": "Enter your phone number",
+        "company": "Enter your company name (optional)",
+        "message": "Write your message or request in detail",
+        "service": "Select a service"
+      },
+      "services": {
+        "ocean": "Ocean Freight",
+        "air": "Air Freight",
+        "land": "Land Transport",
+        "yacht": "Yacht Transportation",
+        "other": "Other"
+      },
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully!",
+      "error": "An error occurred. Please try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "subtitle": "Reach Out to Us",
+      "phone": "Phone",
+      "email": "Email",
+      "address": {
+        "title": "Address",
+        "line1": "SeaLive Logistics",
+        "line2": "Kuzeykent Mahallesi, 31168 Sokak, Ritim Ofis",
+        "line3": "B Blok, Kat 5, Daire No: 19",
+        "line4": "Turkey"
+      },
+      "hours": {
+        "title": "Business Hours",
+        "weekdays": "Monday - Friday: 09:00 - 18:00",
+        "saturday": "Saturday: 09:00 - 14:00",
+        "sunday": "Sunday: Closed"
+      }
+    },
+    "whyChoose": {
+      "title": "Why Choose Us",
+      "experience": "15+ Years Experience",
+      "network": "Global Network Coverage",
+      "support": "24/7 Customer Support",
+      "pricing": "Competitive Pricing"
+    },
+    "emergency": {
+      "title": "Emergency Contact",
+      "subtitle": "For urgent shipments and emergency support",
+      "button": "Emergency Line"
+    },
+    "map": {
+      "title": "Our Location"
+    }
+  },
+  "aboutPage": {
+    "hero": {
+      "badge": "About Sealive",
+      "title": "Leading Yacht Transportation Specialists",
+      "description": "With over 15 years of experience in marine logistics, we specialize in secure, professional yacht transportation services for luxury vessels worldwide."
+    },
+    "story": {
+      "title": "Our Story",
+      "paragraph1": "Founded in 2009, SeaLive began as a specialized freight forwarding company with a vision to revolutionize yacht transportation services. What started as a small operation has grown into a globally recognized leader in marine logistics.",
+      "paragraph2": "Our expertise in luxury vessel transportation has made us the preferred choice for yacht owners, brokers, and manufacturers worldwide. We understand that each yacht represents significant investment and emotional value to its owner.",
+      "paragraph3": "Today, we operate through a network of specialized marine terminals across 50+ countries, ensuring your vessel receives the same level of professional care regardless of destination."
+    },
+    "values": {
+      "title": "Our Core Values",
+      "description": "These principles guide every aspect of our yacht transportation services, ensuring excellence in every shipment.",
+      "security": {
+        "title": "Security & Insurance",
+        "description": "Full coverage protection up to $50M with comprehensive marine insurance policies."
+      },
+      "network": {
+        "title": "Global Network",
+        "description": "Specialized marine terminals and logistics partners across 50+ countries worldwide."
+      },
+      "handling": {
+        "title": "Expert Handling",
+        "description": "Dedicated yacht transport specialists with decades of marine logistics experience."
+      },
+      "team": {
+        "title": "Professional Team",
+        "description": "Certified marine transport professionals ensuring white-glove service standards."
+      }
+    },
+    "mission": {
+      "title": "Our Mission",
+      "quote": "To provide the world's most reliable and professional yacht transportation services, ensuring every luxury vessel reaches its destination safely, securely, and on time.",
+      "description": "We combine decades of marine logistics expertise with cutting-edge technology and an unwavering commitment to excellence, making us the trusted choice for yacht transportation worldwide."
+    },
+    "cta": {
+      "title": "Ready to Transport Your Yacht?",
+      "description": "Contact our team of yacht transportation specialists for a personalized consultation and detailed quote for your vessel.",
+      "getQuote": "Get Quote",
+      "contactUs": "Contact Us"
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "badge": "Professional Freight Services",
+      "title": "Global Logistics",
+      "titleHighlight": "Excellence",
+      "description": "Comprehensive freight forwarding solutions with specialized expertise in yacht transportation, ocean freight, air cargo, and land transport services across six continents.",
+      "getQuote": "Get Free Quote",
+      "viewPortfolio": "View Portfolio"
+    },
+    "mainSection": {
+      "badge": "Core Services",
+      "title": "Specialized Solutions",
+      "description": "Professional freight forwarding solutions tailored to your specific requirements, with industry-leading expertise and global reach."
+    },
+    "mainServices": [
+      {
+        "title": "Yacht Transport",
+        "subtitle": "Special Marine Transport",
+        "description": "Secure, insured, and specialized transport services for luxury vessels worldwide.",
+        "features": [
+          "Full insurance coverage",
+          "Global coverage",
+          "Specialized equipment & crew",
+          "24/7 monitoring system"
+        ],
+        "premiumBadge": "Premium Service",
+        "learnMore": "Learn More",
+        "pricing": {
+          "startingFrom": "Starting from",
+          "contactQuote": "Contact for quote"
+        }
+      },
+      {
+        "title": "Ocean Freight",
+        "subtitle": "Container Shipping",
+        "description": "FCL and LCL container shipping, bill of lading issuance, and port handling services.",
+        "features": [
+          "FCL & LCL services",
+          "Customs support",
+          "Port operations",
+          "Tracking system"
+        ],
+        "learnMore": "Learn More",
+        "pricing": {
+          "startingFrom": "Starting from",
+          "contactQuote": "Contact for quote"
+        }
+      },
+      {
+        "title": "Air Freight",
+        "subtitle": "Air Cargo Services",
+        "description": "Express air cargo, master airway bill (MAWB) issuance, and fast customs clearance solutions.",
+        "features": [
+          "Express service",
+          "Special cargo services",
+          "Door-to-door delivery",
+          "24/7 support"
+        ],
+        "learnMore": "Learn More",
+        "pricing": {
+          "startingFrom": "Starting from",
+          "contactQuote": "Contact for quote"
+        }
+      },
+      {
+        "title": "Road Freight",
+        "subtitle": "Road Logistics",
+        "description": "Cross-border transportation, TIR carnet, and Europe-Asia road freight.",
+        "features": [
+          "FTL & LTL services",
+          "Cross-border transport",
+          "Special equipment fleet",
+          "GPS tracking system"
+        ],
+        "learnMore": "Learn More",
+        "pricing": {
+          "startingFrom": "Starting from",
+          "contactQuote": "Contact for quote"
+        }
+      }
+    ],
+    "additionalServices": {
+      "title": "Support Services",
+      "description": "Comprehensive support services to complement your freight forwarding needs and ensure seamless operations.",
+      "services": [
+        {
+          "title": "Marine Insurance",
+          "description": "Comprehensive marine and cargo insurance coverage with global protection and instant claims processing."
+        },
+        {
+          "title": "Customs Clearance",
+          "description": "Expert customs brokerage and documentation services with expedited processing and compliance assurance."
+        },
+        {
+          "title": "Project Logistics",
+          "description": "Complex project cargo and heavy lift solutions with specialized equipment and engineering support."
+        },
+        {
+          "title": "Supply Chain Consulting",
+          "description": "Strategic logistics consulting and supply chain optimization with cost reduction and efficiency improvements."
+        }
+      ]
+    },
+    "process": {
+      "title": "Our Process",
+      "description": "A streamlined, transparent, and professional approach to freight forwarding that ensures excellence at every step.",
+      "steps": [
+        {
+          "title": "Initial Consultation",
+          "description": "Detailed assessment of your shipping requirements and customized solution planning."
+        },
+        {
+          "title": "Route Planning",
+          "description": "Optimal route selection, documentation preparation, and regulatory compliance verification."
+        },
+        {
+          "title": "Professional Execution",
+          "description": "Expert handling, secure transport, and continuous monitoring throughout the journey."
+        },
+        {
+          "title": "Safe Delivery",
+          "description": "Timely delivery confirmation, completion documentation, and post-delivery support."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Ship Your Cargo?",
+      "description": "Contact our freight forwarding specialists for a detailed quote and consultation tailored to your specific shipping requirements. Available 24/7 worldwide.",
+      "getQuote": "Get Free Quote",
+      "phone": "📞 +90 505 092 09 99",
+      "trustText": "Trusted by 500+ companies worldwide",
+      "certifications": [
+        "🏆 ISO 9001 Certified",
+        "🛡️ Fully Insured",
+        "🌍 Global Network"
+      ]
+    }
+  },
+  "yachtTransportPage": {
+    "hero": {
+      "badge": "Premium Yacht Transport",
+      "title": "Luxury Yacht",
+      "titleHighlight": "Transportation",
+      "description": "Secure, insured, and specialized transport services for luxury vessels worldwide.",
+      "getQuote": "Get Quote",
+      "viewPortfolio": "View Portfolio"
+    },
+    "specifications": [
+      {
+        "label": "Maximum Yacht Length",
+        "value": "200 meters"
+      },
+      {
+        "label": "Maximum Weight",
+        "value": "2000 tons"
+      },
+      {
+        "label": "Insurance Coverage",
+        "value": "Up to $50M"
+      },
+      {
+        "label": "Global Ports",
+        "value": "500+ destinations"
+      }
+    ],
+    "servicesSection": {
+      "title": "Premium Yacht Transport Services",
+      "description": "End-to-end specialized transport solutions for your luxury yacht",
+      "services": [
+        {
+          "title": "Sea Transport",
+          "description": "Sea transport with specialized equipment and expert team",
+          "features": [
+            "Full insurance",
+            "24/7 monitoring",
+            "Special equipment",
+            "Expert crew"
+          ]
+        },
+        {
+          "title": "Road Transport",
+          "description": "Port transfers and short distance transport",
+          "features": [
+            "Special equipment",
+            "Expert team",
+            "Secure transfer",
+            "GPS tracking"
+          ]
+        },
+        {
+          "title": "Air Transport",
+          "description": "Air cargo services for yacht parts and equipment",
+          "features": [
+            "Express delivery",
+            "Global coverage",
+            "Special handling",
+            "Real-time tracking"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "title": "Transport Process",
+      "description": "Professional process management for secure yacht transportation",
+      "steps": [
+        {
+          "title": "Planning",
+          "description": "Detailed route and equipment planning"
+        },
+        {
+          "title": "Preparation",
+          "description": "Preparing the yacht for transport"
+        },
+        {
+          "title": "Transport",
+          "description": "Transport operation with professional team"
+        },
+        {
+          "title": "Delivery",
+          "description": "Safe delivery and completion verification"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Client Reviews",
+      "description": "Experiences from our valued clients",
+      "reviews": [
+        {
+          "name": "John Smith",
+          "title": "Yacht Owner",
+          "content": "Excellent service and professional team",
+          "rating": 5
+        },
+        {
+          "name": "Michael Brown",
+          "title": "Marina Manager",
+          "content": "Reliable and on-time delivery",
+          "rating": 5
+        }
+      ]
+    },
+    "cta": {
+      "title": "Get Custom Quote for Your Yacht",
+      "description": "Contact us now for customized transport solutions",
+      "getQuote": "Get Quote",
+      "phone": "+90 505 092 09 99",
+      "trustText": "Reliable and Professional Service",
+      "features": [
+        "Full Insurance",
+        "24/7 Monitoring",
+        "Expert Team",
+        "Global Network"
+      ]
+    }
+  },
+  "oceanFreightPage": {
+    "hero": {
+      "badge": "Ocean Freight Services",
+      "title": "Global Ocean",
+      "titleHighlight": "Freight Solutions",
+      "description": "Comprehensive ocean freight services connecting major ports worldwide with FCL, LCL, and project cargo solutions. Reliable, cost-effective, and fully tracked shipments.",
+      "getQuote": "Get Shipping Quote",
+      "trackShipment": "Track Shipment"
+    },
+    "specifications": [
+      { "label": "Global Ports", "value": "500+" },
+      { "label": "Container Types", "value": "All Sizes" },
+      { "label": "Weekly Departures", "value": "1000+" },
+      { "label": "Transit Coverage", "value": "Worldwide" }
+    ],
+    "servicesSection": {
+      "title": "Ocean Freight Services",
+      "description": "Flexible ocean freight solutions tailored to your cargo requirements and budget.",
+      "services": [
+        {
+          "title": "FCL (Full Container Load)",
+          "description": "Complete container shipping solutions for large cargo volumes with dedicated container space and competitive rates.",
+          "features": [
+            "20ft & 40ft Containers",
+            "Direct Port-to-Port",
+            "Customs Clearance",
+            "Door-to-Door Options"
+          ]
+        },
+        {
+          "title": "LCL (Less Container Load)",
+          "description": "Cost-effective consolidation services for smaller shipments sharing container space with other cargo.",
+          "features": [
+            "Flexible Volume",
+            "Weekly Departures",
+            "Consolidation Services",
+            "Competitive Rates"
+          ]
+        },
+        {
+          "title": "Break Bulk & Project Cargo",
+          "description": "Specialized handling for oversized, heavy, or unconventional cargo requiring special equipment and expertise.",
+          "features": [
+            "Heavy Lift Capability",
+            "Project Management",
+            "Special Equipment",
+            "Route Planning"
+          ]
+        }
+      ]
+    },
+    "routesSection": {
+      "title": "Major Shipping Routes",
+      "description": "Regular services on major trade routes with competitive transit times and frequencies.",
+      "routes": [
+        {
+          "from": "Europe",
+          "to": "Middle East",
+          "time": "7-10 days",
+          "frequency": "Daily"
+        },
+        {
+          "from": "Asia",
+          "to": "Europe",
+          "time": "14-21 days",
+          "frequency": "Daily"
+        },
+        {
+          "from": "North America",
+          "to": "Asia",
+          "time": "12-18 days",
+          "frequency": "Daily"
+        },
+        {
+          "from": "Middle East",
+          "to": "Africa",
+          "time": "5-8 days",
+          "frequency": "3x/week"
+        }
+      ]
+    },
+    "advantagesSection": {
+      "title": "Why Ocean Freight?",
+      "description": "Advantages of ocean freight and value-added services we provide.",
+      "advantages": [
+        {
+          "title": "Comprehensive Insurance",
+          "description": "Full cargo protection with marine insurance coverage and claims support."
+        },
+        {
+          "title": "Real-Time Tracking",
+          "description": "Advanced tracking systems providing real-time visibility of your shipments."
+        },
+        {
+          "title": "Global Network",
+          "description": "Extensive network of partners and agents in major ports worldwide."
+        },
+        {
+          "title": "Intermodal Solutions",
+          "description": "Seamless integration with land and air transport for complete logistics."
+        }
+      ]
+    },
+    "processSection": {
+      "title": "Shipping Process",
+      "description": "Optimized process steps for efficient and secure ocean freight.",
+      "steps": [
+        {
+          "title": "Quote & Booking",
+          "description": "Price quotation according to your requirements and booking confirmation."
+        },
+        {
+          "title": "Documentation",
+          "description": "Preparation and verification of customs and shipping documents."
+        },
+        {
+          "title": "Container Loading",
+          "description": "Professional loading and container sealing procedures."
+        },
+        {
+          "title": "Transit Tracking",
+          "description": "Continuous monitoring and updates throughout the journey."
+        },
+        {
+          "title": "Delivery",
+          "description": "Safe unloading and delivery procedures at destination port."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready for Ocean Freight?",
+      "description": "Contact our ocean freight specialists for detailed quotation tailored to your specific cargo requirements.",
+      "getQuote": "Get Ocean Freight Quote",
+      "trackShipment": "Track Shipment",
+      "phone": "+90 505 092 09 99",
+      "features": ["🚢 500+ Ports", "📦 FCL & LCL", "🛡️ Full Insurance"]
+    }
+  },
+  "airFreightPage": {
+    "hero": {
+      "badge": "Express Air Freight Services",
+      "title": "Fast & Reliable",
+      "titleHighlight": "Air Freight",
+      "description": "Time-critical air cargo solutions with express delivery, temperature control, and specialized handling. Connecting 200+ airports worldwide with guaranteed transit times.",
+      "getQuote": "Get Air Quote",
+      "trackShipment": "Track Shipment"
+    },
+    "specifications": [
+      { "label": "Global Airports", "value": "200+" },
+      { "label": "Daily Flights", "value": "500+" },
+      { "label": "Max Weight", "value": "Up to 100 tons" },
+      { "label": "Express Delivery", "value": "24-48 hrs" }
+    ],
+    "servicesSection": {
+      "title": "Air Freight Services",
+      "description": "Comprehensive air cargo solutions for every shipping requirement and timeline.",
+      "services": [
+        {
+          "title": "Express Air Freight",
+          "description": "Priority air cargo services for time-critical shipments with guaranteed delivery times and premium handling.",
+          "features": [
+            "24-48 Hour Delivery",
+            "Priority Handling",
+            "Real-Time Tracking",
+            "Door-to-Door Service"
+          ]
+        },
+        {
+          "title": "Standard Air Cargo",
+          "description": "Cost-effective air freight solutions for regular shipments with reliable transit times and competitive rates.",
+          "features": [
+            "3-7 Day Transit",
+            "Competitive Rates",
+            "Consolidation Options",
+            "Global Coverage"
+          ]
+        },
+        {
+          "title": "Specialized Cargo",
+          "description": "Expert handling for temperature-sensitive, dangerous goods, and oversized cargo with specialized equipment.",
+          "features": [
+            "Temperature Control",
+            "Dangerous Goods",
+            "Oversized Cargo",
+            "Pharmaceutical Grade"
+          ]
+        }
+      ]
+    },
+    "destinationsSection": {
+      "title": "Global Destinations",
+      "description": "Comprehensive network access with daily flights to major airports worldwide.",
+      "destinations": [
+        {
+          "region": "Europe",
+          "airports": "50+",
+          "time": "4-6 hours",
+          "frequency": "Daily"
+        },
+        {
+          "region": "Asia Pacific",
+          "airports": "80+",
+          "time": "8-12 hours",
+          "frequency": "Daily"
+        },
+        {
+          "region": "North America",
+          "airports": "60+",
+          "time": "10-14 hours",
+          "frequency": "Daily"
+        },
+        {
+          "region": "Middle East",
+          "airports": "25+",
+          "time": "2-4 hours",
+          "frequency": "Multiple Daily"
+        }
+      ]
+    },
+    "advantagesSection": {
+      "title": "Air Freight Advantages",
+      "description": "Unique advantages of air transport and value-added services.",
+      "advantages": [
+        {
+          "title": "Speed & Reliability",
+          "description": "Fastest transit times with guaranteed delivery schedules and on-time performance."
+        },
+        {
+          "title": "Cargo Security",
+          "description": "Advanced security protocols and handling procedures for high-value shipments."
+        },
+        {
+          "title": "Temperature Control",
+          "description": "Climate-controlled transport for pharmaceuticals, perishables, and sensitive goods."
+        },
+        {
+          "title": "Global Network",
+          "description": "Extensive airline partnerships and airport facilities across six continents."
+        }
+      ]
+    },
+    "cargoTypesSection": {
+      "title": "Cargo Types",
+      "description": "Our areas of expertise and cargo varieties we handle.",
+      "types": [
+        {
+          "type": "General Cargo",
+          "description": "Standard commercial goods and merchandise",
+          "examples": ["Electronics", "Textiles", "Machinery", "Documents"]
+        },
+        {
+          "type": "Perishables",
+          "description": "Temperature-sensitive and time-critical goods",
+          "examples": ["Fresh Produce", "Flowers", "Seafood", "Pharmaceuticals"]
+        },
+        {
+          "type": "Dangerous Goods",
+          "description": "Hazardous materials requiring special handling",
+          "examples": [
+            "Chemicals",
+            "Batteries",
+            "Medical Samples",
+            "Flammable Goods"
+          ]
+        },
+        {
+          "type": "High Value",
+          "description": "Valuable cargo requiring enhanced security",
+          "examples": ["Jewelry", "Electronics", "Artwork", "Precious Metals"]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready for Air Freight?",
+      "description": "Contact our air cargo specialists for fast solutions for your time-sensitive shipments.",
+      "getQuote": "Get Air Freight Quote",
+      "trackShipment": "Track Shipment",
+      "phone": "+90 505 092 09 99",
+      "features": [
+        "✈️ 24-48 Hours",
+        "🌡️ Temperature Control",
+        "🛡️ Secure Transport"
+      ]
+    }
+  },
+  "landTransportPage": {
+    "hero": {
+      "badge": "Professional Land Transport",
+      "title": "Reliable Road",
+      "titleHighlight": "Transport Solutions",
+      "description": "Door-to-door land transport services across Europe, Asia, and Middle East corridors. TIR-certified operations with real-time tracking and customs clearance support.",
+      "getQuote": "Get Transport Quote",
+      "trackVehicle": "Track Vehicle"
+    },
+    "specifications": [
+      { "label": "Route Coverage", "value": "50+ Countries" },
+      { "label": "Fleet Size", "value": "500+ Vehicles" },
+      { "label": "Max Capacity", "value": "Up to 40 tons" },
+      { "label": "TIR Certified", "value": "100%" }
+    ],
+    "servicesSection": {
+      "title": "Land Transport Services",
+      "description": "Comprehensive road transport solutions for all cargo types and destinations.",
+      "services": [
+        {
+          "title": "Full Truck Load (FTL)",
+          "description": "Dedicated truck services for large shipments requiring exclusive use of the entire trailer capacity.",
+          "features": [
+            "Dedicated Vehicle",
+            "Direct Route",
+            "Faster Transit",
+            "Secure Transport"
+          ]
+        },
+        {
+          "title": "Less Than Truck Load (LTL)",
+          "description": "Cost-effective consolidation services for smaller shipments sharing truck space with other cargo.",
+          "features": [
+            "Cost Effective",
+            "Regular Schedules",
+            "Flexible Volumes",
+            "Terminal Networks"
+          ]
+        },
+        {
+          "title": "Cross-Border Transport",
+          "description": "International road transport with TIR and customs clearance services across European and Asian corridors.",
+          "features": [
+            "TIR Operations",
+            "Customs Clearance",
+            "Border Expertise",
+            "Documentation Support"
+          ]
+        }
+      ]
+    },
+    "routesSection": {
+      "title": "Major Transport Routes",
+      "description": "Reliable land transport on key trade corridors with regular services.",
+      "routes": [
+        {
+          "from": "Turkey",
+          "to": "Europe",
+          "time": "3-5 days",
+          "distance": "2,500 km",
+          "frequency": "Daily"
+        },
+        {
+          "from": "Europe",
+          "to": "Central Asia",
+          "time": "7-10 days",
+          "distance": "4,000 km",
+          "frequency": "3x/week"
+        },
+        {
+          "from": "Middle East",
+          "to": "Caucasus",
+          "time": "2-4 days",
+          "distance": "1,500 km",
+          "frequency": "Daily"
+        },
+        {
+          "from": "Turkey",
+          "to": "Russia",
+          "time": "5-7 days",
+          "distance": "3,200 km",
+          "frequency": "2x/week"
+        }
+      ]
+    },
+    "advantagesSection": {
+      "title": "Land Transport Advantages",
+      "description": "Unique advantages of road transport and value-added services.",
+      "advantages": [
+        {
+          "title": "Door-to-Door Service",
+          "description": "Complete logistics solutions from pickup to final delivery with single point of contact."
+        },
+        {
+          "title": "Cargo Security",
+          "description": "GPS tracking, secure loading, and comprehensive insurance for complete peace of mind."
+        },
+        {
+          "title": "Flexible Scheduling",
+          "description": "Adaptable pickup and delivery times to meet your specific operational requirements."
+        },
+        {
+          "title": "Route Optimization",
+          "description": "Advanced route planning and traffic management for efficient and timely deliveries."
+        }
+      ]
+    },
+    "vehicleTypesSection": {
+      "title": "Vehicle Types",
+      "description": "Specialized vehicle fleet for different cargo types and requirements.",
+      "types": [
+        {
+          "type": "Standard Trucks",
+          "description": "Regular cargo transport with standard trailers",
+          "capacity": "Up to 24 tons",
+          "dimensions": "13.6m x 2.5m x 3m",
+          "suitable": [
+            "General Cargo",
+            "Palletized Goods",
+            "Dry Goods",
+            "Consumer Products"
+          ]
+        },
+        {
+          "type": "Refrigerated Trucks",
+          "description": "Temperature-controlled transport for perishables",
+          "capacity": "Up to 22 tons",
+          "dimensions": "13.6m x 2.5m x 2.8m",
+          "suitable": [
+            "Fresh Produce",
+            "Pharmaceuticals",
+            "Frozen Foods",
+            "Chemicals"
+          ]
+        },
+        {
+          "type": "Flatbed Trailers",
+          "description": "Open trailers for oversized and heavy cargo",
+          "capacity": "Up to 40 tons",
+          "dimensions": "13.6m x 2.5m (open)",
+          "suitable": [
+            "Machinery",
+            "Construction Materials",
+            "Steel Products",
+            "Industrial Equipment"
+          ]
+        },
+        {
+          "type": "Specialized Vehicles",
+          "description": "Custom solutions for unique transport requirements",
+          "capacity": "Variable",
+          "dimensions": "Custom",
+          "suitable": [
+            "Dangerous Goods",
+            "Oversized Cargo",
+            "High Value Items",
+            "Project Cargo"
+          ]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready for Land Transport?",
+      "description": "Contact our land transport specialists for detailed quotation for your door-to-door solutions.",
+      "getQuote": "Get Transport Quote",
+      "trackVehicle": "Track Vehicle",
+      "phone": "+90 505 092 09 99",
+      "features": ["🚛 Door-to-Door", "🛣️ TIR Certified", "📍 GPS Tracking"]
     }
   }
 }

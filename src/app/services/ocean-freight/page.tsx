@@ -1,27 +1,103 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Ship, Clock, Shield, Globe, CheckCircle, ArrowRight, Package, Truck } from 'lucide-react'
+import { useLanguage } from '@/lib/language-context'
+import Link from 'next/link'
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Uluslararası Denizyolu Taşımacılığı ve Konteyner Lojistiği",
+  "description": "FCL (Tam Konteyner Yükü) ve LCL (Parsiyel Konteyner Yükü) dahil olmak üzere kapsamlı deniz yolu kargo ve lojistik hizmetleri. Dünya çapında 500+ limana güvenli ve ekonomik taşımacılık.",
+  "provider": {
+    "@type": "Organization",
+    "name": "SeaLive Lojistik & Taşımacılık",
+    "url": "https://www.sealive.net"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Worldwide"
+  },
+  "serviceType": "Ocean Freight",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Denizyolu Taşımacılık Hizmetleri",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "FCL (Full Container Load) Taşımacılığı",
+          "description": "Tam konteyner yükü ile ekonomik ve güvenli uluslararası taşımacılık"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "LCL (Less than Container Load) Taşımacılığı",
+          "description": "Parsiyel yükler için konsolide deniz taşımacılığı hizmetleri"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Proje Kargo Taşımacılığı",
+          "description": "Ağır ve büyük boyutlu yükler için özel deniz taşımacılığı çözümleri"
+        }
+      }
+    ]
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Servis Kapsamı",
+      "value": "500+ Global Liman"
+    },
+    {
+      "@type": "PropertyValue", 
+      "name": "Konteyner Tipleri",
+      "value": "20ft, 40ft, 40ft HC, Özel Konteynerler"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Haftalık Sefer",
+      "value": "1000+ Sefer"
+    }
+  ]
+};
 
 export default function OceanFreightPage() {
+  const { translations } = useLanguage()
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   const oceanServices = [
     {
-      title: "FCL (Full Container Load)",
-      description: "Complete container shipping solutions for large cargo volumes with dedicated container space and competitive rates.",
-      features: ["20ft & 40ft Containers", "Direct Port-to-Port", "Customs Clearance", "Door-to-Door Options"],
+      title: translations.oceanFreightPage.servicesSection.services[0].title,
+      description: translations.oceanFreightPage.servicesSection.services[0].description,
+      features: translations.oceanFreightPage.servicesSection.services[0].features,
       icon: Package,
       image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "LCL (Less Container Load)",
-      description: "Cost-effective consolidation services for smaller shipments sharing container space with other cargo.",
-      features: ["Flexible Volume", "Weekly Departures", "Consolidation Services", "Competitive Rates"],
+      title: translations.oceanFreightPage.servicesSection.services[1].title,
+      description: translations.oceanFreightPage.servicesSection.services[1].description,
+      features: translations.oceanFreightPage.servicesSection.services[1].features,
       icon: Ship,
       image: "https://images.unsplash.com/photo-1605745341112-85968b19335b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Break Bulk & Project Cargo",
-      description: "Specialized handling for oversized, heavy, or unconventional cargo requiring special equipment and expertise.",
-      features: ["Heavy Lift Capability", "Project Management", "Special Equipment", "Route Planning"],
+      title: translations.oceanFreightPage.servicesSection.services[2].title,
+      description: translations.oceanFreightPage.servicesSection.services[2].description,
+      features: translations.oceanFreightPage.servicesSection.services[2].features,
       icon: Globe,
       image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
@@ -44,66 +120,78 @@ export default function OceanFreightPage() {
   const advantages = [
     {
       icon: Shield,
-      title: "Comprehensive Insurance",
-      description: "Full cargo protection with marine insurance coverage and claims support."
+      title: translations.oceanFreightPage.advantagesSection.advantages[0].title,
+      description: translations.oceanFreightPage.advantagesSection.advantages[0].description
     },
     {
       icon: Clock,
-      title: "Real-Time Tracking",
-      description: "Advanced tracking systems providing real-time visibility of your shipments."
+      title: translations.oceanFreightPage.advantagesSection.advantages[1].title,
+      description: translations.oceanFreightPage.advantagesSection.advantages[1].description
     },
     {
       icon: Globe,
-      title: "Global Network",
-      description: "Extensive network of partners and agents in major ports worldwide."
+      title: translations.oceanFreightPage.advantagesSection.advantages[2].title,
+      description: translations.oceanFreightPage.advantagesSection.advantages[2].description
     },
     {
       icon: Truck,
-      title: "Intermodal Solutions",
-      description: "Seamless integration with land and air transport for complete logistics."
+      title: translations.oceanFreightPage.advantagesSection.advantages[3].title,
+      description: translations.oceanFreightPage.advantagesSection.advantages[3].description
     }
   ]
 
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Header />
       
       {/* Hero Section */}
       <section className="pt-32 pb-24 bg-gradient-to-br from-blue-900 via-slate-800 to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div 
-            className="w-full h-full bg-cover bg-center opacity-25"
-            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80')" }}
+          <img 
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            alt="Konteyner limanı ve kargo gemileri - deniz taşımacılığı hizmetleri"
+            className="w-full h-full object-cover object-center opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-slate-800/70 to-gray-900/80"></div>
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center bg-yellow-400/20 backdrop-blur-sm border border-yellow-400/30 text-yellow-400 px-6 py-3 rounded-full text-sm font-medium mb-8">
+            <div className={`inline-flex items-center bg-yellow-400/20 backdrop-blur-sm border border-yellow-400/30 text-yellow-400 px-6 py-3 rounded-full text-sm font-medium mb-8 transition-all duration-700 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
+            }`}>
               <Ship size={16} className="mr-2" />
-              Ocean Freight Services
+              {translations.oceanFreightPage.hero.badge}
             </div>
             
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              Global Ocean
+            <h1 className={`text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight transition-all duration-700 delay-300 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}>
+              {translations.oceanFreightPage.hero.title}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">
-                Freight Solutions
+                {translations.oceanFreightPage.hero.titleHighlight}
               </span>
             </h1>
             
-            <p className="text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12">
-              Comprehensive ocean freight services connecting major ports worldwide with FCL, LCL, and project cargo solutions. 
-              Reliable, cost-effective, and fully tracked shipments.
+            <p className={`text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12 transition-all duration-700 delay-500 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}>
+              {translations.oceanFreightPage.hero.description}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group">
-                Get Shipping Quote
+            <div className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-700 transform ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}>
+              <Link href="/contact" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group transform hover:scale-105">
+                {translations.oceanFreightPage.hero.getQuote}
                 <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
               <button className="border border-white/30 hover:border-white/50 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-                Track Shipment
+                {translations.oceanFreightPage.hero.trackShipment}
               </button>
             </div>
           </div>
@@ -113,9 +201,11 @@ export default function OceanFreightPage() {
       {/* Specifications Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {specifications.map((spec, index) => (
-              <div key={index} className="text-center">
+          <div className={`grid grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
+            {translations.oceanFreightPage.specifications.map((spec, index) => (
+              <div key={index} className="text-center" style={{ transitionDelay: `${300 + index * 100}ms` }}>
                 <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{spec.value}</div>
                 <div className="text-gray-600 font-medium">{spec.label}</div>
               </div>
@@ -127,12 +217,14 @@ export default function OceanFreightPage() {
       {/* Services Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Ocean Freight Services
+              {translations.oceanFreightPage.servicesSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Flexible ocean freight solutions tailored to your cargo requirements and budget.
+              {translations.oceanFreightPage.servicesSection.description}
             </p>
           </div>
 
@@ -142,7 +234,9 @@ export default function OceanFreightPage() {
               const isEven = index % 2 === 0
               
               return (
-                <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''}`}>
+                <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${!isEven ? 'lg:grid-flow-col-dense' : ''} transition-all duration-700 transform ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                }`} style={{ transitionDelay: `${500 + index * 200}ms` }}>
                   <div className={`${!isEven ? 'lg:col-start-2' : ''} space-y-6`}>
                     <div className="flex items-start space-x-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-blue-400/20 to-slate-400/20 border border-blue-400/30 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -164,11 +258,6 @@ export default function OceanFreightPage() {
                         </div>
                       ))}
                     </div>
-                    
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center group">
-                      Learn More
-                      <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </button>
                   </div>
                   
                   <div className={`${!isEven ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
@@ -191,37 +280,49 @@ export default function OceanFreightPage() {
       {/* Routes Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Major Shipping Routes
+              {translations.oceanFreightPage.routesSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Regular services on major trade routes with competitive transit times and frequencies.
+              {translations.oceanFreightPage.routesSection.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {routes.map((route, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 border border-blue-200/50">
+              <div key={index} className={`bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-all duration-300 transform ${
+                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              }`} style={{ transitionDelay: `${700 + index * 100}ms` }}>
                 <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
-                      <Ship size={20} className="text-white" />
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                      {route.from.charAt(0)}
                     </div>
-                    <div>
-                      <div className="text-lg font-bold text-gray-900">{route.from} → {route.to}</div>
+                    <div className="text-gray-400">
+                      <ArrowRight size={20} />
+                    </div>
+                    <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">
+                      {route.to.charAt(0)}
                     </div>
                   </div>
+                  <div className="text-blue-600 font-bold text-lg">{route.frequency}</div>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">Transit Time</div>
-                    <div className="text-lg font-semibold text-gray-900">{route.time}</div>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">From:</span>
+                    <span className="font-semibold">{route.from}</span>
                   </div>
-                  <div>
-                    <div className="text-sm text-gray-600 mb-1">Frequency</div>
-                    <div className="text-lg font-semibold text-gray-900">{route.frequency}</div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">To:</span>
+                    <span className="font-semibold">{route.to}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Transit Time:</span>
+                    <span className="font-semibold text-blue-600">{route.time}</span>
                   </div>
                 </div>
               </div>
@@ -233,25 +334,38 @@ export default function OceanFreightPage() {
       {/* Advantages Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose Our Ocean Freight
+              {translations.oceanFreightPage.advantagesSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive ocean freight solutions with added value services and global coverage.
+              {translations.oceanFreightPage.advantagesSection.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {advantages.map((advantage, index) => {
               const IconComponent = advantage.icon
+              const colors = [
+                { bg: "bg-emerald-50 border-emerald-200", icon: "text-emerald-600" },
+                { bg: "bg-blue-50 border-blue-200", icon: "text-blue-600" },
+                { bg: "bg-purple-50 border-purple-200", icon: "text-purple-600" },
+                { bg: "bg-orange-50 border-orange-200", icon: "text-orange-600" }
+              ]
+              
               return (
-                <div key={index} className="bg-white rounded-2xl p-8 border border-gray-200 text-center hover:shadow-xl transition-all duration-300 group">
-                  <div className="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent size={24} className="text-blue-600" />
+                <div key={index} className={`${colors[index].bg} rounded-2xl p-8 border-2 hover:shadow-xl transition-all duration-300 group cursor-pointer transform ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                }`} style={{ transitionDelay: `${800 + index * 100}ms` }}>
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent size={24} className={colors[index].icon} />
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">{advantage.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{advantage.description}</p>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">{advantage.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{advantage.description}</p>
                 </div>
               )
             })}
@@ -262,74 +376,39 @@ export default function OceanFreightPage() {
       {/* Process Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
+          <div className={`text-center mb-20 transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Shipping Process
+              {translations.oceanFreightPage.processSection.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Streamlined ocean freight process ensuring efficient and reliable cargo delivery.
+              {translations.oceanFreightPage.processSection.description}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            {[
-              { step: "01", title: "Quote Request", description: "Submit cargo details for competitive pricing", icon: "📋" },
-              { step: "02", title: "Booking", description: "Confirm booking and prepare documentation", icon: "📝" },
-              { step: "03", title: "Pickup", description: "Cargo collection and container loading", icon: "🚛" },
-              { step: "04", title: "Transit", description: "Ocean transport with tracking updates", icon: "🚢" },
-              { step: "05", title: "Delivery", description: "Port arrival and final delivery", icon: "✅" }
-            ].map((process, index) => (
-              <div key={index} className="text-center group">
+            {translations.oceanFreightPage.processSection.steps.map((step, index) => (
+              <div key={index} className={`text-center group transition-all duration-700 transform ${
+                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+              }`} style={{ transitionDelay: `${900 + index * 100}ms` }}>
                 <div className="relative mb-8">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-slate-700 text-white rounded-full flex items-center justify-center mx-auto font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    {process.step}
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 text-white rounded-full flex items-center justify-center mx-auto font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    {(index + 1).toString().padStart(2, '0')}
                   </div>
                   <div className="absolute -top-2 -right-2 text-2xl">
-                    {process.icon}
+                    {['💰', '📋', '📦', '🚢', '✅'][index]}
                   </div>
+                  
                   {index < 4 && (
-                    <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-blue-600/50 to-transparent"></div>
+                    <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-blue-400/50 to-transparent"></div>
                   )}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{process.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{process.description}</p>
+                
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{step.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Documentation Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Required Documentation
-              </h2>
-              <p className="text-xl text-gray-600">
-                Essential documents for smooth ocean freight operations and customs clearance.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                "Commercial Invoice",
-                "Packing List",
-                "Bill of Lading",
-                "Certificate of Origin",
-                "Export/Import Licenses",
-                "Insurance Certificate",
-                "Customs Declaration",
-                "Inspection Certificates",
-                "Dangerous Goods Declaration"
-              ].map((doc, index) => (
-                <div key={index} className="bg-white rounded-lg p-4 border border-gray-200 flex items-center space-x-3">
-                  <CheckCircle size={18} className="text-blue-500" />
-                  <span className="text-gray-700 font-medium">{doc}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -337,35 +416,38 @@ export default function OceanFreightPage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-blue-900 via-slate-800 to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-yellow-400/20 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-400/20 to-transparent"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className={`max-w-4xl mx-auto text-center transition-all duration-700 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
-              Ready to Ship Your Cargo?
+              {translations.oceanFreightPage.cta.title}
             </h2>
             <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-              Get competitive ocean freight rates and reliable shipping solutions. 
-              Contact our specialists for a detailed quote and consultation.
+              {translations.oceanFreightPage.cta.description}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center group">
-                Get Shipping Quote
+              <Link href="/contact" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300 flex items-center justify-center group transform hover:scale-105">
+                {translations.oceanFreightPage.cta.getQuote}
                 <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="border-2 border-white/30 hover:border-white/50 hover:bg-white/10 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300">
-                📞 +90 (212) 555-0123
-              </button>
+              </Link>
+              <Link href="/contact">
+                <button className="border-2 border-white/30 hover:border-white/50 hover:bg-white/10 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all duration-300">
+                  {translations.oceanFreightPage.cta.trackShipment}
+                </button>
+              </Link>
             </div>
             
             <div className="mt-12 pt-8 border-t border-white/20">
-              <p className="text-gray-400 mb-4">Trusted by importers and exporters worldwide</p>
+              <p className="text-gray-400 mb-4">Sealive Lojistik - {translations.oceanFreightPage.cta.phone}</p>
               <div className="flex justify-center items-center space-x-8 text-white/60">
-                <span className="text-sm">🚢 FCL & LCL</span>
-                <span className="text-sm">🌍 Global Network</span>
-                <span className="text-sm">📱 Real-Time Tracking</span>
+                {translations.oceanFreightPage.cta.features.map((feature, index) => (
+                  <span key={index} className="text-sm">{feature}</span>
+                ))}
               </div>
             </div>
           </div>
