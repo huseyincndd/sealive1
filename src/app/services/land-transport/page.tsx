@@ -125,13 +125,6 @@ export default function LandTransportPage() {
     { from: "Turkey", to: "Russia", time: "5-7 days", distance: "3,200 km", frequency: "2x/week" }
   ]
 
-  const specifications = [
-    { label: "Route Coverage", value: "50+ Countries" },
-    { label: "Fleet Size", value: "500+ Vehicles" },
-    { label: "Max Capacity", value: "Up to 40 tons" },
-    { label: "TIR Certified", value: "100%" }
-  ]
-
   const advantages = [
     {
       icon: Globe,
