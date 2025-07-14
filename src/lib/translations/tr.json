@@ -1084,5 +1084,9 @@
       "phone": "+90 505 092 09 99",
       "features": ["🚛 Kapıdan Kapıya", "🛣️ TIR Sertifikalı", "📍 GPS İzleme"]
     }
+  },
+  "whatsapp": {
+    "tooltip": "WhatsApp ile iletişime geç",
+    "message": "Merhaba! SeaLive lojistik hizmetleri hakkında bilgi almak istiyorum."
   }
 }

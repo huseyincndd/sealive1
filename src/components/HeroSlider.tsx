@@ -145,16 +145,16 @@ export default function HeroSlider() {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm z-20"
+        className="absolute left-2 lg:left-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 lg:bg-white/20 lg:hover:bg-white/30 text-white p-2 lg:p-3 rounded-full transition-all duration-300 backdrop-blur-sm z-20"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft size={18} className="lg:w-6 lg:h-6" />
       </button>
       
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm z-20"
+        className="absolute right-2 lg:right-4 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 lg:bg-white/20 lg:hover:bg-white/30 text-white p-2 lg:p-3 rounded-full transition-all duration-300 backdrop-blur-sm z-20"
       >
-        <ChevronRight size={24} />
+        <ChevronRight size={18} className="lg:w-6 lg:h-6" />
       </button>
 
       {/* Progress Indicators - Completely Independent */}

@@ -1088,5 +1088,9 @@
       "phone": "+90 505 092 09 99",
       "features": ["🚛 Door-to-Door", "🛣️ TIR Certified", "📍 GPS Tracking"]
     }
+  },
+  "whatsapp": {
+    "tooltip": "Contact via WhatsApp",
+    "message": "Hello! I would like to get information about SeaLive logistics services."
   }
 }

@@ -610,6 +610,10 @@ export interface TranslationStructure {
       features: string[]
     }
   }
+  whatsapp: {
+    tooltip: string
+    message: string
+  }
 }
 
 export function getTranslation(locale: Locale): TranslationStructure {
