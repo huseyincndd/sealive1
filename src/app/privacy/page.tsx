@@ -3,10 +3,12 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/lib/language-context'
+import { LegalSection } from '@/types/legal'
+import Image from 'next/image'
 
 export default function PrivacyPage() {
   const { translations } = useLanguage()
-  const sections = (translations as any).legal?.privacy?.sections || []
+  const sections: LegalSection[] = (translations as { legal?: { privacy?: { sections?: LegalSection[] } } }).legal?.privacy?.sections || []
 
   return (
     <main className="min-h-screen bg-white">
@@ -15,10 +17,12 @@ export default function PrivacyPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gray-900 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img 
+          <Image 
             src="https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=2060&auto=format&fit=crop"
             alt="Gizlilik ve veri koruma politikası"
-            className="w-full h-full object-cover object-center opacity-40"
+            fill
+            className="object-cover object-center opacity-40"
+            priority
           />
           <div className="absolute inset-0 bg-gray-900/60"></div>
         </div>
@@ -28,7 +32,7 @@ export default function PrivacyPage() {
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               {translations.footer.legal.privacy}
             </h1>
-            <p className="text-gray-300">{(translations as any).legal?.lastUpdated} {new Date().toLocaleDateString()}</p>
+            <p className="text-gray-300">{(translations as { legal?: { lastUpdated?: string } }).legal?.lastUpdated} {new Date().toLocaleDateString()}</p>
           </div>
         </div>
       </section>
@@ -38,9 +42,9 @@ export default function PrivacyPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
-              <p className="text-gray-600 mb-6">{(translations as any).legal?.lastUpdated} {new Date().toLocaleDateString()}</p>
+              <p className="text-gray-600 mb-6">{(translations as { legal?: { lastUpdated?: string } }).legal?.lastUpdated} {new Date().toLocaleDateString()}</p>
 
-              {sections.map((section: any, idx: number) => (
+              {sections.map((section: LegalSection, idx: number) => (
                 <div key={idx} className="mb-8">
                   {section.title && (
                     <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{section.title}</h2>
