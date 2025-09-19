@@ -1088,5 +1088,152 @@
   "whatsapp": {
     "tooltip": "WhatsApp ile iletişime geç",
     "message": "Merhaba! SeaLive lojistik hizmetleri hakkında bilgi almak istiyorum."
+  },
+  "legal": {
+    "lastUpdated": "Son güncelleme:",
+    "privacy": {
+      "sections": [
+        {
+          "title": "1. Topladığımız Bilgiler",
+          "intro": "Aşağıdaki durumlarda doğrudan bize sağladığınız bilgileri toplarız:",
+          "items": [
+            "Web sitemizdeki formları doldurduğunuzda",
+            "Bir hesap oluşturduğunuzda",
+            "Teklif talep ettiğinizde",
+            "Destek için bizimle iletişime geçtiğinizde",
+            "Bültenimize abone olduğunuzda"
+          ]
+        },
+        {
+          "title": "2. Bilgilerinizi Nasıl Kullanıyoruz",
+          "intro": "Topladığımız bilgileri şu amaçlarla kullanırız:",
+          "items": [
+            "Hizmetlerimizi sunmak ve geliştirmek",
+            "Taşıma taleplerinizi işlemek",
+            "Gönderilerinizle ilgili güncellemeler göndermek",
+            "Taleplerinize yanıt vermek",
+            "Onayınızla pazarlama iletişimleri göndermek"
+          ]
+        },
+        {
+          "title": "3. Bilgi Paylaşımı",
+          "intro": "Kişisel verilerinizi satmayız. Aşağıdaki taraflarla paylaşabiliriz:",
+          "items": [
+            "Operasyonlarımızda bize yardımcı olan hizmet sağlayıcılar",
+            "Gönderinizde yer alan iş ortaklarımız",
+            "Yasal olarak gerektiğinde kolluk kuvvetleri"
+          ]
+        },
+        {
+          "title": "4. Haklarınız",
+          "intro": "Aşağıdaki haklara sahipsiniz:",
+          "items": [
+            "Kişisel verilerinize erişim",
+            "Hatalı bilgilerin düzeltilmesini talep etme",
+            "Verilerinizin silinmesini talep etme",
+            "Pazarlama iletişimlerinden vazgeçme"
+          ]
+        },
+        {
+          "title": "5. İletişim",
+          "intro": "Bu Gizlilik Politikası ile ilgili sorularınız için bizimle iletişime geçin:",
+          "items": []
+        }
+      ]
+    },
+    "terms": {
+      "sections": [
+        {
+          "title": "1. Şartların Kabulü",
+          "intro": "Bu web sitesine erişerek ve kullanarak bu sözleşmenin hükümlerine bağlı kalmayı kabul edersiniz.",
+          "items": []
+        },
+        {
+          "title": "2. Hizmetler",
+          "intro": "Aşağıdaki nakliye ve lojistik hizmetlerini sağlarız:",
+          "items": [
+            "Deniz taşımacılığı",
+            "Hava kargo hizmetleri",
+            "Kara taşımacılığı",
+            "Yat taşımacılığı",
+            "Gümrükleme",
+            "Forwarding hizmetleri"
+          ]
+        },
+        {
+          "title": "3. Kullanıcı Yükümlülükleri",
+          "intro": "Şunları kabul edersiniz:",
+          "items": [
+            "Doğru ve eksiksiz bilgi sağlamak",
+            "Yürürlükteki tüm yasa ve düzenlemelere uymak",
+            "Hizmetleri yalnızca yasal amaçlarla kullanmak",
+            "Gönderilerinizle ilgili tüm ücretleri ödemek"
+          ]
+        },
+        {
+          "title": "4. Sorumluluk",
+          "intro": "Yasal olarak izin verildiği ölçüde sorumluluğumuz sınırlıdır. Aşağıdakilerden sorumlu değiliz:",
+          "items": [
+            "Gümrük veya diğer otoritelerden kaynaklanan gecikmeler",
+            "Mücbir sebep olayları",
+            "Dolaylı veya sonuç olarak ortaya çıkan kayıplar",
+            "Uygun olmayan paketlemeden kaynaklanan kayıp veya hasar"
+          ]
+        },
+        {
+          "title": "5. Şartlarda Değişiklik",
+          "intro": "Bu şartları herhangi bir zamanda değiştirme hakkımız saklıdır. Değişiklikler web sitesinde yayınlandığı anda geçerlidir.",
+          "items": []
+        },
+        {
+          "title": "6. İletişim Bilgileri",
+          "intro": "Kullanım Şartları hakkında sorularınız için bizimle iletişime geçin:",
+          "items": []
+        }
+      ]
+    },
+    "cookies": {
+      "sections": [
+        {
+          "title": "1. Çerez Nedir",
+          "intro": "Çerezler, web sitemizi ziyaret ettiğinizde bilgisayarınıza veya mobil cihazınıza yerleştirilen küçük metin dosyalarıdır. Web sitelerinin daha verimli çalışmasını sağlamak ve site sahiplerine bilgi sunmak için yaygın olarak kullanılırlar.",
+          "items": []
+        },
+        {
+          "title": "2. Çerezleri Nasıl Kullanıyoruz",
+          "intro": "Çerezleri şu amaçlarla kullanıyoruz:",
+          "items": [
+            "Web sitesinin çalışması için gerekli temel çerezler",
+            "Ziyaretçilerin sitemizi nasıl kullandığını anlamak için analitik çerezler",
+            "Ayarlarınızı hatırlamak için tercih çerezleri",
+            "İlgili reklamlar sunmak için pazarlama çerezleri"
+          ]
+        },
+        {
+          "title": "3. Kullandığımız Çerez Türleri",
+          "intro": "Başlıca çerez türleri aşağıdadır:",
+          "items": [
+            "Zorunlu Çerezler",
+            "Analitik Çerezler",
+            "Tercih Çerezleri",
+            "Pazarlama Çerezleri"
+          ]
+        },
+        {
+          "title": "4. Çerezleri Yönetme",
+          "intro": "Çerezleri çeşitli şekillerde kontrol edebilir ve yönetebilirsiniz:",
+          "items": [
+            "Tarayıcı ayarlarıyla çerezleri engelleme veya silme",
+            "Üçüncü taraf vazgeçme mekanizmaları",
+            "Çerez onay aracımız"
+          ]
+        },
+        {
+          "title": "5. İletişim Bilgileri",
+          "intro": "Çerez Politikamız hakkında sorularınız için bizimle iletişime geçin:",
+          "items": []
+        }
+      ]
+    }
   }
 }

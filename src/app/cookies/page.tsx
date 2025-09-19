@@ -6,83 +6,65 @@ import { useLanguage } from '@/lib/language-context'
 
 export default function CookiesPage() {
   const { translations } = useLanguage()
+  const sections = (translations as any).legal?.cookies?.sections || []
 
   return (
     <main className="min-h-screen bg-white">
       <Header />
       
-      <section className="pt-32 pb-16 bg-gray-50">
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 bg-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2070&auto=format&fit=crop"
+            alt="Çerez politikası ve site kullanımı"
+            className="w-full h-full object-cover object-center opacity-40"
+          />
+          <div className="absolute inset-0 bg-gray-900/60"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              {translations.footer.legal.cookies}
+            </h1>
+            <p className="text-gray-300">{(translations as any).legal?.lastUpdated} {new Date().toLocaleDateString()}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gray-900 -mt-32 py-32 px-4 mb-16">
-              <h1 className="text-4xl font-bold text-white mb-8 text-center">
-                {translations.footer.legal.cookies}
-              </h1>
-            </div>
-            
             <div className="prose prose-lg max-w-none">
-              <p className="text-gray-600 mb-6">
-                Last updated: {new Date().toLocaleDateString()}
-              </p>
+              <p className="text-gray-600 mb-6">{(translations as any).legal?.lastUpdated} {new Date().toLocaleDateString()}</p>
 
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">1. What Are Cookies</h2>
-              <p className="text-gray-600 mb-6">
-                Cookies are small text files that are placed on your computer or mobile device when you visit our website. They are widely used to make websites work more efficiently and provide useful information to website owners.
-              </p>
+              {sections.map((section: any, idx: number) => (
+                <div key={idx} className="mb-8">
+                  {section.title && (
+                    <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{section.title}</h2>
+                  )}
+                  {section.intro && (
+                    <p className="text-gray-600 mb-4">{section.intro}</p>
+                  )}
+                  {Array.isArray(section.items) && section.items.length > 0 && (
+                    <ul className="list-disc pl-6 mb-6 text-gray-600">
+                      {section.items.map((item: string, i: number) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
 
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">2. How We Use Cookies</h2>
-              <p className="text-gray-600 mb-4">
-                We use cookies for the following purposes:
-              </p>
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>Essential cookies for website functionality</li>
-                <li>Analytics cookies to understand how visitors use our site</li>
-                <li>Preference cookies to remember your settings</li>
-                <li>Marketing cookies to deliver relevant advertisements</li>
-              </ul>
-
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. Types of Cookies We Use</h2>
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Essential Cookies</h3>
-                <p className="text-gray-600 mb-4">
-                  These cookies are necessary for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website.
-                </p>
-
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Analytics Cookies</h3>
-                <p className="text-gray-600 mb-4">
-                  These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.
-                </p>
-
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Preference Cookies</h3>
-                <p className="text-gray-600 mb-4">
-                  These cookies enable the website to remember choices you make (such as your language preference) and provide enhanced features.
-                </p>
-
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Marketing Cookies</h3>
-                <p className="text-gray-600 mb-4">
-                  These cookies are used to track visitors across websites to enable us to display relevant advertisements.
-                </p>
+              <div className="mt-10">
+                <ul className="list-none pl-0 mb-6 text-gray-600">
+                  <li>Email: {translations.header.contactInfo.email}</li>
+                  <li>Phone: {translations.header.contactInfo.phone}</li>
+                  <li>Address: {translations.footer.address.line1}, {translations.footer.address.line2}, {translations.footer.address.city}</li>
+                </ul>
               </div>
-
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">4. Managing Cookies</h2>
-              <p className="text-gray-600 mb-4">
-                You can control and manage cookies in various ways:
-              </p>
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>Browser settings to block or delete cookies</li>
-                <li>Third-party opt-out mechanisms</li>
-                <li>Our cookie consent tool</li>
-              </ul>
-
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">5. Contact Information</h2>
-              <p className="text-gray-600 mb-6">
-                If you have any questions about our Cookie Policy, please contact us at:
-              </p>
-              <ul className="list-none pl-6 mb-6 text-gray-600">
-                <li>Email: {translations.header.contactInfo.email}</li>
-                <li>Phone: {translations.header.contactInfo.phone}</li>
-                <li>Address: {translations.footer.address.line1}, {translations.footer.address.line2}, {translations.footer.address.city}</li>
-              </ul>
             </div>
           </div>
         </div>

@@ -6,79 +6,65 @@ import { useLanguage } from '@/lib/language-context'
 
 export default function TermsPage() {
   const { translations } = useLanguage()
+  const sections = (translations as any).legal?.terms?.sections || []
 
   return (
     <main className="min-h-screen bg-white">
       <Header />
       
-      <section className="pt-32 pb-16 bg-gray-50">
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 bg-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1517999349371-c43520457b23?q=80&w=2070&auto=format&fit=crop"
+            alt="Kullanım şartları ve yasal koşullar"
+            className="w-full h-full object-cover object-center opacity-40"
+          />
+          <div className="absolute inset-0 bg-gray-900/60"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              {translations.footer.legal.terms}
+            </h1>
+            <p className="text-gray-300">{(translations as any).legal?.lastUpdated} {new Date().toLocaleDateString()}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gray-900 -mt-32 py-32 px-4 mb-16">
-              <h1 className="text-4xl font-bold text-white mb-8 text-center">
-                {translations.footer.legal.terms}
-              </h1>
-            </div>
-            
             <div className="prose prose-lg max-w-none">
-              <p className="text-gray-600 mb-6">
-                Last updated: {new Date().toLocaleDateString()}
-              </p>
+              <p className="text-gray-600 mb-6">{(translations as any).legal?.lastUpdated} {new Date().toLocaleDateString()}</p>
 
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">1. Acceptance of Terms</h2>
-              <p className="text-gray-600 mb-6">
-                By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.
-              </p>
+              {sections.map((section: any, idx: number) => (
+                <div key={idx} className="mb-8">
+                  {section.title && (
+                    <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{section.title}</h2>
+                  )}
+                  {section.intro && (
+                    <p className="text-gray-600 mb-4">{section.intro}</p>
+                  )}
+                  {Array.isArray(section.items) && section.items.length > 0 && (
+                    <ul className="list-disc pl-6 mb-6 text-gray-600">
+                      {section.items.map((item: string, i: number) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
 
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">2. Services</h2>
-              <p className="text-gray-600 mb-4">
-                We provide the following shipping and logistics services:
-              </p>
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>Ocean freight shipping</li>
-                <li>Air freight services</li>
-                <li>Land transport</li>
-                <li>Yacht transportation</li>
-                <li>Customs clearance</li>
-                <li>Freight forwarding</li>
-              </ul>
-
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. User Obligations</h2>
-              <p className="text-gray-600 mb-4">
-                You agree to:
-              </p>
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>Provide accurate and complete information</li>
-                <li>Comply with all applicable laws and regulations</li>
-                <li>Use the services only for lawful purposes</li>
-                <li>Pay all charges associated with your shipments</li>
-              </ul>
-
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">4. Liability</h2>
-              <p className="text-gray-600 mb-6">
-                Our liability is limited to the extent permitted by applicable law. We are not responsible for:
-              </p>
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>Delays caused by customs or other authorities</li>
-                <li>Force majeure events</li>
-                <li>Indirect or consequential losses</li>
-                <li>Loss or damage due to improper packaging</li>
-              </ul>
-
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">5. Changes to Terms</h2>
-              <p className="text-gray-600 mb-6">
-                We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting to the website.
-              </p>
-
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">6. Contact Information</h2>
-              <p className="text-gray-600 mb-6">
-                For questions about these Terms of Use, please contact us at:
-              </p>
-              <ul className="list-none pl-6 mb-6 text-gray-600">
-                <li>Email: {translations.header.contactInfo.email}</li>
-                <li>Phone: {translations.header.contactInfo.phone}</li>
-                <li>Address: {translations.footer.address.line1}, {translations.footer.address.line2}, {translations.footer.address.city}</li>
-              </ul>
+              <div className="mt-10">
+                <ul className="list-none pl-0 mb-6 text-gray-600">
+                  <li>Email: {translations.header.contactInfo.email}</li>
+                  <li>Phone: {translations.header.contactInfo.phone}</li>
+                  <li>Address: {translations.footer.address.line1}, {translations.footer.address.line2}, {translations.footer.address.city}</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

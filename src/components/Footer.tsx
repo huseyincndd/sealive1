@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
+import { MapPin, Phone, Mail, Linkedin, Instagram } from 'lucide-react'
 import { useLanguage } from '@/lib/language-context'
 
 export default function Footer() {
@@ -24,10 +24,8 @@ export default function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com/globefarer', name: 'Facebook' },
-    { icon: Twitter, href: 'https://twitter.com/globefarer', name: 'Twitter' },
-    { icon: Linkedin, href: 'https://linkedin.com/company/globefarer', name: 'LinkedIn' },
-    { icon: Instagram, href: 'https://instagram.com/globefarer', name: 'Instagram' }
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/99875858/', name: 'LinkedIn' },
+    { icon: Instagram, href: 'http://instagram.com/sealivellc', name: 'Instagram' }
   ]
 
   return (

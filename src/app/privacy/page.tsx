@@ -6,79 +6,65 @@ import { useLanguage } from '@/lib/language-context'
 
 export default function PrivacyPage() {
   const { translations } = useLanguage()
+  const sections = (translations as any).legal?.privacy?.sections || []
 
   return (
     <main className="min-h-screen bg-white">
       <Header />
       
-      <section className="pt-32 pb-16 bg-gray-50">
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 bg-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=2060&auto=format&fit=crop"
+            alt="Gizlilik ve veri koruma politikası"
+            className="w-full h-full object-cover object-center opacity-40"
+          />
+          <div className="absolute inset-0 bg-gray-900/60"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              {translations.footer.legal.privacy}
+            </h1>
+            <p className="text-gray-300">{(translations as any).legal?.lastUpdated} {new Date().toLocaleDateString()}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gray-900 -mt-32 py-32 px-4 mb-16">
-              <h1 className="text-4xl font-bold text-white mb-8 text-center">
-                {translations.footer.legal.privacy}
-              </h1>
-            </div>
-            
             <div className="prose prose-lg max-w-none">
-              <p className="text-gray-600 mb-6">
-                Last updated: {new Date().toLocaleDateString()}
-              </p>
+              <p className="text-gray-600 mb-6">{(translations as any).legal?.lastUpdated} {new Date().toLocaleDateString()}</p>
 
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">1. Information We Collect</h2>
-              <p className="text-gray-600 mb-4">
-                We collect information that you provide directly to us, including when you:
-              </p>
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>Fill out forms on our website</li>
-                <li>Create an account</li>
-                <li>Request a quote</li>
-                <li>Contact us for support</li>
-                <li>Subscribe to our newsletter</li>
-              </ul>
+              {sections.map((section: any, idx: number) => (
+                <div key={idx} className="mb-8">
+                  {section.title && (
+                    <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">{section.title}</h2>
+                  )}
+                  {section.intro && (
+                    <p className="text-gray-600 mb-4">{section.intro}</p>
+                  )}
+                  {Array.isArray(section.items) && section.items.length > 0 && (
+                    <ul className="list-disc pl-6 mb-6 text-gray-600">
+                      {section.items.map((item: string, i: number) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
 
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">2. How We Use Your Information</h2>
-              <p className="text-gray-600 mb-4">
-                We use the information we collect to:
-              </p>
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>Provide and improve our services</li>
-                <li>Process your shipping requests</li>
-                <li>Send you updates about your shipments</li>
-                <li>Respond to your inquiries</li>
-                <li>Send marketing communications (with your consent)</li>
-              </ul>
-
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. Information Sharing</h2>
-              <p className="text-gray-600 mb-6">
-                We do not sell your personal information. We may share your information with:
-              </p>
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>Service providers who assist in our operations</li>
-                <li>Partners involved in your shipment</li>
-                <li>Law enforcement when required by law</li>
-              </ul>
-
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">4. Your Rights</h2>
-              <p className="text-gray-600 mb-4">
-                You have the right to:
-              </p>
-              <ul className="list-disc pl-6 mb-6 text-gray-600">
-                <li>Access your personal information</li>
-                <li>Correct inaccurate information</li>
-                <li>Request deletion of your information</li>
-                <li>Opt-out of marketing communications</li>
-              </ul>
-
-              <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">5. Contact Us</h2>
-              <p className="text-gray-600 mb-6">
-                If you have any questions about this Privacy Policy, please contact us at:
-              </p>
-              <ul className="list-none pl-6 mb-6 text-gray-600">
-                <li>Email: {translations.header.contactInfo.email}</li>
-                <li>Phone: {translations.header.contactInfo.phone}</li>
-                <li>Address: {translations.footer.address.line1}, {translations.footer.address.line2}, {translations.footer.address.city}</li>
-              </ul>
+              <div className="mt-10">
+                <ul className="list-none pl-0 mb-6 text-gray-600">
+                  <li>Email: {translations.header.contactInfo.email}</li>
+                  <li>Phone: {translations.header.contactInfo.phone}</li>
+                  <li>Address: {translations.footer.address.line1}, {translations.footer.address.line2}, {translations.footer.address.city}</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

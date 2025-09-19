@@ -14,7 +14,8 @@ export default function ContactPage() {
     phone: '',
     company: '',
     service: '',
-    message: ''
+    message: '',
+    honeypot: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
@@ -36,9 +37,75 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
+    // Client-side rate limit: 1 per 30s, max 5 per hour
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      const now = Date.now()
+      const cooldownMs = 30 * 1000
+      const windowMs = 60 * 60 * 1000
+      const maxPerWindow = 5
+
+      const raw = typeof window !== 'undefined' ? window.localStorage.getItem('contactRate') : null
+      const state = raw ? JSON.parse(raw) as { last: number, history: number[] } : { last: 0, history: [] as number[] }
+
+      if (state.last && now - state.last < cooldownMs) {
+        setSubmitStatus('error')
+        setIsSubmitting(false)
+        return
+      }
+
+      const recentHistory = (state.history || []).filter(ts => now - ts <= windowMs)
+      if (recentHistory.length >= maxPerWindow) {
+        setSubmitStatus('error')
+        setIsSubmitting(false)
+        return
+      }
+
+      // Pre-write last attempt time to avoid rapid double-clicks
+      if (typeof window !== 'undefined') {
+        const nextState = { last: now, history: recentHistory }
+        window.localStorage.setItem('contactRate', JSON.stringify(nextState))
+      }
+    } catch {
+      // If rate-limit state fails, proceed without blocking
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'e9d8d7ee-b791-40f8-8d07-0a2f9d5a100f',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+          honeypot: formData.honeypot,
+          subject: `SeaLive | ${formData.name} - ${formData.service || 'Contact'}`,
+          from_name: 'SeaLive Website',
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Request failed')
+      }
+
+      // On success, append timestamp to hourly history
+      try {
+        const now = Date.now()
+        const windowMs = 60 * 60 * 1000
+        const raw = typeof window !== 'undefined' ? window.localStorage.getItem('contactRate') : null
+        const state = raw ? JSON.parse(raw) as { last: number, history: number[] } : { last: 0, history: [] as number[] }
+        const recentHistory = (state.history || []).filter(ts => now - ts <= windowMs)
+        recentHistory.push(now)
+        if (typeof window !== 'undefined') {
+          window.localStorage.setItem('contactRate', JSON.stringify({ last: now, history: recentHistory }))
+        }
+      } catch {}
+
       setSubmitStatus('success')
       setFormData({
         name: '',
@@ -46,7 +113,8 @@ export default function ContactPage() {
         phone: '',
         company: '',
         service: '',
-        message: ''
+        message: '',
+        honeypot: ''
       })
     } catch {
       setSubmitStatus('error')
@@ -172,6 +240,17 @@ export default function ContactPage() {
                         />
                       </div>
                     </div>
+
+                    {/* Honeypot (spam koruma) */}
+                    <input
+                      type="text"
+                      name="honeypot"
+                      value={formData.honeypot}
+                      onChange={handleInputChange}
+                      style={{ display: 'none' }}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="group">

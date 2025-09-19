@@ -40,7 +40,7 @@ export default function Header() {
                   : "https://villaqrmenu.b-cdn.net/sealive/Sealive-logo.png"
                 }
                 alt="Sealive Lojistik"
-                width={160}
+                width={150}
                 height={48}
                 className="object-contain"
                 priority
@@ -49,8 +49,8 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation - Optimized for medium screens */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
-            <nav className="flex items-center space-x-4 xl:space-x-6">
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
+            <nav className="flex items-center space-x-2 xl:space-x-4">
               <Link href="/" className={`font-semibold text-base xl:text-lg transition-all duration-300 ${
                 isScrolled 
                   ? 'text-gray-700 hover:text-yellow-600' 
@@ -75,30 +75,30 @@ export default function Header() {
               </Link>
             </nav>
 
-            {/* Contact Info - Hidden on lg, shown on xl+ */}
-            <div className="hidden xl:flex items-center space-x-1 border-l border-yellow-400/30 pl-3">
+            {/* Contact Info - Keep text on lg/xl but compact */}
+            <div className="hidden xl:flex items-center space-x-1 border-l border-yellow-400/30 pl-2">
               <a href={`tel:${translations.header.contactInfo.phone}`} 
-                 className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
+                 className={`flex items-center space-x-2 px-2 py-1.5 rounded-lg transition-all duration-300 ${
                    isScrolled 
                      ? 'text-gray-700 hover:bg-yellow-50 hover:text-yellow-700 border border-transparent hover:border-yellow-200' 
                      : 'text-white hover:bg-white/10 hover:text-yellow-300 border border-white/20 hover:border-yellow-300/50'
                  }`}>
                 <Phone size={16} className="text-yellow-500" />
-                <span className="text-sm font-medium">{translations.header.contactInfo.phone}</span>
+                <span className="text-xs xl:text-sm font-medium">{translations.header.contactInfo.phone}</span>
               </a>
               <a href={`mailto:${translations.header.contactInfo.email}`} 
-                 className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
+                 className={`flex items-center space-x-2 px-2 py-1.5 rounded-lg transition-all duration-300 ${
                    isScrolled 
                      ? 'text-gray-700 hover:bg-yellow-50 hover:text-yellow-700 border border-transparent hover:border-yellow-200' 
                      : 'text-white hover:bg-white/10 hover:text-yellow-300 border border-white/20 hover:border-yellow-300/50'
                  }`}>
                 <Mail size={16} className="text-yellow-500" />
-                <span className="text-sm font-medium">{translations.header.contactInfo.email}</span>
+                <span className="text-xs xl:text-sm font-medium">{translations.header.contactInfo.email}</span>
               </a>
             </div>
 
-            {/* Compact Contact Info - Only on lg screens */}
-            <div className="xl:hidden flex items-center space-x-1 border-l border-yellow-400/30 pl-3">
+            {/* Compact Contact Info - Show on lg only (below xl) */}
+            <div className="xl:hidden flex items-center space-x-1 border-l border-yellow-400/30 pl-2">
               <a href={`tel:${translations.header.contactInfo.phone}`} 
                  className={`flex items-center px-2 py-2 rounded-lg transition-all duration-300 ${
                    isScrolled 
@@ -119,7 +119,7 @@ export default function Header() {
           </div>
 
           {/* Right side items */}
-          <div className="flex items-center space-x-2 xl:space-x-4">
+          <div className="flex items-center space-x-2 xl:space-x-3">
             {/* Language Switcher */}
             <div className="hidden lg:block">
               <LanguageSwitcher isScrolled={isScrolled} />
@@ -127,10 +127,10 @@ export default function Header() {
             
             {/* Freight Quote Button - Responsive sizing */}
             <Link href="/contact" className="hidden lg:flex">
-              <button className="flex items-center space-x-1 xl:space-x-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-4 xl:px-6 py-2 xl:py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              <button className="flex items-center space-x-1 xl:space-x-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-3 xl:px-4 py-2 xl:py-2.5 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 <Quote size={16} className="xl:hidden" />
                 <Quote size={18} className="hidden xl:block" />
-                <span className="text-sm xl:text-base">{translations.header.cta}</span>
+                <span className="text-xs xl:text-sm">{translations.header.cta}</span>
               </button>
             </Link>
 

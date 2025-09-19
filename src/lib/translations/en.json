@@ -1092,5 +1092,152 @@
   "whatsapp": {
     "tooltip": "Contact via WhatsApp",
     "message": "Hello! I would like to get information about SeaLive logistics services."
+  },
+  "legal": {
+    "lastUpdated": "Last updated:",
+    "privacy": {
+      "sections": [
+        {
+          "title": "1. Information We Collect",
+          "intro": "We collect information you provide directly to us, including when you:",
+          "items": [
+            "Fill out forms on our website",
+            "Create an account",
+            "Request a quote",
+            "Contact us for support",
+            "Subscribe to our newsletter"
+          ]
+        },
+        {
+          "title": "2. How We Use Your Information",
+          "intro": "We use the information we collect to:",
+          "items": [
+            "Provide and improve our services",
+            "Process your shipping requests",
+            "Send you updates about your shipments",
+            "Respond to your inquiries",
+            "Send marketing communications (with your consent)"
+          ]
+        },
+        {
+          "title": "3. Information Sharing",
+          "intro": "We do not sell your personal information. We may share your information with:",
+          "items": [
+            "Service providers who assist in our operations",
+            "Partners involved in your shipment",
+            "Law enforcement when required by law"
+          ]
+        },
+        {
+          "title": "4. Your Rights",
+          "intro": "You have the right to:",
+          "items": [
+            "Access your personal information",
+            "Correct inaccurate information",
+            "Request deletion of your information",
+            "Opt-out of marketing communications"
+          ]
+        },
+        {
+          "title": "5. Contact Us",
+          "intro": "If you have any questions about this Privacy Policy, please contact us at:",
+          "items": []
+        }
+      ]
+    },
+    "terms": {
+      "sections": [
+        {
+          "title": "1. Acceptance of Terms",
+          "intro": "By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.",
+          "items": []
+        },
+        {
+          "title": "2. Services",
+          "intro": "We provide the following shipping and logistics services:",
+          "items": [
+            "Ocean freight shipping",
+            "Air freight services",
+            "Land transport",
+            "Yacht transportation",
+            "Customs clearance",
+            "Freight forwarding"
+          ]
+        },
+        {
+          "title": "3. User Obligations",
+          "intro": "You agree to:",
+          "items": [
+            "Provide accurate and complete information",
+            "Comply with all applicable laws and regulations",
+            "Use the services only for lawful purposes",
+            "Pay all charges associated with your shipments"
+          ]
+        },
+        {
+          "title": "4. Liability",
+          "intro": "Our liability is limited to the extent permitted by applicable law. We are not responsible for:",
+          "items": [
+            "Delays caused by customs or other authorities",
+            "Force majeure events",
+            "Indirect or consequential losses",
+            "Loss or damage due to improper packaging"
+          ]
+        },
+        {
+          "title": "5. Changes to Terms",
+          "intro": "We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting to the website.",
+          "items": []
+        },
+        {
+          "title": "6. Contact Information",
+          "intro": "For questions about these Terms of Use, please contact us at:",
+          "items": []
+        }
+      ]
+    },
+    "cookies": {
+      "sections": [
+        {
+          "title": "1. What Are Cookies",
+          "intro": "Cookies are small text files that are placed on your computer or mobile device when you visit our website. They are widely used to make websites work more efficiently and provide useful information to website owners.",
+          "items": []
+        },
+        {
+          "title": "2. How We Use Cookies",
+          "intro": "We use cookies for the following purposes:",
+          "items": [
+            "Essential cookies for website functionality",
+            "Analytics cookies to understand how visitors use our site",
+            "Preference cookies to remember your settings",
+            "Marketing cookies to deliver relevant advertisements"
+          ]
+        },
+        {
+          "title": "3. Types of Cookies We Use",
+          "intro": "The main types of cookies are:",
+          "items": [
+            "Essential Cookies",
+            "Analytics Cookies",
+            "Preference Cookies",
+            "Marketing Cookies"
+          ]
+        },
+        {
+          "title": "4. Managing Cookies",
+          "intro": "You can control and manage cookies in various ways:",
+          "items": [
+            "Browser settings to block or delete cookies",
+            "Third-party opt-out mechanisms",
+            "Our cookie consent tool"
+          ]
+        },
+        {
+          "title": "5. Contact Information",
+          "intro": "If you have any questions about our Cookie Policy, please contact us at:",
+          "items": []
+        }
+      ]
+    }
   }
 }
