@@ -19,12 +19,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/cookies',
   ]
 
-  const staticUrls = staticRoutes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1.0 : 0.8,
-  }))
+  const staticUrls = staticRoutes.map((route) => {
+    // Priority assignment for SEO
+    let priority = 0.8
+    if (route === '') priority = 1.0
+    if (route === '/services/yacht-transportation') priority = 0.95 // Highest priority for yacht transportation
+    if (route === '/services') priority = 0.9
+    
+    return {
+      url: `${baseUrl}${route}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority,
+    }
+  })
 
   // İleride blog veya dinamik hizmet sayfaları eklerseniz,
   // onları da buraya ekleyebilirsiniz.

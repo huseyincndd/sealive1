@@ -118,6 +118,11 @@ export default function ServicesPage() {
 
   return (
     <main className="min-h-screen bg-white">
+      {/* SEO H1 - Hidden but important for SEO */}
+      <h1 className="sr-only">
+        Yat Taşımacılığı ve Lojistik Hizmetleri - Mersin İstanbul Antalya Yat Taşıma, Deniz, Hava ve Kara Taşımacılığı
+      </h1>
+      
       <Header />
       
       {/* Enhanced Hero Section */}
@@ -126,7 +131,8 @@ export default function ServicesPage() {
         <div className="absolute inset-0">
           <img 
             src="https://villaqrmenu.b-cdn.net/sealive/ChatGPT%20Image%2029%20Haz%202025%2014_46_02.png"
-            alt="SeaLive lojistik hizmetleri - deniz, hava, kara ve yat taşımacılığı"
+            alt="Yat taşımacılığı, tekne nakliyesi ve uluslararası lojistik hizmetleri - SeaLive Mersin İstanbul Antalya"
+            title="Profesyonel Yat Taşıma ve Lojistik Hizmetleri"
             className="w-full h-full object-cover object-center opacity-30"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-gray-900/70 via-gray-800/60 to-slate-900/70"></div>
@@ -272,7 +278,8 @@ export default function ServicesPage() {
                       <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 to-transparent rounded-2xl"></div>
                       <img
                         src={service.image}
-                        alt={service.title}
+                        alt={`${service.title} - SeaLive profesyonel ${index === 0 ? 'yat taşımacılığı ve tekne nakliyesi' : 'lojistik'} hizmetleri`}
+                        title={`${service.title} | SeaLive Lojistik Hizmetleri`}
                         className="rounded-2xl shadow-2xl w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       

@@ -13,10 +13,33 @@ import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Yat Taşımacılığı ve Uluslararası Denizyolu Lojistiği | SeaLive',
-  description: 'SeaLive Lojistik: Yat taşımacılığı, uluslararası denizyolu ve havayolu nakliyatında lider çözümler. Proje ve parsiyel kargo için uzman ekibimizden teklif alın.',
+  title: 'Yat Taşımacılığı | Mersin İstanbul Antalya Yat Taşıma | SeaLive Lojistik',
+  description: 'SeaLive ile profesyonel yat taşımacılığı ve tekne nakliyesi. Mersin, İstanbul, Antalya\'da güvenli yat taşıma hizmetleri. Uluslararası lojistik ve denizyolu taşımacılığı. ☎ +90 505 092 09 99',
+  keywords: [
+    'yat taşımacılığı',
+    'yat taşıma',
+    'tekne taşımacılığı',
+    'tekne nakliyesi',
+    'mersin yat taşımacılığı',
+    'istanbul yat taşıma',
+    'antalya yat nakliyesi',
+    'uluslararası yat taşıma',
+    'denizyolu taşımacılığı',
+    'havayolu taşımacılığı',
+    'kara taşımacılığı',
+    'freight forwarding',
+    'lojistik hizmetleri',
+  ],
+  openGraph: {
+    title: 'Yat Taşımacılığı | SeaLive Profesyonel Yat Taşıma Hizmetleri',
+    description: 'Türkiye\'nin lider yat taşımacılığı firması SeaLive. Mersin, İstanbul, Antalya ve tüm Türkiye\'de güvenilir yat taşıma ve tekne nakliyesi hizmetleri.',
+    url: 'https://www.sealive.net',
+    siteName: 'SeaLive Lojistik',
+    locale: 'tr_TR',
+    type: 'website',
+  },
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.sealive.net',
   },
 }
 
@@ -25,7 +48,7 @@ export default function Home() {
     <main className="min-h-screen">
       {/* SEO Ana Başlık - Görsel olarak gizli ama SEO için kritik */}
       <h1 className="sr-only">
-        SeaLive Lojistik - Yat Taşımacılığı ve Uluslararası Denizyolu Lojistiği Hizmetleri
+        Yat Taşımacılığı - Mersin İstanbul Antalya Yat Taşıma ve Tekne Nakliyesi | SeaLive Lojistik
       </h1>
       
       <Header />

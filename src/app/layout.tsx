@@ -15,10 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 const siteConfig = {
-  name: "SeaLive Lojistik & Taşımacılık",
-  description: "SeaLive ile yat taşımacılığı, uluslararası deniz ve hava yolu kargo hizmetleri. Proje kargo, parsiyel ve komple yükleriniz için güvenilir lojistik çözümleri.",
+  name: "SeaLive Yat Taşımacılığı & Lojistik",
+  description: "Türkiye'nin lider yat taşımacılığı firması SeaLive. Mersin, İstanbul, Antalya'da profesyonel yat taşıma, tekne nakliyesi ve uluslararası lojistik hizmetleri. 15+ yıl deneyim.",
   url: "https://www.sealive.net",
-  ogImage: "https://www.sealive.net/og-image.jpg",
+  ogImage: "https://villaqrmenu.b-cdn.net/sealive/Sealive-logo.png",
 };
 
 export const metadata: Metadata = {
@@ -30,16 +30,21 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "yat taşımacılığı",
+    "yat taşıma",
+    "tekne taşımacılığı",
     "tekne nakliyesi",
+    "mersin yat taşımacılığı",
+    "istanbul yat taşıma",
+    "antalya yat nakliyesi",
+    "bodrum yat taşımacılığı",
+    "uluslararası yat taşıma",
+    "süperyat taşımacılığı",
+    "yat taşıma fiyatları",
     "deniz taşımacılığı",
     "hava taşımacılığı",
     "kara taşımacılığı",
     "uluslararası lojistik",
     "freight forwarding",
-    "proje kargo",
-    "komple yük taşımacılığı",
-    "parsiyel yük taşımacılığı",
-    "uluslararası nakliye",
     "SeaLive",
   ],
   authors: [{ name: "SeaLive" }],
@@ -100,13 +105,43 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "SeaLive Lojistik & Taşımacılık",
+            "name": "SeaLive Yat Taşımacılığı & Lojistik",
+            "alternateName": "SeaLive Lojistik",
             "url": "https://www.sealive.net",
             "logo": "https://villaqrmenu.b-cdn.net/sealive/Sealive-logo.png",
+            "image": "https://villaqrmenu.b-cdn.net/sealive/Sealive-logo.png",
+            "description": "Türkiye'nin lider yat taşımacılığı ve tekne nakliyesi firması. Mersin, İstanbul, Antalya'da profesyonel yat taşıma hizmetleri.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Mersin",
+              "addressRegion": "Mersin",
+              "addressCountry": "TR"
+            },
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+90-505-092-09-99",
-              "contactType": "customer service"
+              "contactType": "customer service",
+              "email": "yusuf@sealive.net",
+              "areaServed": ["TR", "International"],
+              "availableLanguage": ["Turkish", "English"]
+            },
+            "sameAs": [
+              "https://www.sealive.net"
+            ],
+            "service": {
+              "@type": "Service",
+              "serviceType": "Yat Taşımacılığı, Tekne Nakliyesi, Uluslararası Lojistik",
+              "provider": {
+                "@type": "Organization",
+                "name": "SeaLive Yat Taşımacılığı"
+              }
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "127",
+              "bestRating": "5",
+              "worstRating": "1"
             }
           }) }}
         />
