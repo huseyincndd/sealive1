@@ -441,11 +441,13 @@ export default function YachtTransportationPage() {
       {/* Hero Section - Optimized for "yat taşımacılığı" keyword */}
       <section className="pt-32 pb-24 bg-gradient-to-br from-slate-900 via-gray-800 to-blue-900 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img 
+          <Image 
             src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
             alt="Profesyonel yat taşımacılığı hizmetleri - SeaLive yat taşıma ve tekne nakliyesi - Mersin İstanbul Antalya"
             title="Yat Taşımacılığı ve Tekne Nakliyesi Hizmetleri"
-            className="w-full h-full object-cover object-center opacity-25"
+            fill
+            priority
+            className="object-cover object-center opacity-25"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-gray-800/70 to-blue-900/80"></div>
         </div>
@@ -456,7 +458,7 @@ export default function YachtTransportationPage() {
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
             }`}>
               <Ship size={16} className="mr-2" />
-              Türkiye'nin Lider Yat Taşımacılığı Firması
+              Türkiye&apos;nin Lider Yat Taşımacılığı Firması
             </div>
             
             <h1 className={`text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight transition-all duration-700 delay-300 transform ${
@@ -471,7 +473,7 @@ export default function YachtTransportationPage() {
             <p className={`text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-12 transition-all duration-700 delay-500 transform ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              Mersin, İstanbul, Antalya ve tüm Türkiye'de <strong className="text-yellow-400">güvenli yat taşıma</strong> hizmetleri. 
+              Mersin, İstanbul, Antalya ve tüm Türkiye&apos;de <strong className="text-yellow-400">güvenli yat taşıma</strong> hizmetleri. 
               Uluslararası <strong className="text-yellow-400">yat taşımacılığı</strong> ve <strong className="text-yellow-400">tekne nakliyesi</strong> konusunda 
               15 yılı aşkın deneyimimizle yanınızdayız. Sigortalı, hızlı ve uygun fiyatlı yat taşıma çözümleri.
             </p>
@@ -519,7 +521,7 @@ export default function YachtTransportationPage() {
                   <div className="text-sm text-gray-600">Yat Taşıma</div>
                 </div>
               </div>
-              <p className="text-gray-700 text-sm">50M USD'ye kadar sigorta kapsamı</p>
+              <p className="text-gray-700 text-sm">50M USD&apos;ye kadar sigorta kapsamı</p>
             </div>
             
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-blue-400">
