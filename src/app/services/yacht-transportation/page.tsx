@@ -7,6 +7,7 @@ import { Anchor, Globe, CheckCircle, ArrowRight, Award, Star, Phone, Ship, Trend
 import { useLanguage } from '@/lib/language-context'
 import Link from 'next/link'
 import Head from 'next/head'
+import Image from 'next/image'
 
 // Enhanced Service Schema with more detailed information
 const serviceSchema = {
@@ -688,7 +689,7 @@ export default function YachtTransportationPage() {
               <div className="px-6 pb-6 text-gray-700 leading-relaxed">
                 <p className="mb-3">
                   <strong>Yat taşıma fiyatları</strong> yatın boyutuna, ağırlığına, taşıma mesafesine ve hedefe göre değişmektedir. 
-                  Örneğin, 30 metrelik bir yatın Mersin'den İstanbul'a taşınması ile 50 metrelik bir süperyatın uluslararası 
+                  Örneğin, 30 metrelik bir yatın Mersin&apos;den İstanbul&apos;a taşınması ile 50 metrelik bir süperyatın uluslararası 
                   taşımacılığı farklı ücretlendirmeler gerektirir.
                 </p>
                 <p className="mb-3">
@@ -735,7 +736,7 @@ export default function YachtTransportationPage() {
                   ve teslim edilir.</li>
                 </ol>
                 <p className="mt-3 bg-blue-50 p-3 rounded-lg">
-                  🛡️ Tüm süreç boyunca <strong>7/24 takip</strong> ve <strong>50M USD'ye kadar sigorta</strong> ile korunursunuz.
+                  🛡️ Tüm süreç boyunca <strong>7/24 takip</strong> ve <strong>50M USD&apos;ye kadar sigorta</strong> ile korunursunuz.
                 </p>
               </div>
             </details>
@@ -751,7 +752,7 @@ export default function YachtTransportationPage() {
               </summary>
               <div className="px-6 pb-6 text-gray-700 leading-relaxed">
                 <p className="mb-3">
-                  Evet, <strong>Mersin'de profesyonel yat taşımacılığı</strong> hizmeti veriyoruz. 
+                  Evet, <strong>Mersin&apos;de profesyonel yat taşımacılığı</strong> hizmeti veriyoruz. 
                   Mersin limanından ve marinalarından yat taşıma işlemlerini güvenli ve hızlı şekilde gerçekleştiriyoruz.
                 </p>
                 <p className="mb-3">
@@ -764,7 +765,7 @@ export default function YachtTransportationPage() {
                   <li>Özel marinalar ve yat çekek yerleri</li>
                 </ul>
                 <p className="mt-3 bg-green-50 p-3 rounded-lg">
-                  📍 Mersin'den Türkiye'nin her yerine ve uluslararası destinasyonlara <strong>yat taşıma</strong> hizmeti sunuyoruz.
+                  📍 Mersin&apos;den Türkiye&apos;nin her yerine ve uluslararası destinasyonlara <strong>yat taşıma</strong> hizmeti sunuyoruz.
                 </p>
               </div>
             </details>
@@ -780,8 +781,8 @@ export default function YachtTransportationPage() {
               </summary>
               <div className="px-6 pb-6 text-gray-700 leading-relaxed">
                 <p className="mb-3">
-                  Evet, dünya çapında <strong>500'den fazla limana uluslararası yat taşımacılığı</strong> hizmeti sunuyoruz. 
-                  Yatınızı Türkiye'den herhangi bir ülkeye veya uluslararası destinasyonlar arasında güvenle taşıyoruz.
+                  Evet, dünya çapında <strong>500&apos;den fazla limana uluslararası yat taşımacılığı</strong> hizmeti sunuyoruz. 
+                  Yatınızı Türkiye&apos;den herhangi bir ülkeye veya uluslararası destinasyonlar arasında güvenle taşıyoruz.
                 </p>
                 <p className="mb-3">
                   <strong>Popüler uluslararası yat taşıma rotalarımız:</strong>
@@ -811,7 +812,7 @@ export default function YachtTransportationPage() {
               </summary>
               <div className="px-6 pb-6 text-gray-700 leading-relaxed">
                 <p className="mb-3">
-                  Evet, tüm <strong>yat taşıma hizmetlerimiz 50 Milyon USD'ye kadar sigorta kapsamındadır</strong>. 
+                  Evet, tüm <strong>yat taşıma hizmetlerimiz 50 Milyon USD&apos;ye kadar sigorta kapsamındadır</strong>. 
                   Yatınız taşıma sürecinde tam koruma altında olur ve olası her türlü hasar için güvence altındasınızdır.
                 </p>
                 <p className="mb-3">
@@ -842,7 +843,7 @@ export default function YachtTransportationPage() {
               <div className="px-6 pb-6 text-gray-700 leading-relaxed">
                 <p className="mb-3">
                   Küçük teknelerden <strong>200 metre uzunluğundaki süperyatlara</strong> kadar her boyutta 
-                  yat taşımacılığı hizmeti veriyoruz. 2000 ton'a kadar ağırlık kapasitemiz bulunmaktadır.
+                  yat taşımacılığı hizmeti veriyoruz. 2000 ton&apos;a kadar ağırlık kapasitemiz bulunmaktadır.
                 </p>
                 <p className="mb-3">
                   <strong>Taşıdığımız yat kategorileri:</strong>
@@ -981,11 +982,14 @@ export default function YachtTransportationPage() {
                   &quot;{testimonial.content}&quot;
                 </p>
                 <div className="flex items-center">
-                  <img
-                    src={`https://images.unsplash.com/${index === 0 ? 'photo-1507003211169-0a1dd7228f2d' : 'photo-1494790108755-2616b612b786'}?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80`}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                  />
+                  <div className="relative w-12 h-12 mr-4">
+                    <Image
+                      src={`https://images.unsplash.com/${index === 0 ? 'photo-1507003211169-0a1dd7228f2d' : 'photo-1494790108755-2616b612b786'}?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80`}
+                      alt={testimonial.name}
+                      fill
+                      className="rounded-full object-cover"
+                    />
+                  </div>
                   <div>
                     <div className="font-semibold text-gray-900">{testimonial.name}</div>
                     <div className="text-gray-600 text-sm">{testimonial.title}</div>
@@ -1005,7 +1009,7 @@ export default function YachtTransportationPage() {
               Yat Taşımacılığı Hizmet Bölgelerimiz
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Türkiye'nin tüm önemli liman şehirlerinde profesyonel yat taşıma ve tekne nakliyesi hizmetleri veriyoruz
+              Türkiye&apos;nin tüm önemli liman şehirlerinde profesyonel yat taşıma ve tekne nakliyesi hizmetleri veriyoruz
             </p>
           </div>
           
@@ -1034,10 +1038,10 @@ export default function YachtTransportationPage() {
           
           <div className="mt-8 text-center">
             <p className="text-gray-700 leading-relaxed max-w-4xl mx-auto">
-              <strong className="text-blue-600">SeaLive Yat Taşımacılığı</strong> olarak Türkiye'nin tüm liman şehirlerinde 
+              <strong className="text-blue-600">SeaLive Yat Taşımacılığı</strong> olarak Türkiye&apos;nin tüm liman şehirlerinde 
               profesyonel <strong>yat taşıma</strong>, <strong>tekne nakliyesi</strong> ve <strong>süperyat taşımacılığı</strong> hizmetleri sunuyoruz. 
               15 yılı aşkın tecrübemiz ve uzman ekibimizle, yatınızı güvenli bir şekilde istediğiniz hedefe ulaştırıyoruz. 
-              Mersin'den başlayarak tüm Akdeniz, Ege ve Marmara bölgelerinde <strong>uygun fiyatlı yat taşımacılığı</strong> çözümleri sağlıyoruz.
+              Mersin&apos;den başlayarak tüm Akdeniz, Ege ve Marmara bölgelerinde <strong>uygun fiyatlı yat taşımacılığı</strong> çözümleri sağlıyoruz.
             </p>
           </div>
         </div>
@@ -1058,7 +1062,7 @@ export default function YachtTransportationPage() {
             </h2>
             <p className="text-xl text-gray-300 mb-12 leading-relaxed">
               Yat taşıma fiyatları ve detaylı bilgi için uzman ekibimizle iletişime geçin. 
-              Mersin, İstanbul, Antalya ve tüm Türkiye'de güvenilir yat taşımacılığı hizmetleri. 
+              Mersin, İstanbul, Antalya ve tüm Türkiye&apos;de güvenilir yat taşımacılığı hizmetleri. 
               Ücretsiz keşif ve şeffaf fiyatlandırma garantisi!
             </p>
             
