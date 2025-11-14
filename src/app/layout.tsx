@@ -100,6 +100,9 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning>
       <head>
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="S92h8LQK4bJ-nuzXP19FKHthOWkOZwaJCTjPfcqkR5A" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
