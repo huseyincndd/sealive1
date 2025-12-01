@@ -481,10 +481,13 @@ export default function YachtTransportationPage() {
             <div className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 delay-700 transform ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}>
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group transform hover:scale-105">
-                {translations.yachtTransportPage.hero.getQuote}
+              <Link
+                href="/contact"
+                className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group transform hover:scale-105"
+              >
+                İletişime Geç
                 <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
               <button className="border border-white/30 hover:border-white/50 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
                 {translations.yachtTransportPage.hero.viewPortfolio}
               </button>
