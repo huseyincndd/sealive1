@@ -22,7 +22,7 @@ export default function ServicesPage() {
       subtitle: translations.servicesPage.mainServices[0].subtitle,
       description: translations.servicesPage.mainServices[0].description,
       features: translations.servicesPage.mainServices[0].features,
-      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://villaqrmenu.b-cdn.net/sealive/ChatGPT%20Image%2029%20Haz%202025%2014_46_02.png",
       premium: true,
       gradient: "from-blue-600 to-cyan-500"
     },
@@ -32,7 +32,7 @@ export default function ServicesPage() {
       subtitle: translations.servicesPage.mainServices[1].subtitle,
       description: translations.servicesPage.mainServices[1].description,
       features: translations.servicesPage.mainServices[1].features,
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://jacanna.global/nz/wp-content/uploads/2024/03/Sea-Freight-Header-image.jpg",
       premium: false,
       gradient: "from-slate-600 to-slate-800"
     },
@@ -52,7 +52,7 @@ export default function ServicesPage() {
       subtitle: translations.servicesPage.mainServices[3].subtitle,
       description: translations.servicesPage.mainServices[3].description,
       features: translations.servicesPage.mainServices[3].features,
-      image: "https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://villaqrmenu.b-cdn.net/sealive/sealivetruck.png",
       premium: false,
       gradient: "from-slate-600 to-slate-800"
     }

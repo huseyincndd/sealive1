@@ -13,8 +13,23 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'www.turkdenizcilik.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.shouf.io',
+      },  
+      {
+        protocol: 'https',
+        hostname: 'cdn.d-marin.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'da28ojrjakn6f.cloudfront.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'image.yachtbuyer.com',
       }
-      
     ],
   },
 }

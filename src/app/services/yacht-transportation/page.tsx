@@ -351,21 +351,21 @@ export default function YachtTransportationPage() {
       description: translations.yachtTransportPage.servicesSection.services[0].description,
       features: translations.yachtTransportPage.servicesSection.services[0].features,
       icon: Anchor,
-      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://image.yachtbuyer.com/w1440/h560/qh/ca/m1/ow-1/k5fc71e18/article/content/2790743/rmk120-seven-seas-aerial-shot-whilst-yacht-is-underway-calm-sea-bright-day.jpg"
     },
     {
       title: translations.yachtTransportPage.servicesSection.services[1].title,
       description: translations.yachtTransportPage.servicesSection.services[1].description,
       features: translations.yachtTransportPage.servicesSection.services[1].features,
       icon: Award,
-      image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://s1.cdn.autoevolution.com/images/news/gallery/oasis-deck-is-how-benetti-reshapes-superyacht-design-to-create-a-new-lifestyle_1.jpg"
     },
     {
       title: translations.yachtTransportPage.servicesSection.services[2].title,
       description: translations.yachtTransportPage.servicesSection.services[2].description,
       features: translations.yachtTransportPage.servicesSection.services[2].features,
       icon: Globe,
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://image.yachtbuyer.com/w1440/h755/qh/ca/kd370e978/cms/photo/3037600.jpg"
     }
   ]
 
@@ -442,7 +442,7 @@ export default function YachtTransportationPage() {
       <section className="pt-32 pb-24 bg-gradient-to-br from-slate-900 via-gray-800 to-blue-900 relative overflow-hidden">
         <div className="absolute inset-0">
           <Image 
-            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80"
+            src="https://da28ojrjakn6f.cloudfront.net/tickets/4717/NEW/img_1684476033_1684477768__moonlight.jpeg?v=1.1.0"
             alt="Profesyonel yat taşımacılığı hizmetleri - SeaLive yat taşıma ve tekne nakliyesi - Mersin İstanbul Antalya"
             title="Yat Taşımacılığı ve Tekne Nakliyesi Hizmetleri"
             fill
