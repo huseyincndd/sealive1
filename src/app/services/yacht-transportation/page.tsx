@@ -370,7 +370,7 @@ export default function YachtTransportationPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-slate-900">
       {/* Enhanced SEO Meta Tags */}
       <Head>
         <title>Yat Taşımacılığı | Profesyonel Yat Taşıma Hizmetleri | SeaLive</title>
@@ -421,23 +421,6 @@ export default function YachtTransportationPage() {
       
       <Header />
       
-      {/* Breadcrumb Navigation for SEO */}
-      <nav className="bg-gray-50 py-3 border-b border-gray-200 mt-20">
-        <div className="container mx-auto px-4">
-          <ol className="flex items-center space-x-2 text-sm">
-            <li>
-              <Link href="/" className="text-blue-600 hover:text-blue-800 hover:underline">Ana Sayfa</Link>
-            </li>
-            <li className="text-gray-400">/</li>
-            <li>
-              <Link href="/services" className="text-blue-600 hover:text-blue-800 hover:underline">Hizmetler</Link>
-            </li>
-            <li className="text-gray-400">/</li>
-            <li className="text-gray-600 font-medium">Yat Taşımacılığı</li>
-          </ol>
-        </div>
-      </nav>
-
       {/* Hero Section - Optimized for "yat taşımacılığı" keyword */}
       <section className="pt-32 pb-24 bg-gradient-to-br from-slate-900 via-gray-800 to-blue-900 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -495,6 +478,23 @@ export default function YachtTransportationPage() {
           </div>
         </div>
       </section>
+
+      {/* Breadcrumb Navigation for SEO - moved below hero to keep header readable */}
+      <nav className="bg-slate-900/80 py-3 border-b border-slate-800">
+        <div className="container mx-auto px-4">
+          <ol className="flex items-center space-x-2 text-sm text-slate-200">
+            <li>
+              <Link href="/" className="text-blue-300 hover:text-blue-100 hover:underline">Ana Sayfa</Link>
+            </li>
+            <li className="text-slate-400">/</li>
+            <li>
+              <Link href="/services" className="text-blue-300 hover:text-blue-100 hover:underline">Hizmetler</Link>
+            </li>
+            <li className="text-slate-400">/</li>
+            <li className="text-slate-100 font-medium">Yat Taşımacılığı</li>
+          </ol>
+        </div>
+      </nav>
 
       {/* Specifications Section */}
       <section className="py-16 bg-white">
