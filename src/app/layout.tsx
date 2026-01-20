@@ -102,7 +102,23 @@ export default function RootLayout({
       <head>
         {/* Google Search Console Verification */}
         <meta name="google-site-verification" content="S92h8LQK4bJ-nuzXP19FKHthOWkOZwaJCTjPfcqkR5A" />
-        
+
+        {/* Google Ads Global Site Tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17828286821"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17828286821');
+            `,
+          }}
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
