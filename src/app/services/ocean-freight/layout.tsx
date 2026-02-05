@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Uluslararası Denizyolu Taşımacılığı ve Konteyner Lojistiği',
+  title: 'Denizyolu Taşımacılığı | FCL & LCL Konteyner Lojistiği | SeaLive',
   description: 'FCL ve LCL konteyner taşımacılığı, uluslararası deniz yolu kargo ve lojistik hizmetleri. SeaLive ile dünya çapında güvenilir ve ekonomik deniz taşımacılığı çözümleri.',
   keywords: [
     'denizyolu taşımacılığı',
@@ -11,9 +11,11 @@ export const metadata: Metadata = {
     'uluslararası deniz kargo',
     'deniz yolu lojistik',
     'konteyner nakliyesi',
+    'ocean freight',
+    'sea cargo',
   ],
   alternates: {
-    canonical: '/services/ocean-freight',
+    canonical: 'https://www.sealive.net/services/ocean-freight',
   },
 }
 

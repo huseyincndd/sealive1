@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Karayolu Nakliyesi ve Kara Taşımacılığı Lojistik Hizmetleri',
+  title: 'Karayolu Nakliyesi | TIR Taşımacılığı | SeaLive',
   description: 'Komple ve parsiyel karayolu nakliyesi, TIR taşımacılığı ve kara lojistiği çözümleri. SeaLive ile Türkiye ve Avrupa genelinde güvenilir kara taşımacılığı.',
   keywords: [
     'karayolu nakliyesi',
@@ -12,9 +12,10 @@ export const metadata: Metadata = {
     'kamyon taşımacılığı',
     'kara lojistiği',
     'overland transport',
+    'land freight',
   ],
   alternates: {
-    canonical: '/services/land-transport',
+    canonical: 'https://www.sealive.net/services/land-transport',
   },
 }
 

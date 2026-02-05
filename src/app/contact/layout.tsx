@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'ücretsiz fiyat teklifi',
   ],
   alternates: {
-    canonical: '/contact',
+    canonical: 'https://www.sealive.net/contact',
   },
 }
 

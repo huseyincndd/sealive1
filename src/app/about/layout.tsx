@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'lojistik çözümleri',
   ],
   alternates: {
-    canonical: '/about',
+    canonical: 'https://www.sealive.net/about',
   },
 }
 
